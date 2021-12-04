@@ -19,6 +19,25 @@ class InvoiceController extends Controller
      */
     public function index()
     {
+        if(request()->ajax())
+                {
+                        return datatables()->of(Invoice::all())
+                                ->addColumn('quotation_no', function($data){
+                                    return $data->quotation_no;
+                                })
+                                ->addColumn('name', function($data){
+                                    return $data->user->name;
+                                })
+                                ->addColumn('address', function($data){
+                                    return $data->user->address == null ? '-' : $data->user->address;
+                                })
+                                ->addColumn('actions', function($data){
+                                    // return '<a href="'.route('admin.invoice.show',$data->id).'" class="btn btn-primary btn-sm">View Invoice</a> &nbsp;&nbsp;<a href="'.asset($data->pdf_path).'" class="btn btn-info btn-sm">View PDF</a>';
+                                    return '<a href="'.asset($data->pdf_path).'" class="btn btn-info btn-sm">View PDF</a>';
+                                })
+                                ->rawColumns(['quotation_no','name','address','actions'])
+                                ->make(true);
+                }
         return view('admin.invoice.index');
     }
 

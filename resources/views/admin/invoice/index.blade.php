@@ -37,7 +37,71 @@
 <!-- Main content -->
 
 <div class="container">
-    
+  <div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-md-10">
+                <h3 class="card-title">Invoices</strong></h3>
+            </div>
+            <div class="col-md-2">
+                <a href="{{route('admin.invoice.create')}}" class="btn btn-primary btn-sm">Create Invoice</a>
+            </div>
+      </div>
+    </div>
+    <div class="card-body">
+        <table id="invoiceTable" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Quotation No</th>
+                    <th>Customer Name</th>
+                    <th>Address</th>
+                    <th>Actions</th>
+                </thead>
+                
+                <tfoot>
+                {{-- <tr>
+                  <th>Quotation No</th>
+                  <th>Customer Name</th>
+                  <th>Address</th>
+                  <th>Actions</th>
+                </tr>
+                </tfoot> --}}
+        </table>
+    </div>
 </div>
 </div>
+</div>
+@endsection
+
+
+@section('extra_js')
+    <script>
+      $('#invoiceTable').DataTable({
+            processing: true,
+            serverSide: true,
+            paging: false,
+            // scrollY: 425,
+            ajax:{
+                url: "{{ route('admin.invoice.index') }}",
+            },
+            columns:[
+                {
+                    data: 'quotation_no',
+                    name: 'quotation_no'
+                },
+                {
+                    data: 'name',
+                    name: 'name'
+                },
+                {
+                    data: 'address',
+                    name: 'address'
+                },
+                {
+                    data: 'actions',
+                    name: 'actions'
+                }
+            ]
+        });
+    </script>
 @endsection
