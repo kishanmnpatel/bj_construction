@@ -4,14 +4,11 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta charset=utf-8>
   <meta name=viewport content="width=device-width,initial-scale=1">
-  <meta name=author content="Krishn Patel">
-  <meta name=keywords content="L N Industries,L N Industries choila, L N Industries ERP, Peanuts processing plant, Groundnut processing plant, Exports of peanuts and groundnuts, Groundnut seeds">
-  <meta name=description content="L N Industries is peanut and groundnut processing plant. L N Industries is also sales seed of groundnut to farmer.">
-
+  <meta name=author content="Kishan Patel">
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>{{ config('app.name', 'L N Industries') }} </title>
+  <title>BJ Construction Swarage System</title>
   
   <link rel="shortcut icon" href="{{asset('logo/ln.png')}}">
   <!-- Font Awesome Icons -->
@@ -83,13 +80,13 @@
       </li> --}}
       <li class="nav-item dropdown user-menu">
         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-          <img src="{{asset(Auth::user()->image)}}" class="user-image img-circle elevation-2" alt="User Image">
+          {{-- <img src="{{asset(Auth::user()->image)}}" class="user-image img-circle elevation-2" alt="User Image"> --}}
           <span class="d-none d-md-inline">{{ Auth::user()->name }}</span>
         </a>
         <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <!-- User image -->
           <li class="user-header bg-primary">
-            <img src="{{asset(Auth::user()->image)}}" class="img-circle elevation-2" alt="User Image">
+            {{-- <img src="{{asset(Auth::user()->image)}}" class="img-circle elevation-2" alt="User Image"> --}}
 
             <p>
                 {{ Auth::user()->name }}
@@ -130,9 +127,9 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="/" class="brand-link">
-      <img src="{{asset('logo/ln.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-           style="opacity: .8">
-      <span class="brand-text font-weight-light">{{ config('app.name', 'L N Industries') }}</span>
+      {{-- <img src="{{asset('logo/ln.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+           style="opacity: .8"> --}}
+      <span class="brand-text font-weight-light">BJ Construction Swarage System</span>
     </a>
 
     <!-- Sidebar -->
@@ -148,11 +145,11 @@
                 <a href="/" class="nav-link {{ Request::path()=='home' ? 'active' : '' }}">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
                   <p>
-                    હોમ
+                    Home
                   </p>
                 </a>
               </li>
-              @if (Request::is('brokers/create') || Request::is('brokers') )
+              @if (Request::is('admin/invoice/create') || Request::is('admin/invoice') )
                   <li class="nav-item has-treeview  menu-open">
                     <a href="#" class="nav-link active">
               @else
@@ -161,63 +158,29 @@
               @endif
                   <i class="nav-icon fas fa-copy"></i>
                   <p>
-                    બ્રોકર
+                    Invoices
                     <i class="fas fa-angle-left right"></i>
                   </p>
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="{{url('brokers/create')}}" class="nav-link {{ Request::is('brokers/create') ? 'active' : '' }}">
-                      <i class="far fa-circle nav-icon text-info"></i>
-                      <p>બ્રોકર બનાવો</p>
+                    <a href="{{url('admin/invoice/create')}}" class="nav-link {{ Request::is('admin/invoice/create') ? 'active' : '' }}">
+                      <i class="far fa-file-alt nav-icon text-info"></i>
+                      <p>Invoice Create</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{url('brokers')}}" class="nav-link {{ Request::is('brokers') ? 'active' : '' }}">
-                      <i class="far fa-circle nav-icon text-info"></i>
-                      <p>બ્રોકર લિસ્ટ</p>
-                    </a>
-                  </li> 
-                </ul>
-              </li>
-              @if (Request::is('orders/create') || Request::is('orders') || Request::is('orders/*/edit') || Request::is('orderRequest') )
-                  <li class="nav-item has-treeview  menu-open">
-                    <a href="#" class="nav-link active">
-              @else
-                  <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-              @endif
-                  <i class="nav-icon fas fa-copy"></i>
-                  <p>
-                    ઓર્ડર
-                    <i class="fas fa-angle-left right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="{{url('orders/create')}}" class="nav-link {{ Request::is('orders/create') ? 'active' : '' }}">
-                      <i class="far fa-circle nav-icon text-info"></i>
-                      <p>ઓર્ડર બનાવો</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="{{url('orders')}}" class="nav-link {{ Request::is('orders') ? 'active' : '' }}">
-                      <i class="far fa-circle nav-icon text-info"></i>
-                      <p>ઓર્ડર લિસ્ટ</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="{{url('orderRequest')}}" class="nav-link {{ Request::is('orderRequest') ? 'active' : '' }}">
-                      <i class="far fa-circle nav-icon text-info"></i>
-                      <p>ઓર્ડર રિકવેસ્ટ</p>
+                    <a href="{{url('admin/invoice')}}" class="nav-link {{ Request::is('admin/invoice') ? 'active' : '' }}">
+                      <i class="far fa-file-alt nav-icon text-info"></i>
+                      <p>All Invoices</p>
                     </a>
                   </li> 
                 </ul>
               </li>
               <li class="nav-item">
-                <a href="{{url('verities')}}" class="nav-link {{ Request::is('verities') ? 'active' : '' }}">
-                  <i class="far fa-circle nav-icon text-info"></i>
-                  <p>Verity Manager</p>
+                <a href="{{url('profile')}}" class="nav-link {{ Request::is('profile') ? 'active' : '' }}">
+                  <i class="far fa-id-badge nav-icon text-info"></i>
+                  <p>Profile</p>
                 </a>
               </li>
               {{-- <li class="nav-item has-treeview">
@@ -251,13 +214,11 @@
 
  @auth
      
- <div class="modal1">
-  <img src="{{URL::asset('/images/loading.gif')}}" class="center" alt="loading gif" height="50" width="50">
-</div>
+ 
   <!-- Main Footer -->
 
   <footer class="  main-footer">
-    <strong>Copyright &copy; {{ date('Y') }}-{{ date('Y')+1 }} <a href="https://lninfosystem.com">Krishn Patel</a>.</strong>
+    <strong>Copyright &copy; {{ date('Y') }}-{{ date('Y')+1 }} <a href="#">Kishan Patel</a>.</strong>
     All rights reserved.
   </footer>
 

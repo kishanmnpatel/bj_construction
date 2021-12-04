@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Invoice;
+use App\Models\ToiletFulljobInvoice;
+use App\Models\ToiletInvoice;
+use App\Models\WasteWaterFulljobInvoice;
+use App\Models\WasteWaterInvoice;
 use Illuminate\Http\Request;
 
 class InvoiceController extends Controller
@@ -15,7 +19,7 @@ class InvoiceController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.invoice.index');
     }
 
     /**
@@ -25,7 +29,7 @@ class InvoiceController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.invoice.create');
     }
 
     /**
@@ -36,7 +40,64 @@ class InvoiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $invoice=Invoice::create([
+            'user_id'=>$request->user_id,
+            'quotation_no'=>$request->quotation_no,
+        ]);
+
+        foreach ($request->toilet as $key => $value) {
+            ToiletInvoice::create([
+                'invoice_id'=>$invoice->id,
+                'product_id'=>$key,
+                'length'=>$value['length']==null ? 0 : $value['length'],
+                'width'=>$value['width']==null ? 0 :$value['width'],
+                'height'=>$value['height']==null ? 0 : $value['height'],
+                'quantity'=>$value['quantity']==null ? 0 : $value['quantity'],
+                'unit_price'=>$value['unit_price']==null ? 0 : $value['unit_price'],
+                'total'=>$value['total']==null ? 0 : $value['total'],
+            ]);
+        }
+
+        foreach ($request->toilet_fulljob as $key => $value) {
+            ToiletFulljobInvoice::create([
+                'invoice_id'=>$invoice->id,
+                'product_id'=>$key,
+                'length'=>$value['length']==null ? 0 : $value['length'],
+                'width'=>$value['width']==null ? 0 :$value['width'],
+                'height'=>$value['height']==null ? 0 : $value['height'],
+                'quantity'=>$value['quantity']==null ? 0 : $value['quantity'],
+                'unit_price'=>$value['unit_price']==null ? 0 : $value['unit_price'],
+                'total'=>$value['total']==null ? 0 : $value['total'],
+            ]);
+        }
+
+        foreach ($request->waste_water as $key => $value) {
+            WasteWaterInvoice::create([
+                'invoice_id'=>$invoice->id,
+                'product_id'=>$key,
+                'length'=>$value['length']==null ? 0 : $value['length'],
+                'width'=>$value['width']==null ? 0 :$value['width'],
+                'height'=>$value['height']==null ? 0 : $value['height'],
+                'quantity'=>$value['quantity']==null ? 0 : $value['quantity'],
+                'unit_price'=>$value['unit_price']==null ? 0 : $value['unit_price'],
+                'total'=>$value['total']==null ? 0 : $value['total'],
+            ]);
+        }
+
+        foreach ($request->waste_water_fulljob as $key => $value) {
+            WasteWaterFulljobInvoice::create([
+                'invoice_id'=>$invoice->id,
+                'product_id'=>$key,
+                'length'=>$value['length']==null ? 0 : $value['length'],
+                'width'=>$value['width']==null ? 0 :$value['width'],
+                'height'=>$value['height']==null ? 0 : $value['height'],
+                'quantity'=>$value['quantity']==null ? 0 : $value['quantity'],
+                'unit_price'=>$value['unit_price']==null ? 0 : $value['unit_price'],
+                'total'=>$value['total']==null ? 0 : $value['total'],
+            ]);
+        }
+        
+        return redirect()->back()->with('success','Profile Updated.');
     }
 
     /**

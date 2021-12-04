@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Invoice extends Model
+class WasteWaterInvoice extends Model
 {
     use HasFactory;
 
     protected $fillable=[
-        'user_id','quotation_no','pdf_path',
+        'invoice_id', 'product_id', 'length', 'width', 'height', 'quantity', 'unit_price', 'total',
     ];
 }
