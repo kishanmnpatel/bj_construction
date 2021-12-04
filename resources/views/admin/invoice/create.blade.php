@@ -35,6 +35,18 @@
         </div>
     </div>
     @endif
+    @if(session()->has('danger'))
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
+            <div class="alert alert-danger alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <h5><i class="icon fas fa-check"></i> Error!</h5>
+                {{ session()->get('danger') }}
+              </div>
+        </div>
+    </div>
+    @endif
 <!-- Main content -->
 
 <div class="container">
@@ -44,16 +56,17 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Contact No</label>
-                    <input type="text" class="form-control @error('mobile') is-invalid @enderror" placeholder="Name" name="name" value="" required autofocus>
-                    <input type="hidden" name="user_id" value="2">
+                    <input type="text" class="form-control @error('mobile') is-invalid @enderror" id="contact_no" placeholder="Mobile" name="mobile" value="" required autofocus>
+                    <input type="hidden" name="user_id" id="user_id"><br>
+                    <button class="btn btn-primary btn-sm" type="button" onclick="getUser();">Get</button>
                 </div>
                 <div class="form-group">
                     <label>Customer Name</label>
-                    <input type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Customer Name" name="name" value="" required>
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="user_name" placeholder="Customer Name" name="name" value="" required>
                 </div>
                 <div class="form-group">
                     <label>Address</label>
-                    <input type="text" class="form-control @error('address') is-invalid @enderror" placeholder="Address" name="address" autocomplete="false">
+                    <input type="text" class="form-control @error('address') is-invalid @enderror" id="user_address" placeholder="Address" name="address" autocomplete="false">
                 </div>
             </div>
             <div class="col-md-6">
@@ -638,4 +651,25 @@
     </form>
 </div>
 </div>
+@endsection
+@section('extra_js')
+    <script>
+        function getUser(){
+         var mobile=document.getElementById('contact_no').value;
+                  $.ajax({  
+                     url:"/admin/getUserFromContact",  
+                     method:"GET",  
+                     data:{mobile:mobile},   
+                     success:function(data){ 
+                       console.log(data)
+                      document.getElementById('user_name').value=data.user.name ; 
+                      document.getElementById('user_id').value=data.user.id ; 
+                      document.getElementById('user_address').value=data.user.address ; 
+                     },
+                     error:function(data){
+                        console.log(data);
+                     }
+                });
+        }
+    </script>
 @endsection

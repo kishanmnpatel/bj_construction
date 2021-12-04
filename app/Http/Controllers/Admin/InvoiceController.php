@@ -40,6 +40,9 @@ class InvoiceController extends Controller
      */
     public function store(Request $request)
     {
+        if ($request->user_id == null || $request->user_id == "") {
+            return redirect()->back()->with('danger','Please select user.');
+        }
         $invoice=Invoice::create([
             'user_id'=>$request->user_id,
             'quotation_no'=>$request->quotation_no,

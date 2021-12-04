@@ -25,6 +25,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['middleware' => ['role:admin'],'prefix'=>'admin','as'=>'admin.'], function () {
     Route::resource('invoice', App\Http\Controllers\Admin\InvoiceController::class);
     Route::resource('profile', App\Http\Controllers\Admin\ProfileController::class);
+    Route::get('getUserFromContact',[App\Http\Controllers\Admin\ProfileController::class,'getUserFromContact']);
 });
 
 Route::group(['middleware' => ['role:user'],'prefix'=>'user','as'=>'user.'], function () {
