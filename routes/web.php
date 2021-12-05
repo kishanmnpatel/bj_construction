@@ -26,6 +26,7 @@ Route::group(['middleware' => ['role:admin','auth'],'prefix'=>'admin','as'=>'adm
     Route::resource('invoice', App\Http\Controllers\Admin\InvoiceController::class);
     Route::resource('profile', App\Http\Controllers\Admin\ProfileController::class);
     Route::resource('visiting', App\Http\Controllers\Admin\VisitingController::class);
+    Route::post('visitPrint',[App\Http\Controllers\Admin\VisitingController::class,'visitPrint']);
     Route::get('getUserFromContact',[App\Http\Controllers\Admin\ProfileController::class,'getUserFromContact']);
 });
 

@@ -57,48 +57,23 @@
             </div>
       </div>
     </div>
-    <div class="card-body">
-        <table id="invoiceTable" class="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    {{-- <th>No</th> --}}
-                    <th>Visiting Date</th>
-                    <th>Customer Name</th>
-                    <th>Contact No</th>
-                    <th>Address</th>
-                </thead>
-                
-                <tfoot>
-                {{-- <tr>
-                  <th>No</th>
-                    <th>Visiting Date</th>
-                    <th>Customer Name</th>
-                    <th>Contact No</th>
-                    <th>Address</th>
-                </tr>
-                </tfoot> --}}
-        </table>
-        <input type="button" id="printButton" class="btn btn-info" onclick="printDiv('invoiceTablePrint')" value="print" />
-        <table id="invoiceTablePrint" class="table table-bordered table-striped" style="display: none">
-            <thead>
-                <tr>
-                    {{-- <th>No</th> --}}
-                    <th>Visiting Date</th>
-                    <th>Customer Name</th>
-                    <th>Contact No</th>
-                    <th>Address</th>
-                </thead>
-                <tbody>
-                    @foreach ($visitings as $item)
-                        <tr>
-                            <td>{{$item->site_visit_date}}</td>
-                            <td>{{$item->first_name}} {{$item->last_name}}</td>
-                            <td>{{$item->contact_no}}</td>
-                            <td>{{$item->user_address}}</td>
-                        </tr>
-                    @endforeach
-                </tbody>
-        </table>
+    <div class="card-body" id="card_body">
+        <form id="handlePrint">
+            @csrf
+            <table id="invoiceTable" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Visiting Date</th>
+                        <th>Customer Name</th>
+                        <th>Contact No</th>
+                        <th>Address</th>
+                        <th>Additional Info</th>
+                    </thead>
+            </table>
+            <input type="submit" class="btn btn-info" id="printBtn" value="print" />
+        </form>
+        <div id="invoiceTablePrint" style="display: none"></div>
     </div>
 </div>
 </div>
@@ -118,6 +93,10 @@
             },
             columns:[
                 {
+                    data: 'select',
+                    name: 'select'
+                },
+                {
                     data: 'visiting_date',
                     name: 'visiting_date'
                 },
@@ -132,19 +111,43 @@
                 {
                     data: 'user_address',
                     name: 'user_address'
+                },
+                {
+                    data: 'addtional_info',
+                    name: 'addtional_info'
                 }
             ]
         });
         function printDiv(divName) {
             var printContents = document.getElementById(divName).innerHTML;
-            var originalContents = document.body.innerHTML;
+            var originalContents = document.getElementById('card_body').innerHTML;
 
-            document.getElementById("printButton").style.display = "none";
-            // document.body.innerHTML = printContents;
+            document.getElementById("printBtn").style.display = "none";
+            document.getElementById('card_body').innerHTML = printContents;
 
             window.print();
 
-            document.body.innerHTML = originalContents;
+            document.getElementById('card_body').innerHTML = originalContents;
         }
+        $('#handlePrint').on("submit", function(event){  
+           event.preventDefault(); 
+           $.ajax({  
+                     url:"{{url('admin/visitPrint')}}",  
+                     method:"POST",  
+                     data:$('#handlePrint').serialize(),  
+                     beforeSend:function(){  
+                          $('#printBtn').val("Printing");  
+                     },  
+                     success:function(data){ 
+                          $('#handlePrint')[0].reset();  
+                         document.getElementById('invoiceTablePrint').innerHTML=data.data;
+                         printDiv('invoiceTablePrint');
+                          $('#printBtn').val("Print");  
+                     },
+                     error:function(data){
+                        console.log(data);
+                     }
+                });
+      });
     </script>
 @endsection
