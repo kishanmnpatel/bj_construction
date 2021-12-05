@@ -20,9 +20,9 @@ class VisitingController extends Controller
         $visitings=Visiting::where('site_visit_date',$date)->get();
         if(request()->ajax())
                 {
-                        return datatables()->of(Visiting::where('site_visit_date',$date)->get())
+                        return datatables()->of(Visiting::all())
                                 ->addColumn('visiting_date', function($data){
-                                    return $data->site_visit_date;
+                                    return $data->site_visit_date == null ? '-' : $data->site_visit_date;
                                 })
                                 ->addColumn('name', function($data){
                                     return $data->first_name.' '. $data->last_name;

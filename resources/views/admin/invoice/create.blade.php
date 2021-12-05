@@ -343,7 +343,7 @@
                           </tr>
                           <tr>
                               <td colspan="4"></td>
-                              <td><div id="toilet_total">0/-</div></td>
+                              <td><div id="toilet_fulljob_total">0/-</div></td>
                           </tr>
                           </tbody>
                         </table>
@@ -381,14 +381,14 @@
                             <td>01</td>
                             <td>Size of grees tap <br>
                                 <div class="row">
-                                    <input style="width: 40px" type="text" name="waste_water[1][length]" value="15"> &nbsp;X &nbsp;
-                                    <input style="width: 40px" type="text" name="waste_water[1][width]" value="10"> &nbsp;X&nbsp; 
-                                    <input style="width: 40px" type="text" name="waste_water[1][height]" value="25">
+                                    <input id="waste_water1l" oninput="reCalculateItem()" style="width: 40px" type="text" name="waste_water[1][length]" value="15"> &nbsp;X &nbsp;
+                                    <input id="waste_water1w" oninput="reCalculateItem()" style="width: 40px" type="text" name="waste_water[1][width]" value="10"> &nbsp;X&nbsp; 
+                                    <input id="waste_water1h" oninput="reCalculateItem()" style="width: 40px" type="text" name="waste_water[1][height]" value="25">
                                 </div>
                             </td>
-                            <td><input type="text" name="waste_water[1][quantity]" placeholder="Quantity"></td>
-                            <td><input type="text" name="waste_water[1][unit_price]" placeholder="Unit Price"></td>
-                            <td><input type="text" name="waste_water[1][total]" placeholder="Total"></td>
+                            <td><input id="waste_water1q" oninput="reCalculateItem()" type="text" name="waste_water[1][quantity]" placeholder="Quantity"></td>
+                            <td><input id="waste_water1u" oninput="reCalculateItem()" type="text" name="waste_water[1][unit_price]" placeholder="Unit Price"></td>
+                            <td><input id="waste_water1t" type="text" name="waste_water[1][total]" placeholder="Total"></td>
                             <input type="hidden" name="waste_water[1][extra_item]">
                           </tr>
                           <tr>
@@ -399,23 +399,23 @@
                                 <input style="width: 40px" type="hidden" name="waste_water[2][width]" value="">  
                                 <input style="width: 40px" type="hidden" name="waste_water[2][height]" value="">
                             </div>
-                            <td><input type="text" name="waste_water[2][quantity]" placeholder="Quantity"></td>
-                            <td><input type="text" name="waste_water[2][unit_price]" placeholder="Unit Price"></td>
-                            <td><input type="text" name="waste_water[2][total]" placeholder="Total"></td>
+                            <td><input id="waste_water2q" oninput="reCalculateItem()" type="text" name="waste_water[2][quantity]" placeholder="Quantity"></td>
+                            <td><input id="waste_water2u" oninput="reCalculateItem()" type="text" name="waste_water[2][unit_price]" placeholder="Unit Price"></td>
+                            <td><input id="waste_water2t" type="text" name="waste_water[2][total]" placeholder="Total"></td>
                             <input type="hidden" name="waste_water[2][extra_item]">
                           </tr>
                           <tr>
                             <td>03</td>
                             <td>Size of Parawewa <br>
                                 <div class="row">
-                                    <input style="width: 40px" type="text" name="waste_water[3][length]" value="15"> &nbsp;X &nbsp;
-                                    <input style="width: 40px" type="text" name="waste_water[3][width]" value="10"> &nbsp;X&nbsp; 
-                                    <input style="width: 40px" type="text" name="waste_water[3][height]" value="25">
+                                    <input id="waste_water3l" oninput="reCalculateItem()" style="width: 40px" type="text" name="waste_water[3][length]" value="15"> &nbsp;X &nbsp;
+                                    <input id="waste_water3w" oninput="reCalculateItem()" style="width: 40px" type="text" name="waste_water[3][width]" value="10"> &nbsp;X&nbsp; 
+                                    <input id="waste_water3h" oninput="reCalculateItem()" style="width: 40px" type="text" name="waste_water[3][height]" value="25">
                                 </div>
                             </td>
-                            <td><input type="text" name="waste_water[3][quantity]" placeholder="Quantity"></td>
-                            <td><input type="text" name="waste_water[3][unit_price]" placeholder="Unit Price"></td>
-                            <td><input type="text" name="waste_water[3][total]" placeholder="Total"></td>
+                            <td><input id="waste_water3q" oninput="reCalculateItem()" type="text" name="waste_water[3][quantity]" placeholder="Quantity"></td>
+                            <td><input id="waste_water3u" oninput="reCalculateItem()" type="text" name="waste_water[3][unit_price]" placeholder="Unit Price"></td>
+                            <td><input id="waste_water3t" type="text" name="waste_water[3][total]" placeholder="Total"></td>
                             <input type="hidden" name="waste_water[3][extra_item]">
                           </tr>
                           <tr>
@@ -426,9 +426,9 @@
                                 <input style="width: 40px" type="hidden" name="waste_water[4][width]" value=""> 
                                 <input style="width: 40px" type="hidden" name="waste_water[4][height]" value="">
                             </div>
-                            <td><input type="text" name="waste_water[4][quantity]" placeholder="Quantity"></td>
-                            <td><input type="text" name="waste_water[4][unit_price]" placeholder="Unit Price"></td>
-                            <td><input type="text" name="waste_water[4][total]" placeholder="Total"></td>
+                            <td><input id="waste_water4q" oninput="reCalculateItem()" type="text" name="waste_water[4][quantity]" placeholder="Quantity"></td>
+                            <td><input id="waste_water4u" oninput="reCalculateItem()" type="text" name="waste_water[4][unit_price]" placeholder="Unit Price"></td>
+                            <td><input id="waste_water4t" type="text" name="waste_water[4][total]" placeholder="Total"></td>
                             <input type="hidden" name="waste_water[4][extra_item]">
                           </tr>
                           <tr>
@@ -439,9 +439,9 @@
                                 <input style="width: 40px" type="hidden" name="waste_water[5][width]" value=""> 
                                 <input style="width: 40px" type="hidden" name="waste_water[5][height]" value="">
                             </div>
-                            <td><input type="text" name="waste_water[5][quantity]" placeholder="Quantity"></td>
-                            <td><input type="text" name="waste_water[5][unit_price]" placeholder="Unit Price"></td>
-                            <td><input type="text" name="waste_water[5][total]" placeholder="Total"></td>
+                            <td><input id="waste_water5q" oninput="reCalculateItem()" type="text" name="waste_water[5][quantity]" placeholder="Quantity"></td>
+                            <td><input id="waste_water5u" oninput="reCalculateItem()" type="text" name="waste_water[5][unit_price]" placeholder="Unit Price"></td>
+                            <td><input id="waste_water5t" type="text" name="waste_water[5][total]" placeholder="Total"></td>
                           </tr>
                           <tr>
                             <td>06</td>
@@ -451,13 +451,13 @@
                                 <input style="width: 60px" type="hidden" name="waste_water[6][width]" value=""> 
                                 <input style="width: 60px" type="hidden" name="waste_water[6][height]" value="">
                             </div>
-                            <td><input type="text" name="waste_water[6][quantity]" placeholder="Quantity"></td>
-                            <td><input type="text" name="waste_water[6][unit_price]" placeholder="Unit Price"></td>
-                            <td><input type="text" name="waste_water[6][total]" placeholder="Total"></td>
+                            <td><input id="waste_water6q" oninput="reCalculateItem()" type="text" name="waste_water[6][quantity]" placeholder="Quantity"></td>
+                            <td><input id="waste_water6u" oninput="reCalculateItem()" type="text" name="waste_water[6][unit_price]" placeholder="Unit Price"></td>
+                            <td><input id="waste_water6t" type="text" name="waste_water[6][total]" placeholder="Total"></td>
                           </tr>
                           <tr>
                               <td colspan="4"></td>
-                              <td><div id="toilet_total">0/-</div></td>
+                              <td><div id="waste_water_total">0/-</div></td>
                           </tr>
                           </tbody>
                         </table>
@@ -495,42 +495,42 @@
                                 <td>01</td>
                                 <td>Capacity of the squre <br>
                                     <div class="row">
-                                        <input style="width: 40px" type="text" name="waste_water_fulljob[1][length]" value="15"> &nbsp;X &nbsp;
-                                        <input style="width: 40px" type="text" name="waste_water_fulljob[1][width]" value="10"> &nbsp;X&nbsp; 
-                                        <input style="width: 40px" type="text" name="waste_water_fulljob[1][height]" value="25">
+                                        <input id="waste_water_fulljob1l" oninput="reCalculateItem()" style="width: 40px" type="text" name="waste_water_fulljob[1][length]" value="15"> &nbsp;X &nbsp;
+                                        <input id="waste_water_fulljob1w" oninput="reCalculateItem()" style="width: 40px" type="text" name="waste_water_fulljob[1][width]" value="10"> &nbsp;X&nbsp; 
+                                        <input id="waste_water_fulljob1h" oninput="reCalculateItem()" style="width: 40px" type="text" name="waste_water_fulljob[1][height]" value="25">
                                     </div>
                                 </td>
-                                <td><input type="text" name="waste_water_fulljob[1][quantity]" placeholder="Quantity"></td>
-                                <td><input type="text" name="waste_water_fulljob[1][unit_price]" placeholder="Unit Price"></td>
-                                <td><input type="text" name="waste_water_fulljob[1][total]" placeholder="Total"></td>
+                                <td><input id="waste_water_fulljob1q" oninput="reCalculateItem()" type="text" name="waste_water_fulljob[1][quantity]" placeholder="Quantity"></td>
+                                <td><input id="waste_water_fulljob1u" oninput="reCalculateItem()" type="text" name="waste_water_fulljob[1][unit_price]" placeholder="Unit Price"></td>
+                                <td><input id="waste_water_fulljob1t" type="text" name="waste_water_fulljob[1][total]" placeholder="Total"></td>
                                 <input type="hidden" name="waste_water_fulljob[1][extra_item]">
                             </tr>
                             <tr>
                                 <td>02</td>
                                 <td>Size of grees tap <br>
                                     <div class="row">
-                                        <input style="width: 40px" type="text" name="waste_water_fulljob[2][length]" value="15"> &nbsp;X &nbsp;
-                                        <input style="width: 40px" type="text" name="waste_water_fulljob[2][width]" value="10"> &nbsp;X&nbsp; 
-                                        <input style="width: 40px" type="text" name="waste_water_fulljob[2][height]" value="25">
+                                        <input id="waste_water_fulljob2l" oninput="reCalculateItem()" style="width: 40px" type="text" name="waste_water_fulljob[2][length]" value="15"> &nbsp;X &nbsp;
+                                        <input id="waste_water_fulljob2w" oninput="reCalculateItem()" style="width: 40px" type="text" name="waste_water_fulljob[2][width]" value="10"> &nbsp;X&nbsp; 
+                                        <input id="waste_water_fulljob2h" oninput="reCalculateItem()" style="width: 40px" type="text" name="waste_water_fulljob[2][height]" value="25">
                                     </div>
                                 </td>
-                                <td><input type="text" name="waste_water_fulljob[2][quantity]" placeholder="Quantity"></td>
-                                <td><input type="text" name="waste_water_fulljob[2][unit_price]" placeholder="Unit Price"></td>
-                                <td><input type="text" name="waste_water_fulljob[2][total]" placeholder="Total"></td>
+                                <td><input id="waste_water_fulljob2q" oninput="reCalculateItem()" type="text" name="waste_water_fulljob[2][quantity]" placeholder="Quantity"></td>
+                                <td><input id="waste_water_fulljob2u" oninput="reCalculateItem()" type="text" name="waste_water_fulljob[2][unit_price]" placeholder="Unit Price"></td>
+                                <td><input id="waste_water_fulljob2t" type="text" name="waste_water_fulljob[2][total]" placeholder="Total"></td>
                                 <input type="hidden" name="waste_water_fulljob[2][extra_item]">
                             </tr>
                             <tr>
                             <td>03</td>
                             <td>Size of Parawewa & Sand filter<br>
                                 <div class="row">
-                                    <input style="width: 40px" type="text" name="waste_water_fulljob[3][length]" value="15"> &nbsp;X &nbsp;
-                                    <input style="width: 40px" type="text" name="waste_water_fulljob[3][width]" value="10"> &nbsp;X&nbsp; 
-                                    <input style="width: 40px" type="text" name="waste_water_fulljob[3][height]" value="25">
+                                    <input id="waste_water_fulljob3l" oninput="reCalculateItem()" style="width: 40px" type="text" name="waste_water_fulljob[3][length]" value="15"> &nbsp;X &nbsp;
+                                    <input id="waste_water_fulljob3w" oninput="reCalculateItem()" style="width: 40px" type="text" name="waste_water_fulljob[3][width]" value="10"> &nbsp;X&nbsp; 
+                                    <input id="waste_water_fulljob3h" oninput="reCalculateItem()" style="width: 40px" type="text" name="waste_water_fulljob[3][height]" value="25">
                                 </div>
                             </td>
-                            <td><input type="text" name="waste_water_fulljob[3][quantity]" placeholder="Quantity"></td>
-                            <td><input type="text" name="waste_water_fulljob[3][unit_price]" placeholder="Unit Price"></td>
-                            <td><input type="text" name="waste_water_fulljob[3][total]" placeholder="Total"></td>
+                            <td><input id="waste_water_fulljob3q" oninput="reCalculateItem()" type="text" name="waste_water_fulljob[3][quantity]" placeholder="Quantity"></td>
+                            <td><input id="waste_water_fulljob3u" oninput="reCalculateItem()" type="text" name="waste_water_fulljob[3][unit_price]" placeholder="Unit Price"></td>
+                            <td><input id="waste_water_fulljob3t" type="text" name="waste_water_fulljob[3][total]" placeholder="Total"></td>
                             <input type="hidden" name="waste_water_fulljob[3][extra_item]">
                           </tr>
                           <tr>
@@ -541,9 +541,9 @@
                                 <input style="width: 40px" type="hidden" name="waste_water_fulljob[4][width]" value=""> 
                                 <input style="width: 40px" type="hidden" name="waste_water_fulljob[4][height]" value="">
                             </div>
-                            <td><input type="text" name="waste_water_fulljob[4][quantity]" placeholder="Quantity"></td>
-                            <td><input type="text" name="waste_water_fulljob[4][unit_price]" placeholder="Unit Price"></td>
-                            <td><input type="text" name="waste_water_fulljob[4][total]" placeholder="Total"></td>
+                            <td><input id="waste_water_fulljob4q" oninput="reCalculateItem()" type="text" name="waste_water_fulljob[4][quantity]" placeholder="Quantity"></td>
+                            <td><input id="waste_water_fulljob4u" oninput="reCalculateItem()" type="text" name="waste_water_fulljob[4][unit_price]" placeholder="Unit Price"></td>
+                            <td><input id="waste_water_fulljob4t" type="text" name="waste_water_fulljob[4][total]" placeholder="Total"></td>
                             <input type="hidden" name="waste_water_fulljob[4][extra_item]">
                           </tr>
                           <tr>
@@ -554,9 +554,9 @@
                                 <input style="width: 40px" type="hidden" name="waste_water_fulljob[5][width]" value=""> 
                                 <input style="width: 40px" type="hidden" name="waste_water_fulljob[5][height]" value="">
                             </div>
-                            <td><input type="text" name="waste_water_fulljob[5][quantity]" placeholder="Quantity"></td>
-                            <td><input type="text" name="waste_water_fulljob[5][unit_price]" placeholder="Unit Price"></td>
-                            <td><input type="text" name="waste_water_fulljob[5][total]" placeholder="Total"></td>
+                            <td><input id="waste_water_fulljob5q" oninput="reCalculateItem()" type="text" name="waste_water_fulljob[5][quantity]" placeholder="Quantity"></td>
+                            <td><input id="waste_water_fulljob5u" oninput="reCalculateItem()" type="text" name="waste_water_fulljob[5][unit_price]" placeholder="Unit Price"></td>
+                            <td><input id="waste_water_fulljob5t" type="text" name="waste_water_fulljob[5][total]" placeholder="Total"></td>
                             <input type="hidden" name="waste_water_fulljob[5][extra_item]">
                           </tr>
                           <tr>
@@ -567,9 +567,9 @@
                                 <input style="width: 40px" type="hidden" name="waste_water_fulljob[6][width]" value=""> 
                                 <input style="width: 40px" type="hidden" name="waste_water_fulljob[6][height]" value="">
                             </div>
-                            <td><input type="text" name="waste_water_fulljob[6][quantity]" placeholder="Quantity"></td>
-                            <td><input type="text" name="waste_water_fulljob[6][unit_price]" placeholder="Unit Price"></td>
-                            <td><input type="text" name="waste_water_fulljob[6][total]" placeholder="Total"></td>
+                            <td><input id="waste_water_fulljob6q" oninput="reCalculateItem()" type="text" name="waste_water_fulljob[6][quantity]" placeholder="Quantity"></td>
+                            <td><input id="waste_water_fulljob6u" oninput="reCalculateItem()" type="text" name="waste_water_fulljob[6][unit_price]" placeholder="Unit Price"></td>
+                            <td><input id="waste_water_fulljob6t" type="text" name="waste_water_fulljob[6][total]" placeholder="Total"></td>
                             <input type="hidden" name="waste_water_fulljob[6][extra_item]">
                           </tr>
                           <tr>
@@ -580,9 +580,9 @@
                                 <input style="width: 40px" type="hidden" name="waste_water_fulljob[7][width]" value=""> 
                                 <input style="width: 40px" type="hidden" name="waste_water_fulljob[7][height]" value="">
                             </div>
-                            <td><input type="text" name="waste_water_fulljob[7][quantity]" placeholder="Quantity"></td>
-                            <td><input type="text" name="waste_water_fulljob[7][unit_price]" placeholder="Unit Price"></td>
-                            <td><input type="text" name="waste_water_fulljob[7][total]" placeholder="Total"></td>
+                            <td><input id="waste_water_fulljob7q" oninput="reCalculateItem()" type="text" name="waste_water_fulljob[7][quantity]" placeholder="Quantity"></td>
+                            <td><input id="waste_water_fulljob7u" oninput="reCalculateItem()" type="text" name="waste_water_fulljob[7][unit_price]" placeholder="Unit Price"></td>
+                            <td><input id="waste_water_fulljob7t" type="text" name="waste_water_fulljob[7][total]" placeholder="Total"></td>
                             <input type="hidden" name="waste_water_fulljob[7][extra_item]">
                           </tr>
                           <tr>
@@ -593,9 +593,9 @@
                                 <input style="width: 40px" type="hidden" name="waste_water_fulljob[8][width]" value=""> 
                                 <input style="width: 40px" type="hidden" name="waste_water_fulljob[8][height]" value="">
                             </div>
-                            <td><input type="text" name="waste_water_fulljob[8][quantity]" placeholder="Quantity"></td>
-                            <td><input type="text" name="waste_water_fulljob[8][unit_price]" placeholder="Unit Price"></td>
-                            <td><input type="text" name="waste_water_fulljob[8][total]" placeholder="Total"></td>
+                            <td><input id="waste_water_fulljob8q" oninput="reCalculateItem()" type="text" name="waste_water_fulljob[8][quantity]" placeholder="Quantity"></td>
+                            <td><input id="waste_water_fulljob8u" oninput="reCalculateItem()" type="text" name="waste_water_fulljob[8][unit_price]" placeholder="Unit Price"></td>
+                            <td><input id="waste_water_fulljob8t" type="text" name="waste_water_fulljob[8][total]" placeholder="Total"></td>
                             <input type="hidden" name="waste_water_fulljob[8][extra_item]">
                           </tr>
                           <tr>
@@ -606,9 +606,9 @@
                                 <input style="width: 40px" type="hidden" name="waste_water_fulljob[9][width]" value=""> 
                                 <input style="width: 40px" type="hidden" name="waste_water_fulljob[9][height]" value="">
                             </div>
-                            <td><input type="text" name="waste_water_fulljob[9][quantity]" placeholder="Quantity"></td>
-                            <td><input type="text" name="waste_water_fulljob[9][unit_price]" placeholder="Unit Price"></td>
-                            <td><input type="text" name="waste_water_fulljob[9][total]" placeholder="Total"></td>
+                            <td><input id="waste_water_fulljob9q" oninput="reCalculateItem()" type="text" name="waste_water_fulljob[9][quantity]" placeholder="Quantity"></td>
+                            <td><input id="waste_water_fulljob9u" oninput="reCalculateItem()" type="text" name="waste_water_fulljob[9][unit_price]" placeholder="Unit Price"></td>
+                            <td><input id="waste_water_fulljob9t" type="text" name="waste_water_fulljob[9][total]" placeholder="Total"></td>
                             <input type="hidden" name="waste_water_fulljob[9][extra_item]">
                           </tr>
                           <tr>
@@ -619,9 +619,9 @@
                                 <input style="width: 40px" type="hidden" name="waste_water_fulljob[10][width]" value=""> 
                                 <input style="width: 40px" type="hidden" name="waste_water_fulljob[10][height]" value="">
                             </div>
-                            <td><input type="text" name="waste_water_fulljob[10][quantity]" placeholder="Quantity"></td>
-                            <td><input type="text" name="waste_water_fulljob[10][unit_price]" placeholder="Unit Price"></td>
-                            <td><input type="text" name="waste_water_fulljob[10][total]" placeholder="Total"></td>
+                            <td><input id="waste_water_fulljob10q" oninput="reCalculateItem()" type="text" name="waste_water_fulljob[10][quantity]" placeholder="Quantity"></td>
+                            <td><input id="waste_water_fulljob10u" oninput="reCalculateItem()" type="text" name="waste_water_fulljob[10][unit_price]" placeholder="Unit Price"></td>
+                            <td><input id="waste_water_fulljob10t" type="text" name="waste_water_fulljob[10][total]" placeholder="Total"></td>
                             <input type="hidden" name="waste_water_fulljob[10][extra_item]">
                           </tr>
                           <tr>
@@ -632,9 +632,9 @@
                                 <input style="width: 40px" type="hidden" name="waste_water_fulljob[11][width]" value=""> 
                                 <input style="width: 40px" type="hidden" name="waste_water_fulljob[11][height]" value="">
                             </div>
-                            <td><input type="text" name="waste_water_fulljob[11][quantity]" placeholder="Quantity"></td>
-                            <td><input type="text" name="waste_water_fulljob[11][unit_price]" placeholder="Unit Price"></td>
-                            <td><input type="text" name="waste_water_fulljob[11][total]" placeholder="Total"></td>
+                            <td><input id="waste_water_fulljob11q" oninput="reCalculateItem()" type="text" name="waste_water_fulljob[11][quantity]" placeholder="Quantity"></td>
+                            <td><input id="waste_water_fulljob11u" oninput="reCalculateItem()" type="text" name="waste_water_fulljob[11][unit_price]" placeholder="Unit Price"></td>
+                            <td><input id="waste_water_fulljob11t" type="text" name="waste_water_fulljob[11][total]" placeholder="Total"></td>
                             <input type="hidden" name="waste_water_fulljob[11][extra_item]">
                           </tr>
                           <tr>
@@ -645,9 +645,9 @@
                                 <input style="width: 40px" type="hidden" name="waste_water_fulljob[12][width]" value=""> 
                                 <input style="width: 40px" type="hidden" name="waste_water_fulljob[12][height]" value="">
                             </div>
-                            <td><input type="text" name="waste_water_fulljob[12][quantity]" placeholder="Quantity"></td>
-                            <td><input type="text" name="waste_water_fulljob[12][unit_price]" placeholder="Unit Price"></td>
-                            <td><input type="text" name="waste_water_fulljob[12][total]" placeholder="Total"></td>
+                            <td><input id="waste_water_fulljob12q" oninput="reCalculateItem()" type="text" name="waste_water_fulljob[12][quantity]" placeholder="Quantity"></td>
+                            <td><input id="waste_water_fulljob12u" oninput="reCalculateItem()" type="text" name="waste_water_fulljob[12][unit_price]" placeholder="Unit Price"></td>
+                            <td><input id="waste_water_fulljob12t" type="text" name="waste_water_fulljob[12][total]" placeholder="Total"></td>
                           </tr>
                           <tr>
                             <td>13</td>
@@ -657,13 +657,13 @@
                                 <input style="width: 40px" type="hidden" name="waste_water_fulljob[13][width]" value=""> 
                                 <input style="width: 40px" type="hidden" name="waste_water_fulljob[13][height]" value="">
                             </div>
-                            <td><input type="text" name="waste_water_fulljob[13][quantity]" placeholder="Quantity"></td>
-                            <td><input type="text" name="waste_water_fulljob[13][unit_price]" placeholder="Unit Price"></td>
-                            <td><input type="text" name="waste_water_fulljob[13][total]" placeholder="Total"></td>
+                            <td><input id="waste_water_fulljob13q" oninput="reCalculateItem()" type="text" name="waste_water_fulljob[13][quantity]" placeholder="Quantity"></td>
+                            <td><input id="waste_water_fulljob13u" oninput="reCalculateItem()" type="text" name="waste_water_fulljob[13][unit_price]" placeholder="Unit Price"></td>
+                            <td><input id="waste_water_fulljob13t" type="text" name="waste_water_fulljob[13][total]" placeholder="Total"></td>
                           </tr>
                           <tr>
                               <td colspan="4"></td>
-                              <td><div id="toilet_total">0/-</div></td>
+                              <td><div id="waste_water_fulljob_total">0/-</div></td>
                           </tr>
                           </tbody>
                         </table>
@@ -702,6 +702,75 @@
           document.getElementById('toilet_fulljob8t').value=document.getElementById('toilet_fulljob8q').value*document.getElementById('toilet_fulljob8u').value;
           document.getElementById('toilet_fulljob9t').value=document.getElementById('toilet_fulljob9q').value*document.getElementById('toilet_fulljob9u').value;
           document.getElementById('toilet_fulljob10t').value=document.getElementById('toilet_fulljob10q').value*document.getElementById('toilet_fulljob10u').value;
+
+          document.getElementById('waste_water1q').value=document.getElementById('waste_water1l').value * document.getElementById('waste_water1w').value * document.getElementById('waste_water1h').value; 
+          document.getElementById('waste_water1t').value=document.getElementById('waste_water1q').value*document.getElementById('waste_water1u').value;
+          document.getElementById('waste_water2t').value=document.getElementById('waste_water2q').value*document.getElementById('waste_water2u').value;
+          document.getElementById('waste_water3q').value=document.getElementById('waste_water3l').value * document.getElementById('waste_water3w').value * document.getElementById('waste_water3h').value; 
+          document.getElementById('waste_water3t').value=document.getElementById('waste_water3q').value*document.getElementById('waste_water3u').value;
+          document.getElementById('waste_water4t').value=document.getElementById('waste_water4q').value*document.getElementById('waste_water4u').value;
+          document.getElementById('waste_water5t').value=document.getElementById('waste_water5q').value*document.getElementById('waste_water5u').value;
+          document.getElementById('waste_water6t').value=document.getElementById('waste_water6q').value*document.getElementById('waste_water6u').value;
+        
+          document.getElementById('waste_water_fulljob1q').value=document.getElementById('waste_water_fulljob1l').value * document.getElementById('waste_water_fulljob1w').value * document.getElementById('waste_water_fulljob1h').value; 
+          document.getElementById('waste_water_fulljob1t').value=document.getElementById('waste_water_fulljob1q').value*document.getElementById('waste_water_fulljob1u').value;
+          document.getElementById('waste_water_fulljob2q').value=document.getElementById('waste_water_fulljob2l').value * document.getElementById('waste_water_fulljob2w').value * document.getElementById('waste_water_fulljob2h').value; 
+          document.getElementById('waste_water_fulljob2t').value=document.getElementById('waste_water_fulljob2q').value*document.getElementById('waste_water_fulljob2u').value;
+          document.getElementById('waste_water_fulljob3q').value=document.getElementById('waste_water_fulljob3l').value * document.getElementById('waste_water_fulljob3w').value * document.getElementById('waste_water_fulljob3h').value; 
+          document.getElementById('waste_water_fulljob3t').value=document.getElementById('waste_water_fulljob3q').value*document.getElementById('waste_water_fulljob3u').value;
+          document.getElementById('waste_water_fulljob4t').value=document.getElementById('waste_water_fulljob4q').value*document.getElementById('waste_water_fulljob4u').value;
+          document.getElementById('waste_water_fulljob5t').value=document.getElementById('waste_water_fulljob5q').value*document.getElementById('waste_water_fulljob5u').value;
+          document.getElementById('waste_water_fulljob6t').value=document.getElementById('waste_water_fulljob6q').value*document.getElementById('waste_water_fulljob6u').value;
+          document.getElementById('waste_water_fulljob7t').value=document.getElementById('waste_water_fulljob7q').value*document.getElementById('waste_water_fulljob7u').value;
+          document.getElementById('waste_water_fulljob8t').value=document.getElementById('waste_water_fulljob8q').value*document.getElementById('waste_water_fulljob8u').value;
+          document.getElementById('waste_water_fulljob9t').value=document.getElementById('waste_water_fulljob9q').value*document.getElementById('waste_water_fulljob9u').value;
+          document.getElementById('waste_water_fulljob10t').value=document.getElementById('waste_water_fulljob10q').value*document.getElementById('waste_water_fulljob10u').value;
+          document.getElementById('waste_water_fulljob11t').value=document.getElementById('waste_water_fulljob11q').value*document.getElementById('waste_water_fulljob11u').value;
+          document.getElementById('waste_water_fulljob12t').value=document.getElementById('waste_water_fulljob12q').value*document.getElementById('waste_water_fulljob12u').value;
+          document.getElementById('waste_water_fulljob13t').value=document.getElementById('waste_water_fulljob13q').value*document.getElementById('waste_water_fulljob13u').value;
+
+          var total=parseFloat(document.getElementById('toilet1t').value) +
+                    parseFloat(document.getElementById('toilet2t').value) +
+                    parseFloat(document.getElementById('toilet3t').value) +
+                    parseFloat(document.getElementById('toilet4t').value) +
+
+                    parseFloat(document.getElementById('toilet_fulljob1t').value) +
+                    parseFloat(document.getElementById('toilet_fulljob2t').value) +
+                    parseFloat(document.getElementById('toilet_fulljob3t').value) +
+                    parseFloat(document.getElementById('toilet_fulljob4t').value) +
+                    parseFloat(document.getElementById('toilet_fulljob5t').value) +
+                    parseFloat(document.getElementById('toilet_fulljob6t').value) +
+                    parseFloat(document.getElementById('toilet_fulljob7t').value) +
+                    parseFloat(document.getElementById('toilet_fulljob8t').value) +
+                    parseFloat(document.getElementById('toilet_fulljob9t').value) +
+                    parseFloat(document.getElementById('toilet_fulljob10t').value) +
+
+                    parseFloat(document.getElementById('waste_water1t').value) +
+                    parseFloat(document.getElementById('waste_water2t').value) +
+                    parseFloat(document.getElementById('waste_water3t').value) +
+                    parseFloat(document.getElementById('waste_water4t').value) +
+                    parseFloat(document.getElementById('waste_water5t').value) +
+                    parseFloat(document.getElementById('waste_water6t').value) +
+ 
+                    parseFloat(document.getElementById('waste_water_fulljob1t').value) +
+                    parseFloat(document.getElementById('waste_water_fulljob2t').value) +
+                    parseFloat(document.getElementById('waste_water_fulljob3t').value) +
+                    parseFloat(document.getElementById('waste_water_fulljob4t').value) +
+                    parseFloat(document.getElementById('waste_water_fulljob5t').value) +
+                    parseFloat(document.getElementById('waste_water_fulljob6t').value) +
+                    parseFloat(document.getElementById('waste_water_fulljob7t').value) +
+                    parseFloat(document.getElementById('waste_water_fulljob8t').value) +
+                    parseFloat(document.getElementById('waste_water_fulljob9t').value) +
+                    parseFloat(document.getElementById('waste_water_fulljob10t').value) +
+                    parseFloat(document.getElementById('waste_water_fulljob11t').value) +
+                    parseFloat(document.getElementById('waste_water_fulljob12t').value) +
+                    parseFloat(document.getElementById('waste_water_fulljob13t').value);
+
+          console.log(total);
+          document.getElementById('toilet_total').innerHTML=total+'/-';
+          document.getElementById('toilet_fulljob_total').innerHTML=total+'/-';
+          document.getElementById('waste_water_total').innerHTML=total+'/-';
+          document.getElementById('waste_water_fulljob_total').innerHTML=total+'/-';
         }
         function getUser(){
          var mobile=document.getElementById('contact_no').value;
