@@ -149,7 +149,7 @@
                   </p>
                 </a>
               </li>
-              @if (Request::is('admin/invoice/create') || Request::is('admin/invoice') )
+              @if (Request::is('user/invoice/create') || Request::is('user/invoice') )
                   <li class="nav-item has-treeview  menu-open">
                     <a href="#" class="nav-link active">
               @else
@@ -164,13 +164,13 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="{{url('admin/invoice/create')}}" class="nav-link {{ Request::is('admin/invoice/create') ? 'active' : '' }}">
+                    <a href="{{url('user/invoice/create')}}" class="nav-link {{ Request::is('user/invoice/create') ? 'active' : '' }}">
                       <i class="far fa-file-alt nav-icon text-info"></i>
                       <p>Invoice Create</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{url('admin/invoice')}}" class="nav-link {{ Request::is('admin/invoice') ? 'active' : '' }}">
+                    <a href="{{url('user/invoice')}}" class="nav-link {{ Request::is('user/invoice') ? 'active' : '' }}">
                       <i class="far fa-file-alt nav-icon text-info"></i>
                       <p>All Invoices</p>
                     </a>

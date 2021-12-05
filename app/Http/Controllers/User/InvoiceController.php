@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers\User;
 
-use App\Http\Controllers\Controller;
 use App\Models\Invoice;
 use Illuminate\Http\Request;
+use App\Models\ToiletInvoice;
+use App\Models\WasteWaterInvoice;
+use App\Http\Controllers\Controller;
+use App\Models\ToiletFulljobInvoice;
+use App\Models\WasteWaterFulljobInvoice;
 
 class InvoiceController extends Controller
 {
@@ -15,7 +19,26 @@ class InvoiceController extends Controller
      */
     public function index()
     {
-        //
+        if(request()->ajax())
+                {
+                        return datatables()->of(Invoice::where('user_id',auth()->user()->id)->get())
+                                ->addColumn('quotation_no', function($data){
+                                    return $data->quotation_no;
+                                })
+                                ->addColumn('name', function($data){
+                                    return $data->user->name;
+                                })
+                                ->addColumn('address', function($data){
+                                    return $data->user->address == null ? '-' : $data->user->address;
+                                })
+                                ->addColumn('actions', function($data){
+                                    // return '<a href="'.route('admin.invoice.show',$data->id).'" class="btn btn-primary btn-sm">View Invoice</a> &nbsp;&nbsp;<a href="'.asset($data->pdf_path).'" class="btn btn-info btn-sm">View PDF</a>';
+                                    return '<a href="'.asset($data->pdf_path).'" class="btn btn-info btn-sm">View PDF</a>';
+                                })
+                                ->rawColumns(['quotation_no','name','address','actions'])
+                                ->make(true);
+                }
+        return view('user.invoice.index');
     }
 
     /**
@@ -25,7 +48,7 @@ class InvoiceController extends Controller
      */
     public function create()
     {
-        //
+        return view('user.invoice.create');
     }
 
     /**
@@ -36,7 +59,87 @@ class InvoiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+        $invoiceType=null;
+        if ($request->user_id == null || $request->user_id == "") {
+            return redirect()->back()->with('danger','Please select user.');
+        }
+        if ($request->toilet[0]['quantity'] != null) {
+            $invoiceType='toiletInvoice';
+        }elseif ($request->toilet_fulljob[0]['quantity'] != null) {
+            $invoiceType='toiletFulljobInvoice';
+        }elseif ($request->waste_water[0]['quantity'] != null) {
+            $invoiceType='tasteWaterInvoice';
+        }elseif ($request->waste_water_fulljob[0]['quantity'] != null) {
+            $invoiceType='wasteWaterFulljobInvoice';
+        }else {
+            return redirect()->back()->with('danger','Please fill the invoice details.');
+        }
+        $invoice=Invoice::create([
+            'user_id'=>$request->user_id,
+            'quotation_no'=>$request->quotation_no,
+            'invoice_type'=>$invoiceType,
+        ]);
+
+        if ($invoiceType == 'toiletInvoice') {
+            foreach ($request->toilet as $key => $value) {
+                ToiletInvoice::create([
+                    'invoice_id'=>$invoice->id,
+                    'product_id'=>$key,
+                    'extra_item'=>$value['extra_item']==null ? 0 : $value['extra_item'],
+                    'length'=>$value['length']==null ? 0 : $value['length'],
+                    'width'=>$value['width']==null ? 0 :$value['width'],
+                    'height'=>$value['height']==null ? 0 : $value['height'],
+                    'quantity'=>$value['quantity']==null ? 0 : $value['quantity'],
+                    'unit_price'=>$value['unit_price']==null ? 0 : $value['unit_price'],
+                    'total'=>$value['total']==null ? 0 : $value['total'],
+                ]);
+            }
+        } elseif ($invoiceType == 'toiletFulljobInvoice') {
+            foreach ($request->toilet_fulljob as $key => $value) {
+                ToiletFulljobInvoice::create([
+                    'invoice_id'=>$invoice->id,
+                    'product_id'=>$key,
+                    'extra_item'=>$value['extra_item']==null ? 0 : $value['extra_item'],
+                    'length'=>$value['length']==null ? 0 : $value['length'],
+                    'width'=>$value['width']==null ? 0 :$value['width'],
+                    'height'=>$value['height']==null ? 0 : $value['height'],
+                    'quantity'=>$value['quantity']==null ? 0 : $value['quantity'],
+                    'unit_price'=>$value['unit_price']==null ? 0 : $value['unit_price'],
+                    'total'=>$value['total']==null ? 0 : $value['total'],
+                ]);
+            }
+        }elseif($invoiceType == 'tasteWaterInvoice'){
+            foreach ($request->waste_water as $key => $value) {
+                WasteWaterInvoice::create([
+                    'invoice_id'=>$invoice->id,
+                    'product_id'=>$key,
+                    'extra_item'=>$value['extra_item']==null ? 0 : $value['extra_item'],
+                    'length'=>$value['length']==null ? 0 : $value['length'],
+                    'width'=>$value['width']==null ? 0 :$value['width'],
+                    'height'=>$value['height']==null ? 0 : $value['height'],
+                    'quantity'=>$value['quantity']==null ? 0 : $value['quantity'],
+                    'unit_price'=>$value['unit_price']==null ? 0 : $value['unit_price'],
+                    'total'=>$value['total']==null ? 0 : $value['total'],
+                ]);
+            }
+        }else {
+            foreach ($request->waste_water_fulljob as $key => $value) {
+                WasteWaterFulljobInvoice::create([
+                    'invoice_id'=>$invoice->id,
+                    'product_id'=>$key,
+                    'extra_item'=>$value['extra_item']==null ? 0 : $value['extra_item'],
+                    'length'=>$value['length']==null ? 0 : $value['length'],
+                    'width'=>$value['width']==null ? 0 :$value['width'],
+                    'height'=>$value['height']==null ? 0 : $value['height'],
+                    'quantity'=>$value['quantity']==null ? 0 : $value['quantity'],
+                    'unit_price'=>$value['unit_price']==null ? 0 : $value['unit_price'],
+                    'total'=>$value['total']==null ? 0 : $value['total'],
+                ]);
+            }
+        }
+        
+        return redirect()->back()->with('success','Profile Updated.');
     }
 
     /**
