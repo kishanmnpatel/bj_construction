@@ -77,7 +77,7 @@ class VisitingController extends Controller
             }else{
                 $data.='
                             <tr>
-                                <td colspan="4" align="center">No data selected</td>
+                                <td colspan="5" align="center">No data selected</td>
                             </tr>
                     ';
             }
