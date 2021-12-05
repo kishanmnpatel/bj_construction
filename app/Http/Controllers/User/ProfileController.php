@@ -40,6 +40,11 @@ class ProfileController extends Controller
     {
         Validator::make($request->all(), [
             'name' => ['required', 'string', 'max:255'],
+            'last_name' => ['required', 'string', 'max:255'],
+            'mobile' => ['required'],
+            'mobile_home' => ['required'],
+            'address' => ['required', 'string', 'max:255'],
+            'near_city' => ['required', 'string', 'max:255'],
         ])->validate();
         if ($request->email != auth()->user()->email) {
             Validator::make($request->all(), [
@@ -61,6 +66,11 @@ class ProfileController extends Controller
         }
         User::where('id',auth()->user()->id)->update([
             'name'=>$request->name,
+            'last_name'=>$request->last_name,
+            'mobile'=>$request->mobile,
+            'mobile_home'=>$request->mobile_home,
+            'address'=>$request->address,
+            'near_city'=>$request->near_city,
             'email'=>$request->email,
         ]);
         return redirect()->back()->with('success','Profile Updated.');

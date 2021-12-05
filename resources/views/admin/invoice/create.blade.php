@@ -128,14 +128,14 @@
                             <td>01</td>
                             <td>Size of Parawewa <br>
                                 <div class="row">
-                                    <input style="width: 40px" type="text" name="toilet[1][length]" value="15"> &nbsp;X &nbsp;
-                                    <input style="width: 40px" type="text" name="toilet[1][width]" value="10"> &nbsp;X&nbsp; 
-                                    <input style="width: 40px" type="text" name="toilet[1][height]" value="25">
+                                    <input id="toilet1l" oninput="reCalculateItem()" style="width: 40px"  type="text" name="toilet[1][length]" value="15"> &nbsp;X &nbsp;
+                                    <input id="toilet1w" oninput="reCalculateItem()" style="width: 40px"  type="text" name="toilet[1][width]" value="10"> &nbsp;X&nbsp; 
+                                    <input id="toilet1h" oninput="reCalculateItem()" style="width: 40px"  type="text" name="toilet[1][height]" value="25">
                                 </div>
                             </td>
-                            <td><input type="text" name="toilet[1][quantity]" placeholder="Quantity"></td>
-                            <td><input type="text" name="toilet[1][unit_price]" placeholder="Unit Price"></td>
-                            <td><input type="text" name="toilet[1][total]" placeholder="Total"></td>
+                            <td><input id="toilet1q" oninput="reCalculateItem()"  type="text" name="toilet[1][quantity]" placeholder="Quantity"></td>
+                            <td><input id="toilet1u" oninput="reCalculateItem()"  type="text" name="toilet[1][unit_price]" placeholder="Unit Price"></td>
+                            <td><input id="toilet1t" type="text" name="toilet[1][total]" placeholder="Total"></td>
                             <input type="hidden" name="toilet[1][extra_item]">
                           </tr>
                           <tr>
@@ -146,9 +146,9 @@
                                 <input style="width: 40px" type="hidden" name="toilet[2][width]" value=""> 
                                 <input style="width: 40px" type="hidden" name="toilet[2][height]" value="">
                             </div>
-                            <td><input type="text" name="toilet[2][quantity]" placeholder="Quantity"></td>
-                            <td><input type="text" name="toilet[2][unit_price]" placeholder="Unit Price"></td>
-                            <td><input type="text" name="toilet[2][total]" placeholder="Total"></td>
+                            <td><input id="toilet2q" oninput="reCalculateItem()" type="text" name="toilet[2][quantity]" placeholder="Quantity"></td>
+                            <td><input id="toilet2u" oninput="reCalculateItem()" type="text" name="toilet[2][unit_price]" placeholder="Unit Price"></td>
+                            <td><input id="toilet2t" type="text" name="toilet[2][total]" placeholder="Total"></td>
                             <input type="hidden" name="toilet[2][extra_item]">
                           </tr>
                           <tr>
@@ -159,9 +159,9 @@
                                 <input style="width: 40px" type="hidden" name="toilet[3][width]" value=""> 
                                 <input style="width: 40px" type="hidden" name="toilet[3][height]" value="">
                             </div>
-                            <td><input type="text" name="toilet[3][quantity]" placeholder="Quantity"></td>
-                            <td><input type="text" name="toilet[3][unit_price]" placeholder="Unit Price"></td>
-                            <td><input type="text" name="toilet[3][total]" placeholder="Total"></td>
+                            <td><input id="toilet3q" oninput="reCalculateItem()" type="text" name="toilet[3][quantity]" placeholder="Quantity"></td>
+                            <td><input id="toilet3u" oninput="reCalculateItem()" type="text" name="toilet[3][unit_price]" placeholder="Unit Price"></td>
+                            <td><input id="toilet3t" type="text" name="toilet[3][total]" placeholder="Total"></td>
                           </tr>
                           <tr>
                             <td>04</td>
@@ -171,9 +171,9 @@
                                 <input style="width: 40px" type="hidden" name="toilet[4][width]" value=""> 
                                 <input style="width: 40px" type="hidden" name="toilet[4][height]" value="">
                             </div>
-                            <td><input type="text" name="toilet[4][quantity]" placeholder="Quantity"></td>
-                            <td><input type="text" name="toilet[4][unit_price]" placeholder="Unit Price"></td>
-                            <td><input type="text" name="toilet[4][total]" placeholder="Total"></td>
+                            <td><input id="toilet4q" oninput="reCalculateItem()" type="text" name="toilet[4][quantity]" placeholder="Quantity"></td>
+                            <td><input id="toilet4u" oninput="reCalculateItem()" type="text" name="toilet[4][unit_price]" placeholder="Unit Price"></td>
+                            <td><input id="toilet4t" type="text" name="toilet[4][total]" placeholder="Total"></td>
                           </tr>
                           <tr>
                               <td colspan="4"></td>
@@ -215,14 +215,14 @@
                             <td>01</td>
                             <td>Capacity of the squre <br>
                                 <div class="row">
-                                    <input style="width: 40px" type="text" name="toilet_fulljob[1][length]" value="15"> &nbsp;X &nbsp;
-                                    <input style="width: 40px" type="text" name="toilet_fulljob[1][width]" value="10"> &nbsp;X&nbsp; 
-                                    <input style="width: 40px" type="text" name="toilet_fulljob[1][height]" value="25">
+                                    <input id="toilet_fulljob1l" oninput="reCalculateItem()" style="width: 40px" type="text" name="toilet_fulljob[1][length]" value="15"> &nbsp;X &nbsp;
+                                    <input id="toilet_fulljob1w" oninput="reCalculateItem()" style="width: 40px" type="text" name="toilet_fulljob[1][width]" value="10"> &nbsp;X&nbsp; 
+                                    <input id="toilet_fulljob1h" oninput="reCalculateItem()" style="width: 40px" type="text" name="toilet_fulljob[1][height]" value="25">
                                 </div>
                             </td>
-                            <td><input type="text" name="toilet_fulljob[1][quantity]" placeholder="Quantity"></td>
-                            <td><input type="text" name="toilet_fulljob[1][unit_price]" placeholder="Unit Price"></td>
-                            <td><input type="text" name="toilet_fulljob[1][total]" placeholder="Total"></td>
+                            <td><input id="toilet_fulljob1q" oninput="reCalculateItem()" type="text" name="toilet_fulljob[1][quantity]" placeholder="Quantity"></td>
+                            <td><input id="toilet_fulljob1u" oninput="reCalculateItem()" type="text" name="toilet_fulljob[1][unit_price]" placeholder="Unit Price"></td>
+                            <td><input id="toilet_fulljob1t" type="text" name="toilet_fulljob[1][total]" placeholder="Total"></td>
                             <input type="hidden" name="toilet_fulljob[1][extra_item]">
                           </tr>
                           <tr>
@@ -233,23 +233,23 @@
                                 <input style="width: 40px" type="hidden" name="toilet_fulljob[2][width]" value="">
                                 <input style="width: 40px" type="hidden" name="toilet_fulljob[2][height]" value="">
                             </div>
-                            <td><input type="text" name="toilet_fulljob[2][quantity]" placeholder="Quantity"></td>
-                            <td><input type="text" name="toilet_fulljob[2][unit_price]" placeholder="Unit Price"></td>
-                            <td><input type="text" name="toilet_fulljob[2][total]" placeholder="Total"></td>
+                            <td><input id="toilet_fulljob2q" oninput="reCalculateItem()" type="text" name="toilet_fulljob[2][quantity]" placeholder="Quantity"></td>
+                            <td><input id="toilet_fulljob2u" oninput="reCalculateItem()" type="text" name="toilet_fulljob[2][unit_price]" placeholder="Unit Price"></td>
+                            <td><input id="toilet_fulljob2t" type="text" name="toilet_fulljob[2][total]" placeholder="Total"></td>
                             <input type="hidden" name="toilet_fulljob[2][extra_item]">
                           </tr>
                           <tr>
                             <td>03</td>
                             <td>Size of parawewa <br>
                                 <div class="row">
-                                    <input style="width: 40px" type="text" name="toilet_fulljob[3][length]" value="15"> &nbsp;X &nbsp;
-                                    <input style="width: 40px" type="text" name="toilet_fulljob[3][width]" value="10"> &nbsp;X&nbsp; 
-                                    <input style="width: 40px" type="text" name="toilet_fulljob[3][height]" value="25">
+                                    <input id="toilet_fulljob3l" oninput="reCalculateItem()" style="width: 40px" type="text" name="toilet_fulljob[3][length]" value="15"> &nbsp;X &nbsp;
+                                    <input id="toilet_fulljob3w" oninput="reCalculateItem()" style="width: 40px" type="text" name="toilet_fulljob[3][width]" value="10"> &nbsp;X&nbsp; 
+                                    <input id="toilet_fulljob3h" oninput="reCalculateItem()" style="width: 40px" type="text" name="toilet_fulljob[3][height]" value="25">
                                 </div>
                             </td>
-                            <td><input type="text" name="toilet_fulljob[3][quantity]" placeholder="Quantity"></td>
-                            <td><input type="text" name="toilet_fulljob[3][unit_price]" placeholder="Unit Price"></td>
-                            <td><input type="text" name="toilet_fulljob[3][total]" placeholder="Total"></td>
+                            <td><input id="toilet_fulljob3q" oninput="reCalculateItem()" type="text" name="toilet_fulljob[3][quantity]" placeholder="Quantity"></td>
+                            <td><input id="toilet_fulljob3u" oninput="reCalculateItem()" type="text" name="toilet_fulljob[3][unit_price]" placeholder="Unit Price"></td>
+                            <td><input id="toilet_fulljob3t" type="text" name="toilet_fulljob[3][total]" placeholder="Total"></td>
                             <input type="hidden" name="toilet_fulljob[3][extra_item]">
                           </tr>
                           <tr>
@@ -260,9 +260,9 @@
                                 <input style="width: 40px" type="hidden" name="toilet_fulljob[4][width]" value="">  
                                 <input style="width: 40px" type="hidden" name="toilet_fulljob[4][height]" value="">
                             </div>
-                            <td><input type="text" name="toilet_fulljob[4][quantity]" placeholder="Quantity"></td>
-                            <td><input type="text" name="toilet_fulljob[4][unit_price]" placeholder="Unit Price"></td>
-                            <td><input type="text" name="toilet_fulljob[4][total]" placeholder="Total"></td>
+                            <td><input id="toilet_fulljob4q" oninput="reCalculateItem()" type="text" name="toilet_fulljob[4][quantity]" placeholder="Quantity"></td>
+                            <td><input id="toilet_fulljob4u" oninput="reCalculateItem()" type="text" name="toilet_fulljob[4][unit_price]" placeholder="Unit Price"></td>
+                            <td><input id="toilet_fulljob4t" type="text" name="toilet_fulljob[4][total]" placeholder="Total"></td>
                             <input type="hidden" name="toilet_fulljob[4][extra_item]">
                           </tr>
                           <tr>
@@ -273,9 +273,9 @@
                                 <input style="width: 40px" type="hidden" name="toilet_fulljob[5][width]" value="">  
                                 <input style="width: 40px" type="hidden" name="toilet_fulljob[5][height]" value="">
                             </div>
-                            <td><input type="text" name="toilet_fulljob[5][quantity]" placeholder="Quantity"></td>
-                            <td><input type="text" name="toilet_fulljob[5][unit_price]" placeholder="Unit Price"></td>
-                            <td><input type="text" name="toilet_fulljob[5][total]" placeholder="Total"></td>
+                            <td><input id="toilet_fulljob5q" oninput="reCalculateItem()" type="text" name="toilet_fulljob[5][quantity]" placeholder="Quantity"></td>
+                            <td><input id="toilet_fulljob5u" oninput="reCalculateItem()" type="text" name="toilet_fulljob[5][unit_price]" placeholder="Unit Price"></td>
+                            <td><input id="toilet_fulljob5t" type="text" name="toilet_fulljob[5][total]" placeholder="Total"></td>
                             <input type="hidden" name="toilet_fulljob[5][extra_item]">
                           </tr>
                           <tr>
@@ -286,9 +286,9 @@
                                 <input style="width: 40px" type="hidden" name="toilet_fulljob[6][width]" value="">  
                                 <input style="width: 40px" type="hidden" name="toilet_fulljob[6][height]" value="">
                             </div>
-                            <td><input type="text" name="toilet_fulljob[6][quantity]" placeholder="Quantity"></td>
-                            <td><input type="text" name="toilet_fulljob[6][unit_price]" placeholder="Unit Price"></td>
-                            <td><input type="text" name="toilet_fulljob[6][total]" placeholder="Total"></td>
+                            <td><input id="toilet_fulljob6q" oninput="reCalculateItem()" type="text" name="toilet_fulljob[6][quantity]" placeholder="Quantity"></td>
+                            <td><input id="toilet_fulljob6u" oninput="reCalculateItem()" type="text" name="toilet_fulljob[6][unit_price]" placeholder="Unit Price"></td>
+                            <td><input id="toilet_fulljob6t" type="text" name="toilet_fulljob[6][total]" placeholder="Total"></td>
                             <input type="hidden" name="toilet_fulljob[6][extra_item]">
                           </tr>
                           <tr>
@@ -299,9 +299,9 @@
                                 <input style="width: 40px" type="hidden" name="toilet_fulljob[7][width]" value="">  
                                 <input style="width: 40px" type="hidden" name="toilet_fulljob[7][height]" value="">
                             </div>
-                            <td><input type="text" name="toilet_fulljob[7][quantity]" placeholder="Quantity"></td>
-                            <td><input type="text" name="toilet_fulljob[7][unit_price]" placeholder="Unit Price"></td>
-                            <td><input type="text" name="toilet_fulljob[7][total]" placeholder="Total"></td>
+                            <td><input id="toilet_fulljob7q" oninput="reCalculateItem()" type="text" name="toilet_fulljob[7][quantity]" placeholder="Quantity"></td>
+                            <td><input id="toilet_fulljob7u" oninput="reCalculateItem()" type="text" name="toilet_fulljob[7][unit_price]" placeholder="Unit Price"></td>
+                            <td><input id="toilet_fulljob7t" type="text" name="toilet_fulljob[7][total]" placeholder="Total"></td>
                             <input type="hidden" name="toilet_fulljob[7][extra_item]">
                           </tr>
                           <tr>
@@ -312,9 +312,9 @@
                                 <input style="width: 40px" type="hidden" name="toilet_fulljob[8][width]" value="">  
                                 <input style="width: 40px" type="hidden" name="toilet_fulljob[8][height]" value="">
                             </div>
-                            <td><input type="text" name="toilet_fulljob[8][quantity]" placeholder="Quantity"></td>
-                            <td><input type="text" name="toilet_fulljob[8][unit_price]" placeholder="Unit Price"></td>
-                            <td><input type="text" name="toilet_fulljob[8][total]" placeholder="Total"></td>
+                            <td><input id="toilet_fulljob8q" oninput="reCalculateItem()" type="text" name="toilet_fulljob[8][quantity]" placeholder="Quantity"></td>
+                            <td><input id="toilet_fulljob8u" oninput="reCalculateItem()" type="text" name="toilet_fulljob[8][unit_price]" placeholder="Unit Price"></td>
+                            <td><input id="toilet_fulljob8t" type="text" name="toilet_fulljob[8][total]" placeholder="Total"></td>
                             <input type="hidden" name="toilet_fulljob[8][extra_item]">
                           </tr>
                           <tr>
@@ -325,9 +325,9 @@
                                 <input style="width: 40px" type="hidden" name="toilet_fulljob[9][width]" value="">  
                                 <input style="width: 40px" type="hidden" name="toilet_fulljob[9][height]" value="">
                             </div>
-                            <td><input type="text" name="toilet_fulljob[9][quantity]" placeholder="Quantity"></td>
-                            <td><input type="text" name="toilet_fulljob[9][unit_price]" placeholder="Unit Price"></td>
-                            <td><input type="text" name="toilet_fulljob[9][total]" placeholder="Total"></td>
+                            <td><input id="toilet_fulljob9q" oninput="reCalculateItem()" type="text" name="toilet_fulljob[9][quantity]" placeholder="Quantity"></td>
+                            <td><input id="toilet_fulljob9u" oninput="reCalculateItem()" type="text" name="toilet_fulljob[9][unit_price]" placeholder="Unit Price"></td>
+                            <td><input id="toilet_fulljob9t" type="text" name="toilet_fulljob[9][total]" placeholder="Total"></td>
                           </tr>
                           <tr>
                             <td>10</td>
@@ -337,9 +337,9 @@
                                 <input style="width: 40px" type="hidden" name="toilet_fulljob[10][width]" value="">  
                                 <input style="width: 40px" type="hidden" name="toilet_fulljob[10][height]" value="">
                             </div>
-                            <td><input type="text" name="toilet_fulljob[10][quantity]" placeholder="Quantity"></td>
-                            <td><input type="text" name="toilet_fulljob[10][unit_price]" placeholder="Unit Price"></td>
-                            <td><input type="text" name="toilet_fulljob[10][total]" placeholder="Total"></td>
+                            <td><input id="toilet_fulljob10q" oninput="reCalculateItem()" type="text" name="toilet_fulljob[10][quantity]" placeholder="Quantity"></td>
+                            <td><input id="toilet_fulljob10u" oninput="reCalculateItem()" type="text" name="toilet_fulljob[10][unit_price]" placeholder="Unit Price"></td>
+                            <td><input id="toilet_fulljob10t" type="text" name="toilet_fulljob[10][total]" placeholder="Total"></td>
                           </tr>
                           <tr>
                               <td colspan="4"></td>
@@ -683,6 +683,26 @@
 @endsection
 @section('extra_js')
     <script>
+        function reCalculateItem(){
+          document.getElementById('toilet1q').value=document.getElementById('toilet1l').value * document.getElementById('toilet1w').value * document.getElementById('toilet1h').value; 
+          document.getElementById('toilet1t').value=document.getElementById('toilet1q').value*document.getElementById('toilet1u').value;
+          document.getElementById('toilet2t').value=document.getElementById('toilet2q').value*document.getElementById('toilet2u').value;
+          document.getElementById('toilet3t').value=document.getElementById('toilet3q').value*document.getElementById('toilet3u').value;
+          document.getElementById('toilet4t').value=document.getElementById('toilet4q').value*document.getElementById('toilet4u').value;
+
+          document.getElementById('toilet_fulljob1q').value=document.getElementById('toilet_fulljob1l').value * document.getElementById('toilet_fulljob1w').value * document.getElementById('toilet_fulljob1h').value; 
+          document.getElementById('toilet_fulljob1t').value=document.getElementById('toilet_fulljob1q').value*document.getElementById('toilet_fulljob1u').value;
+          document.getElementById('toilet_fulljob2t').value=document.getElementById('toilet_fulljob2q').value*document.getElementById('toilet_fulljob2u').value;
+          document.getElementById('toilet_fulljob3q').value=document.getElementById('toilet_fulljob3l').value * document.getElementById('toilet_fulljob3w').value * document.getElementById('toilet_fulljob3h').value; 
+          document.getElementById('toilet_fulljob3t').value=document.getElementById('toilet_fulljob3q').value*document.getElementById('toilet_fulljob3u').value;
+          document.getElementById('toilet_fulljob4t').value=document.getElementById('toilet_fulljob4q').value*document.getElementById('toilet_fulljob4u').value;
+          document.getElementById('toilet_fulljob5t').value=document.getElementById('toilet_fulljob5q').value*document.getElementById('toilet_fulljob5u').value;
+          document.getElementById('toilet_fulljob6t').value=document.getElementById('toilet_fulljob6q').value*document.getElementById('toilet_fulljob6u').value;
+          document.getElementById('toilet_fulljob7t').value=document.getElementById('toilet_fulljob7q').value*document.getElementById('toilet_fulljob7u').value;
+          document.getElementById('toilet_fulljob8t').value=document.getElementById('toilet_fulljob8q').value*document.getElementById('toilet_fulljob8u').value;
+          document.getElementById('toilet_fulljob9t').value=document.getElementById('toilet_fulljob9q').value*document.getElementById('toilet_fulljob9u').value;
+          document.getElementById('toilet_fulljob10t').value=document.getElementById('toilet_fulljob10q').value*document.getElementById('toilet_fulljob10u').value;
+        }
         function getUser(){
          var mobile=document.getElementById('contact_no').value;
                   $.ajax({  

@@ -47,8 +47,28 @@
                     <input type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Name" name="name" value="{{auth()->user()->name}}" required autofocus>
                 </div>
                 <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" class="form-control @error('last_name') is-invalid @enderror" placeholder="Last Name" name="last_name" value="{{auth()->user()->last_name}}" required>
+                </div>
+                <div class="form-group">
                     <label>Email</label>
                     <input type="text" class="form-control @error('email') is-invalid @enderror" placeholder="Email" name="email" value="{{auth()->user()->email}}" required>
+                </div>
+                <div class="form-group">
+                    <label>Mobile</label>
+                    <input type="text" class="form-control @error('mobile') is-invalid @enderror" placeholder="Mobile" name="mobile" value="{{auth()->user()->mobile}}" required>
+                </div>
+                <div class="form-group">
+                    <label>Mobile Home</label>
+                    <input type="text" class="form-control @error('mobile_home') is-invalid @enderror" placeholder="Mobile Home" name="mobile_home" value="{{auth()->user()->mobile_home}}" required>
+                </div>
+                <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" class="form-control @error('address') is-invalid @enderror" placeholder="Address" name="address" value="{{auth()->user()->address}}" required>
+                </div>
+                <div class="form-group">
+                    <label>Near City</label>
+                    <input type="text" class="form-control @error('near_city') is-invalid @enderror" placeholder="Near City" name="near_city" value="{{auth()->user()->near_city}}" required>
                 </div>
                 <div class="form-group">
                     <label>Password</label>
