@@ -18,6 +18,7 @@ class CreateInvoicesTable extends Migration
             $table->bigInteger('user_id');
             $table->bigInteger('quotation_no');
             $table->string('pdf_path')->nullable();
+            $table->string('invoice_type');
             $table->timestamps();
         });
     }

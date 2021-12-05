@@ -207,7 +207,7 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a href="{{url('profile')}}" class="nav-link {{ Request::is('profile') ? 'active' : '' }}">
+                <a href="{{url('admin/profile')}}" class="nav-link {{ Request::is('admin/profile') ? 'active' : '' }}">
                   <i class="far fa-id-badge nav-icon text-info"></i>
                   <p>Profile</p>
                 </a>

@@ -17,6 +17,7 @@ class CreateWasteWaterFulljobInvoicesTable extends Migration
             $table->id();
             $table->bigInteger('invoice_id');
             $table->integer('product_id');
+            $table->string('extra_item');
             $table->double('length',8,2)->nullable();
             $table->double('width',8,2)->nullable();
             $table->double('height',8,2)->nullable();

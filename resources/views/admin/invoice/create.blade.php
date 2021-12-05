@@ -72,7 +72,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Quotation No</label>
-                    <input type="text" class="form-control @error('quotation_no') is-invalid @enderror" placeholder="Quotation No" name="quotation_no" value="" required autofocus>
+                    <input type="text" class="form-control @error('quotation_no') is-invalid @enderror" placeholder="Quotation No" name="quotation_no" value="{{App\Models\Invoice::max('quotation_no') == null ? 3000 : App\Models\Invoice::max('quotation_no') + 1}}" required autofocus>
                 </div>
             </div>
         </div>
@@ -109,6 +109,7 @@
                                 <input style="width: 40px" type="hidden" name="toilet[0][height]" value="0">
                                 <input style="width: 40px" type="hidden" name="toilet[0][unit_price]" value="0"> 
                                 <input style="width: 40px" type="hidden" name="toilet[0][total]" value="0">
+                                <input type="hidden" name="toilet[0][extra_item]">
                             </div>
                         </div>
                         <br>
@@ -135,6 +136,7 @@
                             <td><input type="text" name="toilet[1][quantity]" placeholder="Quantity"></td>
                             <td><input type="text" name="toilet[1][unit_price]" placeholder="Unit Price"></td>
                             <td><input type="text" name="toilet[1][total]" placeholder="Total"></td>
+                            <input type="hidden" name="toilet[1][extra_item]">
                           </tr>
                           <tr>
                             <td>02</td>
@@ -147,10 +149,11 @@
                             <td><input type="text" name="toilet[2][quantity]" placeholder="Quantity"></td>
                             <td><input type="text" name="toilet[2][unit_price]" placeholder="Unit Price"></td>
                             <td><input type="text" name="toilet[2][total]" placeholder="Total"></td>
+                            <input type="hidden" name="toilet[2][extra_item]">
                           </tr>
                           <tr>
                             <td>03</td>
-                            <td>_______________________</td>
+                            <td><input type="text" name="toilet[3][extra_item]" placeholder="Add extra items"></td>
                             <div class="row">
                                 <input style="width: 40px" type="hidden" name="toilet[3][length]" value=""> 
                                 <input style="width: 40px" type="hidden" name="toilet[3][width]" value=""> 
@@ -162,7 +165,7 @@
                           </tr>
                           <tr>
                             <td>04</td>
-                            <td>_______________________</td>
+                            <td><input type="text" name="toilet[4][extra_item]" placeholder="Add extra items"></td>
                             <div class="row">
                                 <input style="width: 40px" type="hidden" name="toilet[4][length]" value=""> 
                                 <input style="width: 40px" type="hidden" name="toilet[4][width]" value=""> 
@@ -193,6 +196,7 @@
                                 <input style="width: 40px" type="hidden" name="toilet_fulljob[0][height]" value="0">
                                 <input style="width: 40px" type="hidden" name="toilet_fulljob[0][unit_price]" value="0"> 
                                 <input style="width: 40px" type="hidden" name="toilet_fulljob[0][total]" value="0">
+                                <input type="hidden" name="toilet_fulljob[0][extra_item]">
                             </div>
                         </div>
                         <br>
@@ -219,6 +223,7 @@
                             <td><input type="text" name="toilet_fulljob[1][quantity]" placeholder="Quantity"></td>
                             <td><input type="text" name="toilet_fulljob[1][unit_price]" placeholder="Unit Price"></td>
                             <td><input type="text" name="toilet_fulljob[1][total]" placeholder="Total"></td>
+                            <input type="hidden" name="toilet_fulljob[1][extra_item]">
                           </tr>
                           <tr>
                             <td>02</td>
@@ -231,6 +236,7 @@
                             <td><input type="text" name="toilet_fulljob[2][quantity]" placeholder="Quantity"></td>
                             <td><input type="text" name="toilet_fulljob[2][unit_price]" placeholder="Unit Price"></td>
                             <td><input type="text" name="toilet_fulljob[2][total]" placeholder="Total"></td>
+                            <input type="hidden" name="toilet_fulljob[2][extra_item]">
                           </tr>
                           <tr>
                             <td>03</td>
@@ -244,6 +250,7 @@
                             <td><input type="text" name="toilet_fulljob[3][quantity]" placeholder="Quantity"></td>
                             <td><input type="text" name="toilet_fulljob[3][unit_price]" placeholder="Unit Price"></td>
                             <td><input type="text" name="toilet_fulljob[3][total]" placeholder="Total"></td>
+                            <input type="hidden" name="toilet_fulljob[3][extra_item]">
                           </tr>
                           <tr>
                             <td>04</td>
@@ -256,6 +263,7 @@
                             <td><input type="text" name="toilet_fulljob[4][quantity]" placeholder="Quantity"></td>
                             <td><input type="text" name="toilet_fulljob[4][unit_price]" placeholder="Unit Price"></td>
                             <td><input type="text" name="toilet_fulljob[4][total]" placeholder="Total"></td>
+                            <input type="hidden" name="toilet_fulljob[4][extra_item]">
                           </tr>
                           <tr>
                             <td>05</td>
@@ -268,6 +276,7 @@
                             <td><input type="text" name="toilet_fulljob[5][quantity]" placeholder="Quantity"></td>
                             <td><input type="text" name="toilet_fulljob[5][unit_price]" placeholder="Unit Price"></td>
                             <td><input type="text" name="toilet_fulljob[5][total]" placeholder="Total"></td>
+                            <input type="hidden" name="toilet_fulljob[5][extra_item]">
                           </tr>
                           <tr>
                             <td>06</td>
@@ -280,6 +289,7 @@
                             <td><input type="text" name="toilet_fulljob[6][quantity]" placeholder="Quantity"></td>
                             <td><input type="text" name="toilet_fulljob[6][unit_price]" placeholder="Unit Price"></td>
                             <td><input type="text" name="toilet_fulljob[6][total]" placeholder="Total"></td>
+                            <input type="hidden" name="toilet_fulljob[6][extra_item]">
                           </tr>
                           <tr>
                             <td>07</td>
@@ -292,6 +302,7 @@
                             <td><input type="text" name="toilet_fulljob[7][quantity]" placeholder="Quantity"></td>
                             <td><input type="text" name="toilet_fulljob[7][unit_price]" placeholder="Unit Price"></td>
                             <td><input type="text" name="toilet_fulljob[7][total]" placeholder="Total"></td>
+                            <input type="hidden" name="toilet_fulljob[7][extra_item]">
                           </tr>
                           <tr>
                             <td>08</td>
@@ -304,10 +315,11 @@
                             <td><input type="text" name="toilet_fulljob[8][quantity]" placeholder="Quantity"></td>
                             <td><input type="text" name="toilet_fulljob[8][unit_price]" placeholder="Unit Price"></td>
                             <td><input type="text" name="toilet_fulljob[8][total]" placeholder="Total"></td>
+                            <input type="hidden" name="toilet_fulljob[8][extra_item]">
                           </tr>
                           <tr>
                             <td>09</td>
-                            <td>_______________________</td>
+                            <td><input type="text" name="toilet_fulljob[9][extra_item]" placeholder="Add extra items"></td>
                             <div class="row">
                                 <input style="width: 40px" type="hidden" name="toilet_fulljob[9][length]" value=""> 
                                 <input style="width: 40px" type="hidden" name="toilet_fulljob[9][width]" value="">  
@@ -319,7 +331,7 @@
                           </tr>
                           <tr>
                             <td>10</td>
-                            <td>_______________________</td>
+                            <td><input type="text" name="toilet_fulljob[10][extra_item]" placeholder="Add extra items"></td>
                             <div class="row">
                                 <input style="width: 40px" type="hidden" name="toilet_fulljob[10][length]" value=""> 
                                 <input style="width: 40px" type="hidden" name="toilet_fulljob[10][width]" value="">  
@@ -350,6 +362,7 @@
                                 <input style="width: 40px" type="hidden" name="waste_water[0][height]" value="0">
                                 <input style="width: 40px" type="hidden" name="waste_water[0][unit_price]" value="0"> 
                                 <input style="width: 40px" type="hidden" name="waste_water[0][total]" value="0">
+                                <input type="hidden" name="waste_water[0][extra_item]">
                             </div>
                         </div>
                         <br>
@@ -376,6 +389,7 @@
                             <td><input type="text" name="waste_water[1][quantity]" placeholder="Quantity"></td>
                             <td><input type="text" name="waste_water[1][unit_price]" placeholder="Unit Price"></td>
                             <td><input type="text" name="waste_water[1][total]" placeholder="Total"></td>
+                            <input type="hidden" name="waste_water[1][extra_item]">
                           </tr>
                           <tr>
                             <td>02</td>
@@ -388,6 +402,7 @@
                             <td><input type="text" name="waste_water[2][quantity]" placeholder="Quantity"></td>
                             <td><input type="text" name="waste_water[2][unit_price]" placeholder="Unit Price"></td>
                             <td><input type="text" name="waste_water[2][total]" placeholder="Total"></td>
+                            <input type="hidden" name="waste_water[2][extra_item]">
                           </tr>
                           <tr>
                             <td>03</td>
@@ -401,6 +416,7 @@
                             <td><input type="text" name="waste_water[3][quantity]" placeholder="Quantity"></td>
                             <td><input type="text" name="waste_water[3][unit_price]" placeholder="Unit Price"></td>
                             <td><input type="text" name="waste_water[3][total]" placeholder="Total"></td>
+                            <input type="hidden" name="waste_water[3][extra_item]">
                           </tr>
                           <tr>
                             <td>04</td>
@@ -413,10 +429,11 @@
                             <td><input type="text" name="waste_water[4][quantity]" placeholder="Quantity"></td>
                             <td><input type="text" name="waste_water[4][unit_price]" placeholder="Unit Price"></td>
                             <td><input type="text" name="waste_water[4][total]" placeholder="Total"></td>
+                            <input type="hidden" name="waste_water[4][extra_item]">
                           </tr>
                           <tr>
                             <td>05</td>
-                            <td>_______________________</td>
+                            <td><input type="text" name="waste_water[5][extra_item]" placeholder="Add extra items"></td>
                             <div class="row">
                                 <input style="width: 40px" type="hidden" name="waste_water[5][length]" value=""> 
                                 <input style="width: 40px" type="hidden" name="waste_water[5][width]" value=""> 
@@ -428,7 +445,7 @@
                           </tr>
                           <tr>
                             <td>06</td>
-                            <td>_______________________</td>
+                            <td><input type="text" name="waste_water[6][extra_item]" placeholder="Add extra items"></td>
                             <div class="row">
                                 <input style="width: 60px" type="hidden" name="waste_water[6][length]" value=""> 
                                 <input style="width: 60px" type="hidden" name="waste_water[6][width]" value=""> 
@@ -459,6 +476,7 @@
                                 <input style="width: 40px" type="hidden" name="waste_water_fulljob[0][height]" value="0">
                                 <input style="width: 40px" type="hidden" name="waste_water_fulljob[0][unit_price]" value="0"> 
                                 <input style="width: 40px" type="hidden" name="waste_water_fulljob[0][total]" value="0">
+                                <input type="hidden" name="waste_water_fulljob[0][extra_item]">
                             </div>
                         </div>
                         <br>
@@ -485,6 +503,7 @@
                                 <td><input type="text" name="waste_water_fulljob[1][quantity]" placeholder="Quantity"></td>
                                 <td><input type="text" name="waste_water_fulljob[1][unit_price]" placeholder="Unit Price"></td>
                                 <td><input type="text" name="waste_water_fulljob[1][total]" placeholder="Total"></td>
+                                <input type="hidden" name="waste_water_fulljob[1][extra_item]">
                             </tr>
                             <tr>
                                 <td>02</td>
@@ -498,6 +517,7 @@
                                 <td><input type="text" name="waste_water_fulljob[2][quantity]" placeholder="Quantity"></td>
                                 <td><input type="text" name="waste_water_fulljob[2][unit_price]" placeholder="Unit Price"></td>
                                 <td><input type="text" name="waste_water_fulljob[2][total]" placeholder="Total"></td>
+                                <input type="hidden" name="waste_water_fulljob[2][extra_item]">
                             </tr>
                             <tr>
                             <td>03</td>
@@ -511,6 +531,7 @@
                             <td><input type="text" name="waste_water_fulljob[3][quantity]" placeholder="Quantity"></td>
                             <td><input type="text" name="waste_water_fulljob[3][unit_price]" placeholder="Unit Price"></td>
                             <td><input type="text" name="waste_water_fulljob[3][total]" placeholder="Total"></td>
+                            <input type="hidden" name="waste_water_fulljob[3][extra_item]">
                           </tr>
                           <tr>
                             <td>4</td>
@@ -523,6 +544,7 @@
                             <td><input type="text" name="waste_water_fulljob[4][quantity]" placeholder="Quantity"></td>
                             <td><input type="text" name="waste_water_fulljob[4][unit_price]" placeholder="Unit Price"></td>
                             <td><input type="text" name="waste_water_fulljob[4][total]" placeholder="Total"></td>
+                            <input type="hidden" name="waste_water_fulljob[4][extra_item]">
                           </tr>
                           <tr>
                             <td>5</td>
@@ -535,6 +557,7 @@
                             <td><input type="text" name="waste_water_fulljob[5][quantity]" placeholder="Quantity"></td>
                             <td><input type="text" name="waste_water_fulljob[5][unit_price]" placeholder="Unit Price"></td>
                             <td><input type="text" name="waste_water_fulljob[5][total]" placeholder="Total"></td>
+                            <input type="hidden" name="waste_water_fulljob[5][extra_item]">
                           </tr>
                           <tr>
                             <td>6</td>
@@ -547,6 +570,7 @@
                             <td><input type="text" name="waste_water_fulljob[6][quantity]" placeholder="Quantity"></td>
                             <td><input type="text" name="waste_water_fulljob[6][unit_price]" placeholder="Unit Price"></td>
                             <td><input type="text" name="waste_water_fulljob[6][total]" placeholder="Total"></td>
+                            <input type="hidden" name="waste_water_fulljob[6][extra_item]">
                           </tr>
                           <tr>
                             <td>7</td>
@@ -559,6 +583,7 @@
                             <td><input type="text" name="waste_water_fulljob[7][quantity]" placeholder="Quantity"></td>
                             <td><input type="text" name="waste_water_fulljob[7][unit_price]" placeholder="Unit Price"></td>
                             <td><input type="text" name="waste_water_fulljob[7][total]" placeholder="Total"></td>
+                            <input type="hidden" name="waste_water_fulljob[7][extra_item]">
                           </tr>
                           <tr>
                             <td>8</td>
@@ -571,6 +596,7 @@
                             <td><input type="text" name="waste_water_fulljob[8][quantity]" placeholder="Quantity"></td>
                             <td><input type="text" name="waste_water_fulljob[8][unit_price]" placeholder="Unit Price"></td>
                             <td><input type="text" name="waste_water_fulljob[8][total]" placeholder="Total"></td>
+                            <input type="hidden" name="waste_water_fulljob[8][extra_item]">
                           </tr>
                           <tr>
                             <td>9</td>
@@ -583,6 +609,7 @@
                             <td><input type="text" name="waste_water_fulljob[9][quantity]" placeholder="Quantity"></td>
                             <td><input type="text" name="waste_water_fulljob[9][unit_price]" placeholder="Unit Price"></td>
                             <td><input type="text" name="waste_water_fulljob[9][total]" placeholder="Total"></td>
+                            <input type="hidden" name="waste_water_fulljob[9][extra_item]">
                           </tr>
                           <tr>
                             <td>10</td>
@@ -595,6 +622,7 @@
                             <td><input type="text" name="waste_water_fulljob[10][quantity]" placeholder="Quantity"></td>
                             <td><input type="text" name="waste_water_fulljob[10][unit_price]" placeholder="Unit Price"></td>
                             <td><input type="text" name="waste_water_fulljob[10][total]" placeholder="Total"></td>
+                            <input type="hidden" name="waste_water_fulljob[10][extra_item]">
                           </tr>
                           <tr>
                             <td>11</td>
@@ -607,10 +635,11 @@
                             <td><input type="text" name="waste_water_fulljob[11][quantity]" placeholder="Quantity"></td>
                             <td><input type="text" name="waste_water_fulljob[11][unit_price]" placeholder="Unit Price"></td>
                             <td><input type="text" name="waste_water_fulljob[11][total]" placeholder="Total"></td>
+                            <input type="hidden" name="waste_water_fulljob[11][extra_item]">
                           </tr>
                           <tr>
                             <td>12</td>
-                            <td>_______________________</td>
+                            <td><input type="text" name="waste_water_fulljob[12][extra_item]" placeholder="Add extra items"></td>
                             <div class="row">
                                 <input style="width: 40px" type="hidden" name="waste_water_fulljob[12][length]" value="">
                                 <input style="width: 40px" type="hidden" name="waste_water_fulljob[12][width]" value=""> 
@@ -622,7 +651,7 @@
                           </tr>
                           <tr>
                             <td>13</td>
-                            <td>_______________________</td>
+                            <td><input type="text" name="waste_water_fulljob[13][extra_item]" placeholder="Add extra items"></td>
                             <div class="row">
                                 <input style="width: 40px" type="hidden" name="waste_water_fulljob[13][length]" value="">
                                 <input style="width: 40px" type="hidden" name="waste_water_fulljob[13][width]" value=""> 

@@ -10,6 +10,6 @@ class WasteWaterFulljobInvoice extends Model
     use HasFactory;
 
     protected $fillable=[
-        'invoice_id', 'product_id', 'length', 'width', 'height', 'quantity', 'unit_price', 'total',
+        'invoice_id', 'product_id', 'extra_item', 'length', 'width', 'height', 'quantity', 'unit_price', 'total',
     ];
 }
