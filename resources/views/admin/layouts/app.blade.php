@@ -177,6 +177,35 @@
                   </li> 
                 </ul>
               </li>
+
+              @if (Request::is('admin/visiting/create') || Request::is('admin/visiting') )
+                  <li class="nav-item has-treeview  menu-open">
+                    <a href="#" class="nav-link active">
+              @else
+                  <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+              @endif
+                  <i class="nav-icon fas fa-copy"></i>
+                  <p>
+                    Visitings
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{url('admin/visiting/create')}}" class="nav-link {{ Request::is('admin/visiting/create') ? 'active' : '' }}">
+                      <i class="far fa-file-alt nav-icon text-info"></i>
+                      <p>Visiting Create</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{url('admin/visiting')}}" class="nav-link {{ Request::is('admin/visiting') ? 'active' : '' }}">
+                      <i class="far fa-file-alt nav-icon text-info"></i>
+                      <p>All Visitings</p>
+                    </a>
+                  </li> 
+                </ul>
+              </li>
               <li class="nav-item">
                 <a href="{{url('profile')}}" class="nav-link {{ Request::is('profile') ? 'active' : '' }}">
                   <i class="far fa-id-badge nav-icon text-info"></i>
