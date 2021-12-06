@@ -50,7 +50,7 @@
 <!-- Main content -->
 
 <div class="container">
-    <form action="{{route('admin.visiting.store')}}" method="POST">
+    <form action="{{route('user.visiting.store')}}" method="POST">
         @csrf
         <div class="row">
             <div class="col-md-6">
