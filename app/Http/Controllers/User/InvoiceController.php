@@ -140,7 +140,7 @@ class InvoiceController extends Controller
             }
         }
         
-        return redirect()->back()->with('success','Profile Updated.');
+        return redirect()->back()->with('success','Invoice Updated.');
     }
 
     /**
