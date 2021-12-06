@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('nav_title','Admin Profile')
+@section('nav_title','User Create')
 @section('content')
 
 <!-- Content Wrapper. Contains page content -->
@@ -10,13 +10,13 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Admin Profile</h1>
+            <h1 class="m-0 text-dark">User Create</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/">Home</a></li>
-              <li class="breadcrumb-item">Admin</li>
-              <li class="breadcrumb-item active">Profile</li>
+              <li class="breadcrumb-item">User</li>
+              <li class="breadcrumb-item active">Create</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -38,21 +38,21 @@
 <!-- Main content -->
 
 <div class="container">
-    <form action="{{route('admin.profile.store')}}" method="POST" id="purchase_form">
+    <form action="{{route('admin.user.store')}}" method="POST" id="purchase_form">
         @csrf
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Name</label>
-                    <input type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Name" name="name" value="{{auth()->user()->name}}" required autofocus>
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Name" name="name" required autofocus>
                 </div>
-                <div class="form-group">
-                    <label>Email</label>
+                {{-- <div class="form-group">
+                    <label>Email (Optional)</label>
                     <input type="text" class="form-control @error('email') is-invalid @enderror" placeholder="Email" name="email" value="{{auth()->user()->email}}" required>
-                </div>
+                </div> --}}
                 <div class="form-group">
                     <label>Mobile</label>
-                    <input type="text" class="form-control @error('mobile') is-invalid @enderror" placeholder="Mobile" name="mobile" value="{{auth()->user()->mobile}}" required>
+                    <input type="text" class="form-control @error('mobile') is-invalid @enderror" placeholder="Mobile" name="mobile" required>
                 </div>
                 <div class="form-group">
                     <label>Password</label>

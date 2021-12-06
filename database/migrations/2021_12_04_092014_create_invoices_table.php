@@ -16,6 +16,7 @@ class CreateInvoicesTable extends Migration
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id');
+            $table->bigInteger('visiting_id');
             $table->bigInteger('quotation_no');
             $table->string('pdf_path')->nullable();
             $table->string('invoice_type');

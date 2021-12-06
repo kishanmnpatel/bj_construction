@@ -26,14 +26,14 @@ class InvoiceController extends Controller
                                     return $data->quotation_no;
                                 })
                                 ->addColumn('name', function($data){
-                                    return $data->user->name;
+                                    return $data->visiting->first_name;
                                 })
                                 ->addColumn('address', function($data){
-                                    return $data->user->address == null ? '-' : $data->user->address;
+                                    return $data->visiting->user_address == null ? '-' : $data->visiting->user_address;
                                 })
                                 ->addColumn('actions', function($data){
                                     // return '<a href="'.route('admin.invoice.show',$data->id).'" class="btn btn-primary btn-sm">View Invoice</a> &nbsp;&nbsp;<a href="'.asset($data->pdf_path).'" class="btn btn-info btn-sm">View PDF</a>';
-                                    return '<a href="'.asset($data->pdf_path).'" class="btn btn-info btn-sm">View PDF</a>';
+                                    return '<a href="'.asset($data->pdf_path).'" class="btn btn-info btn-sm">View PDF</a> &nbsp;&nbsp;<a href="'.route('admin.invoice.show',$data->id).'" class="btn btn-danger btn-sm">Delete</a>';
                                 })
                                 ->rawColumns(['quotation_no','name','address','actions'])
                                 ->make(true);
@@ -76,7 +76,8 @@ class InvoiceController extends Controller
             return redirect()->back()->with('danger','Please fill the invoice details.');
         }
         $invoice=Invoice::create([
-            'user_id'=>$request->user_id,
+            'user_id'=>auth()->user()->id,
+            'visiting_id'=>$request->user_id,
             'quotation_no'=>$request->quotation_no,
             'invoice_type'=>$invoiceType,
         ]);
@@ -139,7 +140,7 @@ class InvoiceController extends Controller
             }
         }
         
-        return redirect()->back()->with('success','Profile Updated.');
+        return redirect()->back()->with('success','Invoice Created.');
     }
 
     /**
@@ -150,7 +151,17 @@ class InvoiceController extends Controller
      */
     public function show(Invoice $invoice)
     {
-        //
+        if ($invoice->invoice_type == 'toiletInvoice') {
+            ToiletInvoice::where('invoice_id',$invoice->id)->delete();
+        } elseif($invoice->invoice_type == 'toiletFulljobInvoice') {
+            ToiletFulljobInvoice::where('invoice_id',$invoice->id)->delete();
+        }elseif($invoice->invoice_type == 'tasteWaterInvoice') {
+            WasteWaterInvoice::where('invoice_id',$invoice->id)->delete();
+        }elseif($invoice->invoice_type == 'wasteWaterFulljobInvoice') {
+            WasteWaterFulljobInvoice::where('invoice_id',$invoice->id)->delete();
+        }
+        $invoice->delete();
+        return redirect()->back()->with('success','Invoice Deleted.');
     }
 
     /**

@@ -206,6 +206,34 @@
                   </li> 
                 </ul>
               </li>
+              @if (Request::is('admin/user/create') || Request::is('admin/user') )
+                  <li class="nav-item has-treeview  menu-open">
+                    <a href="#" class="nav-link active">
+              @else
+                  <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+              @endif
+                  <i class="nav-icon fas fa-copy"></i>
+                  <p>
+                    Users
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{url('admin/user/create')}}" class="nav-link {{ Request::is('admin/user/create') ? 'active' : '' }}">
+                      <i class="far fa-file-alt nav-icon text-info"></i>
+                      <p>User Create</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{url('admin/user')}}" class="nav-link {{ Request::is('admin/user') ? 'active' : '' }}">
+                      <i class="far fa-file-alt nav-icon text-info"></i>
+                      <p>All Users</p>
+                    </a>
+                  </li> 
+                </ul>
+              </li>
               <li class="nav-item">
                 <a href="{{url('admin/profile')}}" class="nav-link {{ Request::is('admin/profile') ? 'active' : '' }}">
                   <i class="far fa-id-badge nav-icon text-info"></i>

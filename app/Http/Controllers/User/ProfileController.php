@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Models\User;
+use App\Models\Visiting;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -40,21 +41,17 @@ class ProfileController extends Controller
     {
         Validator::make($request->all(), [
             'name' => ['required', 'string', 'max:255'],
-            'last_name' => ['required', 'string', 'max:255'],
             'mobile' => ['required'],
-            'mobile_home' => ['required'],
-            'address' => ['required', 'string', 'max:255'],
-            'near_city' => ['required', 'string', 'max:255'],
         ])->validate();
-        if ($request->email != auth()->user()->email) {
-            Validator::make($request->all(), [
-                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            ])->validate();
-        }else {
-            Validator::make($request->all(), [
-                'email' => ['required', 'string', 'email', 'max:255'],
-            ])->validate();
-        }
+        // if ($request->email != auth()->user()->email) {
+        //     Validator::make($request->all(), [
+        //         'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        //     ])->validate();
+        // }else {
+        //     Validator::make($request->all(), [
+        //         'email' => ['required', 'string', 'email', 'max:255'],
+        //     ])->validate();
+        // }
         if ($request->password != null || $request->password != '') {
             Validator::make($request->all(), [
                 'password' => ['required', 'string', 'min:8', 'confirmed'],
@@ -66,14 +63,16 @@ class ProfileController extends Controller
         }
         User::where('id',auth()->user()->id)->update([
             'name'=>$request->name,
-            'last_name'=>$request->last_name,
             'mobile'=>$request->mobile,
-            'mobile_home'=>$request->mobile_home,
-            'address'=>$request->address,
-            'near_city'=>$request->near_city,
-            'email'=>$request->email,
+            // 'email'=>$request->email,
         ]);
         return redirect()->back()->with('success','Profile Updated.');
+    }
+
+    public function getCustomerFromContact(Request $request)
+    {
+        $user=Visiting::where('contact_no',$request->mobile)->first();
+        return response()->json(['user'=>$user]);
     }
 
     /**

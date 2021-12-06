@@ -775,14 +775,14 @@
         function getUser(){
          var mobile=document.getElementById('contact_no').value;
                   $.ajax({  
-                     url:"/admin/getUserFromContact",  
+                     url:"/admin/getCustomerFromContact",  
                      method:"GET",  
                      data:{mobile:mobile},   
                      success:function(data){ 
                        console.log(data)
-                      document.getElementById('user_name').value=data.user.name ; 
+                      document.getElementById('user_name').value=data.user.first_name ; 
                       document.getElementById('user_id').value=data.user.id ; 
-                      document.getElementById('user_address').value=data.user.address ; 
+                      document.getElementById('user_address').value=data.user.user_address ; 
                      },
                      error:function(data){
                         console.log(data);

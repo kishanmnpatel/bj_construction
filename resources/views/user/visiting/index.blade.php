@@ -1,6 +1,6 @@
-@extends('admin.layouts.app')
+@extends('user.layouts.app')
 
-@section('nav_title','Visiting')
+@section('nav_title','Visiting Create')
 @section('content')
 
 <!-- Content Wrapper. Contains page content -->
@@ -90,7 +90,7 @@
             paging: false,
             // scrollY: 425,
             ajax:{
-                url: "{{ route('admin.visiting.index') }}",
+                url: "{{ route('user.visiting.index') }}",
             },
             columns:[
                 {
@@ -137,7 +137,7 @@
         $('#handlePrint').on("submit", function(event){  
            event.preventDefault(); 
            $.ajax({  
-                     url:"{{url('admin/visitPrint')}}",  
+                     url:"{{url('user/visitPrint')}}",  
                      method:"POST",  
                      data:$('#handlePrint').serialize(),  
                      beforeSend:function(){  

@@ -26,11 +26,15 @@ Route::group(['middleware' => ['role:admin','auth'],'prefix'=>'admin','as'=>'adm
     Route::resource('invoice', App\Http\Controllers\Admin\InvoiceController::class);
     Route::resource('profile', App\Http\Controllers\Admin\ProfileController::class);
     Route::resource('visiting', App\Http\Controllers\Admin\VisitingController::class);
+    Route::resource('user', App\Http\Controllers\Admin\UserController::class);
     Route::post('visitPrint',[App\Http\Controllers\Admin\VisitingController::class,'visitPrint']);
-    Route::get('getUserFromContact',[App\Http\Controllers\Admin\ProfileController::class,'getUserFromContact']);
+    Route::get('getCustomerFromContact',[App\Http\Controllers\Admin\ProfileController::class,'getCustomerFromContact']);
 });
 
 Route::group(['middleware' => ['role:user','auth'],'prefix'=>'user','as'=>'user.'], function () {
     Route::resource('invoice', App\Http\Controllers\User\InvoiceController::class);
     Route::resource('profile', App\Http\Controllers\User\ProfileController::class);
+    Route::resource('visiting', App\Http\Controllers\User\VisitingController::class);
+    Route::post('visitPrint',[App\Http\Controllers\User\VisitingController::class,'visitPrint']);
+    Route::get('getCustomerFromContact',[App\Http\Controllers\User\ProfileController::class,'getCustomerFromContact']);
 });

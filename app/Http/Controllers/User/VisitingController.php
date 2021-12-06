@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\User;
 
 use Carbon\Carbon;
 use App\Models\Visiting;
@@ -50,7 +50,7 @@ class VisitingController extends Controller
                                 ->rawColumns(['select','visiting_date','name','user_address','contact_no','addtional_info','actions'])
                                 ->make(true);
                 }
-        return view('admin.visiting.index',['visitings'=>$visitings]);
+        return view('user.visiting.index',['visitings'=>$visitings]);
     }
 
     public function visitPrint(Request $request)
@@ -100,7 +100,7 @@ class VisitingController extends Controller
      */
     public function create()
     {
-        return view('admin.visiting.create');
+        return view('user.visiting.create');
     }
 
     /**

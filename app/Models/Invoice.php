@@ -10,11 +10,11 @@ class Invoice extends Model
     use HasFactory;
 
     protected $fillable=[
-        'user_id', 'quotation_no', 'pdf_path', 'invoice_type',
+        'user_id', 'visiting_id', 'quotation_no', 'pdf_path', 'invoice_type',
     ];
 
-    public function user()
+    public function visiting()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Visiting::class);
     }
 }
