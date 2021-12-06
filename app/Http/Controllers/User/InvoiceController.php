@@ -33,7 +33,7 @@ class InvoiceController extends Controller
                                 })
                                 ->addColumn('actions', function($data){
                                     // return '<a href="'.route('admin.invoice.show',$data->id).'" class="btn btn-primary btn-sm">View Invoice</a> &nbsp;&nbsp;<a href="'.asset($data->pdf_path).'" class="btn btn-info btn-sm">View PDF</a>';
-                                    return '<a href="'.asset($data->pdf_path).'" class="btn btn-info btn-sm">View PDF</a> &nbsp;&nbsp;<a href="'.route('admin.invoice.show',$data->id).'" class="btn btn-danger btn-sm">Delete</a>';
+                                    return '<a href="'.asset($data->pdf_path).'" class="btn btn-info btn-sm">View PDF</a> &nbsp;&nbsp;<a href="'.route('user.invoice.show',$data->id).'" class="btn btn-danger btn-sm">Delete</a>';
                                 })
                                 ->rawColumns(['quotation_no','name','address','actions'])
                                 ->make(true);

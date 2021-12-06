@@ -45,7 +45,7 @@ class VisitingController extends Controller
                                 })
                                 ->addColumn('actions', function($data){
                                     // return '<a href="'.route('admin.invoice.show',$data->id).'" class="btn btn-primary btn-sm">View Invoice</a> &nbsp;&nbsp;<a href="'.asset($data->pdf_path).'" class="btn btn-info btn-sm">View PDF</a>';
-                                    return '<a href="'.route('admin.visiting.show',$data->id).'" class="btn btn-danger btn-sm">Delete</a>';
+                                    return '<a href="'.route('user.visiting.show',$data->id).'" class="btn btn-danger btn-sm">Delete</a>';
                                 })
                                 ->rawColumns(['select','visiting_date','name','user_address','contact_no','addtional_info','actions'])
                                 ->make(true);
