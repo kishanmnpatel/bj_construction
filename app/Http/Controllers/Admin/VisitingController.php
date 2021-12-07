@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Models\Visiting;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Cookie;
 
 class VisitingController extends Controller
 {
@@ -16,13 +17,24 @@ class VisitingController extends Controller
      */
     public function index(Request $request)
     {
-        $date=Carbon::parse($request->date)->format('Y-m-d');
-        $visitings=Visiting::where('site_visit_date',$date)->get();
+        $visitings=Visiting::all();
+        if (isset($request->date)) {
+            $date=Carbon::parse($request->date)->format('Y-m-d');
+            Cookie::queue('site_visit_date', $date, 10);
+        }
+        if (Cookie::get('site_visit_date') !== null) {
+            $site_visit_date=Cookie::get('site_visit_date');
+            $visitings=Visiting::where('site_visit_date',$site_visit_date)->get();
+        }
         if(request()->ajax())
                 {
-                        return datatables()->of(Visiting::all())
+                    Cookie::queue(Cookie::forget('site_visit_date'));
+                        return datatables()->of($visitings)
                                 ->addColumn('select', function($data){
                                     return '<input type="checkbox" name="selectedData['.$data->id.']" value="true">';
+                                })
+                                ->addColumn('reference_no', function($data){
+                                    return $data->reference_no.'<input style="display:none" type"text" name="reference_no['.$data->id.']" value="'.$data->reference_no.'">';
                                 })
                                 ->addColumn('visiting_date', function($data){
                                     if ($data->site_visit_date == null) {
@@ -37,17 +49,28 @@ class VisitingController extends Controller
                                 ->addColumn('user_address', function($data){
                                     return $data->user_address.'<input style="display:none" type"text" name="user_address['.$data->id.']" value="'.$data->user_address.'">';
                                 })
+                                ->addColumn('near_city', function($data){
+                                    return $data->near_city.'<input style="display:none" type"text" name="near_city['.$data->id.']" value="'.$data->near_city.'">';
+                                })
                                 ->addColumn('contact_no', function($data){
                                     return $data->contact_no.'<input style="display:none" type"text" name="contact_no['.$data->id.']" value="'.$data->contact_no.'">';
+                                })
+                                ->addColumn('status', function($data){
+                                    if ($data->status == '1') {
+                                        return '<span class="right badge badge-primary">Visited</span><input style="display:none" type"text" name="status['.$data->id.']" value="'.$data->status.'">';
+                                    }elseif ($data->status == '2') {
+                                        return '<span class="right badge badge-success">Job Done</span><input style="display:none" type"text" name="status['.$data->id.']" value="'.$data->status.'">';
+                                    }else {
+                                        return '<span class="right badge badge-info">Visit Pending</span><input style="display:none" type"text" name="status['.$data->id.']" value="'.$data->status.'">';
+                                    }
                                 })
                                 ->addColumn('addtional_info', function($data){
                                     return '<input type="text" name="addtional_info['.$data->id.']">';
                                 })
                                 ->addColumn('actions', function($data){
-                                    // return '<a href="'.route('admin.invoice.show',$data->id).'" class="btn btn-primary btn-sm">View Invoice</a> &nbsp;&nbsp;<a href="'.asset($data->pdf_path).'" class="btn btn-info btn-sm">View PDF</a>';
-                                    return '<a href="'.route('admin.visiting.show',$data->id).'" class="btn btn-danger btn-sm">Delete</a>';
+                                    return '<a href="'.route('admin.visiting.edit',$data->id).'" class="btn btn-warning btn-sm">Update</a>&nbsp;&nbsp;<a href="'.route('admin.visiting.show',$data->id).'" class="btn btn-danger btn-sm mt-3">Delete</a>';
                                 })
-                                ->rawColumns(['select','visiting_date','name','user_address','contact_no','addtional_info','actions'])
+                                ->rawColumns(['select','reference_no','visiting_date','name','user_address','near_city','contact_no','status','addtional_info','actions'])
                                 ->make(true);
                 }
         return view('admin.visiting.index',['visitings'=>$visitings]);
@@ -58,10 +81,13 @@ class VisitingController extends Controller
         $data='<table id="invoiceTablePrint" class="table table-bordered table-striped">
                     <thead>
                         <tr>
+                        <th>Reference No</th>
                         <th>Visiting Date</th>
                         <th>Customer Name</th>
                         <th>Contact No</th>
                         <th>Address</th>
+                        <th>Near City</th>
+                        <th>Status</th>
                         <th>Additional Info</th>
                     </thead>
                     <tbody>
@@ -70,11 +96,20 @@ class VisitingController extends Controller
                 foreach ($request->selectedData as $key => $value) {
                     $data.='
                             <tr>
+                                <td>'.$request->reference_no[$key].'</td>
                                 <td>'.$request->site_visit_date[$key].'</td>
                                 <td>'.$request->name[$key].'</td>
                                 <td>'.$request->contact_no[$key].'</td>
                                 <td>'.$request->user_address[$key].'</td>
-                                <td><input type"text" value="'.$request->addtional_info[$key].'"></td>
+                                <td>'.$request->near_city[$key].'</td>';
+                                if ($request->status[$key] == '1') {
+                                    $data.='<td>Visited</td>';
+                                }elseif ($request->status[$key] == '2') {
+                                    $data.='<td>Job Done</td>';
+                                }else {
+                                    $data.='<td>Visit Pending</td>'; 
+                                }
+                    $data.='    <td><input type"text" value="'.$request->addtional_info[$key].'"></td>
                             </tr>
                     ';
                 }
@@ -111,7 +146,13 @@ class VisitingController extends Controller
      */
     public function store(Request $request)
     {
+        if (isset($request->site_visit_fee) || $request->site_visit_fee != null || $request->site_visit_fee != '') {
+            $request->validate([
+                'site_visit_fee'=>'numeric'
+            ]);
+        }
         Visiting::create([
+            'reference_no'=>$request->reference_no,
             'first_name'=>$request->first_name,
             'contact_no'=>$request->contact_no,
             'user_address'=>$request->user_address,
@@ -123,6 +164,7 @@ class VisitingController extends Controller
             'water_level'=>$request->water_level,
             'site_visit'=>$request->site_visit,
             'site_visit_date'=>$request->site_visit_date,
+            'site_visit_fee'=>$request->site_visit_fee,
         ]);
         return redirect()->back()->with('success','Visiting Created.');
     }
@@ -147,7 +189,7 @@ class VisitingController extends Controller
      */
     public function edit(Visiting $visiting)
     {
-        //
+        return view('admin.visiting.edit',['visiting'=>$visiting]);
     }
 
     /**
@@ -159,7 +201,28 @@ class VisitingController extends Controller
      */
     public function update(Request $request, Visiting $visiting)
     {
-        //
+        if (isset($request->site_visit_fee) || $request->site_visit_fee != null || $request->site_visit_fee != '') {
+            $request->validate([
+                'site_visit_fee'=>'numeric'
+            ]);
+        }
+        Visiting::where('id',$visiting->id)->update([
+            'reference_no'=>$request->reference_no,
+            'first_name'=>$request->first_name,
+            'contact_no'=>$request->contact_no,
+            'user_address'=>$request->user_address,
+            'last_name'=>$request->last_name,
+            'contact_home'=>$request->contact_home,
+            'near_city'=>$request->near_city,
+            'email'=>$request->email,
+            'service_category'=>$request->service_category,
+            'water_level'=>$request->water_level,
+            'site_visit'=>$request->site_visit,
+            'site_visit_date'=>$request->site_visit_date,
+            'site_visit_fee'=>$request->site_visit_fee,
+            'status'=>$request->status,
+        ]);
+        return redirect()->back()->with('success','Visiting Updated.');
     }
 
     /**

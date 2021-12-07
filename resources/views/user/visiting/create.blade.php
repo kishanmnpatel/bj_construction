@@ -1,6 +1,6 @@
 @extends('user.layouts.app')
 
-@section('nav_title','Visiting Create')
+@section('nav_title','Client Registration')
 @section('content')
 
 <!-- Content Wrapper. Contains page content -->
@@ -10,13 +10,13 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Visiting Create</h1>
+            <h1 class="m-0 text-dark">Client Registration</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/">Home</a></li>
-              <li class="breadcrumb-item">Visiting</li>
-              <li class="breadcrumb-item active">Create</li>
+              <li class="breadcrumb-item">Client</li>
+              <li class="breadcrumb-item active">Registration</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -47,6 +47,18 @@
         </div>
     </div>
     @endif
+    @error('site_visit_fee')
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
+            <div class="alert alert-danger alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <h5><i class="icon fas fa-check"></i> Error!</h5>
+                {{ $message }}
+              </div>
+        </div>
+    </div>
+    @enderror
 <!-- Main content -->
 
 <div class="container">
@@ -54,6 +66,10 @@
         @csrf
         <div class="row">
             <div class="col-md-6">
+                <div class="form-group">
+                    <label>Reference No</label>
+                    <input type="text" class="form-control @error('reference_no') is-invalid @enderror" id="reference_no" placeholder="Reference No" name="reference_no" value="{{App\Models\Visiting::max('reference_no') == null ? 1 : App\Models\Visiting::max('reference_no') + 1}}" required>
+                </div>
                 <div class="form-group">
                     <label>First Name</label>
                     <input type="text" class="form-control @error('first_name') is-invalid @enderror" id="first_name" placeholder="First Name" name="first_name" value="" required>
@@ -111,6 +127,12 @@
                     <input type="date" class="form-control @error('site_visit_date') is-invalid @enderror" id="site_visit_date" placeholder="Email Address" name="site_visit_date" autocomplete="false">
                 </div>
             </div>
+            <div class="col-md-6">
+                <div class="form-group" style="display: none" id="site_visit_fee">
+                    <label>Site Visit Fee</label>
+                    <input type="text" class="form-control @error('site_visit_fee') is-invalid @enderror" id="site_visit_fee" placeholder="Site visiting fee" name="site_visit_fee" autocomplete="false">
+                </div>
+            </div>
         </div>
         <div class="form-group">
             <label for=""></label>
@@ -125,8 +147,10 @@
         function visibility(){
             if (document.getElementById("site_visit").value === 'yes') {
                 document.getElementById("site_visit_date_id").style.display = "block";
+                document.getElementById("site_visit_fee").style.display = "block";
             }else{
                 document.getElementById("site_visit_date_id").style.display = "none";
+                document.getElementById("site_visit_fee").style.display = "none";
             }
         }
     </script>

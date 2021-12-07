@@ -10,7 +10,7 @@ class Visiting extends Model
     use HasFactory;
 
     protected $fillable=[
-        'first_name', 'contact_no', 'user_address', 'last_name', 'contact_home', 'near_city', 'email', 'service_category',
-        'water_level', 'site_visit', 'site_visit_date',
+        'reference_no', 'first_name', 'contact_no', 'user_address', 'last_name', 'contact_home', 'near_city', 'email', 'service_category',
+        'water_level', 'site_visit', 'site_visit_date', 'site_visit_fee', 'status',
     ];
 }

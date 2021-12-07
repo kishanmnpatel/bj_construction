@@ -40,11 +40,11 @@
   <div class="card">
     <div class="card-header">
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-8">
                 <h3 class="card-title">Visitings</strong></h3>
             </div>
-            <div class="col-md-3">
-                {{-- <form action="{{ route('admin.visiting.index') }}" method="GET">
+            <div class="col-md-4">
+                <form action="{{ route('admin.visiting.index') }}" method="GET">
                     <div class="row">
                         <div class="col-md-6">
                             <input type="date" class="form-control" name="date">
@@ -53,7 +53,7 @@
                             <input class="btn btn-info" type="submit" value="Go">
                         </div>
                     </div>
-                </form> --}}
+                </form>
             </div>
       </div>
     </div>
@@ -64,10 +64,13 @@
                 <thead>
                     <tr>
                         <th>Select</th>
+                        <th>Ref. No</th>
                         <th>Visiting Date</th>
                         <th>Customer Name</th>
                         <th>Contact No</th>
                         <th>Address</th>
+                        <th>Near City</th>
+                        <th>Status</th>
                         <th>Additional Info</th>
                         <th>Actions</th>
                     </thead>
@@ -98,6 +101,10 @@
                     name: 'select'
                 },
                 {
+                    data: 'reference_no',
+                    name: 'reference_no'
+                },
+                {
                     data: 'visiting_date',
                     name: 'visiting_date'
                 },
@@ -112,6 +119,14 @@
                 {
                     data: 'user_address',
                     name: 'user_address'
+                },
+                {
+                    data: 'near_city',
+                    name: 'near_city'
+                },
+                {
+                    data: 'status',
+                    name: 'status'
                 },
                 {
                     data: 'addtional_info',
