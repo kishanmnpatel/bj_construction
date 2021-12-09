@@ -690,7 +690,7 @@
           document.getElementById('toilet3t').value=document.getElementById('toilet3q').value*document.getElementById('toilet3u').value;
           document.getElementById('toilet4t').value=document.getElementById('toilet4q').value*document.getElementById('toilet4u').value;
 
-          document.getElementById('toilet_fulljob1q').value=document.getElementById('toilet_fulljob1l').value * document.getElementById('toilet_fulljob1w').value * document.getElementById('toilet_fulljob1h').value; 
+          // document.getElementById('toilet_fulljob1q').value=document.getElementById('toilet_fulljob1l').value * document.getElementById('toilet_fulljob1w').value * document.getElementById('toilet_fulljob1h').value; 
           document.getElementById('toilet_fulljob1t').value=document.getElementById('toilet_fulljob1q').value*document.getElementById('toilet_fulljob1u').value;
           document.getElementById('toilet_fulljob2t').value=document.getElementById('toilet_fulljob2q').value*document.getElementById('toilet_fulljob2u').value;
           // document.getElementById('toilet_fulljob3q').value=document.getElementById('toilet_fulljob3l').value * document.getElementById('toilet_fulljob3w').value * document.getElementById('toilet_fulljob3h').value; 
@@ -703,7 +703,7 @@
           document.getElementById('toilet_fulljob9t').value=document.getElementById('toilet_fulljob9q').value*document.getElementById('toilet_fulljob9u').value;
           document.getElementById('toilet_fulljob10t').value=document.getElementById('toilet_fulljob10q').value*document.getElementById('toilet_fulljob10u').value;
 
-          document.getElementById('waste_water1q').value=document.getElementById('waste_water1l').value * document.getElementById('waste_water1w').value * document.getElementById('waste_water1h').value; 
+          // document.getElementById('waste_water1q').value=document.getElementById('waste_water1l').value * document.getElementById('waste_water1w').value * document.getElementById('waste_water1h').value; 
           document.getElementById('waste_water1t').value=document.getElementById('waste_water1q').value*document.getElementById('waste_water1u').value;
           document.getElementById('waste_water2t').value=document.getElementById('waste_water2q').value*document.getElementById('waste_water2u').value;
           // document.getElementById('waste_water3q').value=document.getElementById('waste_water3l').value * document.getElementById('waste_water3w').value * document.getElementById('waste_water3h').value; 
@@ -712,9 +712,9 @@
           document.getElementById('waste_water5t').value=document.getElementById('waste_water5q').value*document.getElementById('waste_water5u').value;
           document.getElementById('waste_water6t').value=document.getElementById('waste_water6q').value*document.getElementById('waste_water6u').value;
         
-          document.getElementById('waste_water_fulljob1q').value=document.getElementById('waste_water_fulljob1l').value * document.getElementById('waste_water_fulljob1w').value * document.getElementById('waste_water_fulljob1h').value; 
+          // document.getElementById('waste_water_fulljob1q').value=document.getElementById('waste_water_fulljob1l').value * document.getElementById('waste_water_fulljob1w').value * document.getElementById('waste_water_fulljob1h').value; 
           document.getElementById('waste_water_fulljob1t').value=document.getElementById('waste_water_fulljob1q').value*document.getElementById('waste_water_fulljob1u').value;
-          document.getElementById('waste_water_fulljob2q').value=document.getElementById('waste_water_fulljob2l').value * document.getElementById('waste_water_fulljob2w').value * document.getElementById('waste_water_fulljob2h').value; 
+          // document.getElementById('waste_water_fulljob2q').value=document.getElementById('waste_water_fulljob2l').value * document.getElementById('waste_water_fulljob2w').value * document.getElementById('waste_water_fulljob2h').value; 
           document.getElementById('waste_water_fulljob2t').value=document.getElementById('waste_water_fulljob2q').value*document.getElementById('waste_water_fulljob2u').value;
           // document.getElementById('waste_water_fulljob3q').value=document.getElementById('waste_water_fulljob3l').value * document.getElementById('waste_water_fulljob3w').value * document.getElementById('waste_water_fulljob3h').value; 
           document.getElementById('waste_water_fulljob3t').value=document.getElementById('waste_water_fulljob3q').value*document.getElementById('waste_water_fulljob3u').value;

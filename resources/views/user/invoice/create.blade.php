@@ -682,52 +682,52 @@
 </div>
 @endsection
 @section('extra_js')
-    <script>
-        function reCalculateItem(){
-          // document.getElementById('toilet1q').value=document.getElementById('toilet1l').value * document.getElementById('toilet1w').value * document.getElementById('toilet1h').value; 
-          document.getElementById('toilet1t').value=document.getElementById('toilet1q').value*document.getElementById('toilet1u').value;
-          document.getElementById('toilet2t').value=document.getElementById('toilet2q').value*document.getElementById('toilet2u').value;
-          document.getElementById('toilet3t').value=document.getElementById('toilet3q').value*document.getElementById('toilet3u').value;
-          document.getElementById('toilet4t').value=document.getElementById('toilet4q').value*document.getElementById('toilet4u').value;
+<script>
+  function reCalculateItem(){
+    // document.getElementById('toilet1q').value=document.getElementById('toilet1l').value * document.getElementById('toilet1w').value * document.getElementById('toilet1h').value; 
+    document.getElementById('toilet1t').value=document.getElementById('toilet1q').value*document.getElementById('toilet1u').value;
+    document.getElementById('toilet2t').value=document.getElementById('toilet2q').value*document.getElementById('toilet2u').value;
+    document.getElementById('toilet3t').value=document.getElementById('toilet3q').value*document.getElementById('toilet3u').value;
+    document.getElementById('toilet4t').value=document.getElementById('toilet4q').value*document.getElementById('toilet4u').value;
 
-          document.getElementById('toilet_fulljob1q').value=document.getElementById('toilet_fulljob1l').value * document.getElementById('toilet_fulljob1w').value * document.getElementById('toilet_fulljob1h').value; 
-          document.getElementById('toilet_fulljob1t').value=document.getElementById('toilet_fulljob1q').value*document.getElementById('toilet_fulljob1u').value;
-          document.getElementById('toilet_fulljob2t').value=document.getElementById('toilet_fulljob2q').value*document.getElementById('toilet_fulljob2u').value;
-          // document.getElementById('toilet_fulljob3q').value=document.getElementById('toilet_fulljob3l').value * document.getElementById('toilet_fulljob3w').value * document.getElementById('toilet_fulljob3h').value; 
-          document.getElementById('toilet_fulljob3t').value=document.getElementById('toilet_fulljob3q').value*document.getElementById('toilet_fulljob3u').value;
-          document.getElementById('toilet_fulljob4t').value=document.getElementById('toilet_fulljob4q').value*document.getElementById('toilet_fulljob4u').value;
-          document.getElementById('toilet_fulljob5t').value=document.getElementById('toilet_fulljob5q').value*document.getElementById('toilet_fulljob5u').value;
-          document.getElementById('toilet_fulljob6t').value=document.getElementById('toilet_fulljob6q').value*document.getElementById('toilet_fulljob6u').value;
-          document.getElementById('toilet_fulljob7t').value=document.getElementById('toilet_fulljob7q').value*document.getElementById('toilet_fulljob7u').value;
-          document.getElementById('toilet_fulljob8t').value=document.getElementById('toilet_fulljob8q').value*document.getElementById('toilet_fulljob8u').value;
-          document.getElementById('toilet_fulljob9t').value=document.getElementById('toilet_fulljob9q').value*document.getElementById('toilet_fulljob9u').value;
-          document.getElementById('toilet_fulljob10t').value=document.getElementById('toilet_fulljob10q').value*document.getElementById('toilet_fulljob10u').value;
+    // document.getElementById('toilet_fulljob1q').value=document.getElementById('toilet_fulljob1l').value * document.getElementById('toilet_fulljob1w').value * document.getElementById('toilet_fulljob1h').value; 
+    document.getElementById('toilet_fulljob1t').value=document.getElementById('toilet_fulljob1q').value*document.getElementById('toilet_fulljob1u').value;
+    document.getElementById('toilet_fulljob2t').value=document.getElementById('toilet_fulljob2q').value*document.getElementById('toilet_fulljob2u').value;
+    // document.getElementById('toilet_fulljob3q').value=document.getElementById('toilet_fulljob3l').value * document.getElementById('toilet_fulljob3w').value * document.getElementById('toilet_fulljob3h').value; 
+    document.getElementById('toilet_fulljob3t').value=document.getElementById('toilet_fulljob3q').value*document.getElementById('toilet_fulljob3u').value;
+    document.getElementById('toilet_fulljob4t').value=document.getElementById('toilet_fulljob4q').value*document.getElementById('toilet_fulljob4u').value;
+    document.getElementById('toilet_fulljob5t').value=document.getElementById('toilet_fulljob5q').value*document.getElementById('toilet_fulljob5u').value;
+    document.getElementById('toilet_fulljob6t').value=document.getElementById('toilet_fulljob6q').value*document.getElementById('toilet_fulljob6u').value;
+    document.getElementById('toilet_fulljob7t').value=document.getElementById('toilet_fulljob7q').value*document.getElementById('toilet_fulljob7u').value;
+    document.getElementById('toilet_fulljob8t').value=document.getElementById('toilet_fulljob8q').value*document.getElementById('toilet_fulljob8u').value;
+    document.getElementById('toilet_fulljob9t').value=document.getElementById('toilet_fulljob9q').value*document.getElementById('toilet_fulljob9u').value;
+    document.getElementById('toilet_fulljob10t').value=document.getElementById('toilet_fulljob10q').value*document.getElementById('toilet_fulljob10u').value;
 
-          document.getElementById('waste_water1q').value=document.getElementById('waste_water1l').value * document.getElementById('waste_water1w').value * document.getElementById('waste_water1h').value; 
-          document.getElementById('waste_water1t').value=document.getElementById('waste_water1q').value*document.getElementById('waste_water1u').value;
-          document.getElementById('waste_water2t').value=document.getElementById('waste_water2q').value*document.getElementById('waste_water2u').value;
-          // document.getElementById('waste_water3q').value=document.getElementById('waste_water3l').value * document.getElementById('waste_water3w').value * document.getElementById('waste_water3h').value; 
-          document.getElementById('waste_water3t').value=document.getElementById('waste_water3q').value*document.getElementById('waste_water3u').value;
-          document.getElementById('waste_water4t').value=document.getElementById('waste_water4q').value*document.getElementById('waste_water4u').value;
-          document.getElementById('waste_water5t').value=document.getElementById('waste_water5q').value*document.getElementById('waste_water5u').value;
-          document.getElementById('waste_water6t').value=document.getElementById('waste_water6q').value*document.getElementById('waste_water6u').value;
-        
-          document.getElementById('waste_water_fulljob1q').value=document.getElementById('waste_water_fulljob1l').value * document.getElementById('waste_water_fulljob1w').value * document.getElementById('waste_water_fulljob1h').value; 
-          document.getElementById('waste_water_fulljob1t').value=document.getElementById('waste_water_fulljob1q').value*document.getElementById('waste_water_fulljob1u').value;
-          document.getElementById('waste_water_fulljob2q').value=document.getElementById('waste_water_fulljob2l').value * document.getElementById('waste_water_fulljob2w').value * document.getElementById('waste_water_fulljob2h').value; 
-          document.getElementById('waste_water_fulljob2t').value=document.getElementById('waste_water_fulljob2q').value*document.getElementById('waste_water_fulljob2u').value;
-          // document.getElementById('waste_water_fulljob3q').value=document.getElementById('waste_water_fulljob3l').value * document.getElementById('waste_water_fulljob3w').value * document.getElementById('waste_water_fulljob3h').value; 
-          document.getElementById('waste_water_fulljob3t').value=document.getElementById('waste_water_fulljob3q').value*document.getElementById('waste_water_fulljob3u').value;
-          document.getElementById('waste_water_fulljob4t').value=document.getElementById('waste_water_fulljob4q').value*document.getElementById('waste_water_fulljob4u').value;
-          document.getElementById('waste_water_fulljob5t').value=document.getElementById('waste_water_fulljob5q').value*document.getElementById('waste_water_fulljob5u').value;
-          document.getElementById('waste_water_fulljob6t').value=document.getElementById('waste_water_fulljob6q').value*document.getElementById('waste_water_fulljob6u').value;
-          document.getElementById('waste_water_fulljob7t').value=document.getElementById('waste_water_fulljob7q').value*document.getElementById('waste_water_fulljob7u').value;
-          document.getElementById('waste_water_fulljob8t').value=document.getElementById('waste_water_fulljob8q').value*document.getElementById('waste_water_fulljob8u').value;
-          document.getElementById('waste_water_fulljob9t').value=document.getElementById('waste_water_fulljob9q').value*document.getElementById('waste_water_fulljob9u').value;
-          document.getElementById('waste_water_fulljob10t').value=document.getElementById('waste_water_fulljob10q').value*document.getElementById('waste_water_fulljob10u').value;
-          document.getElementById('waste_water_fulljob11t').value=document.getElementById('waste_water_fulljob11q').value*document.getElementById('waste_water_fulljob11u').value;
-          document.getElementById('waste_water_fulljob12t').value=document.getElementById('waste_water_fulljob12q').value*document.getElementById('waste_water_fulljob12u').value;
-          document.getElementById('waste_water_fulljob13t').value=document.getElementById('waste_water_fulljob13q').value*document.getElementById('waste_water_fulljob13u').value;
+    // document.getElementById('waste_water1q').value=document.getElementById('waste_water1l').value * document.getElementById('waste_water1w').value * document.getElementById('waste_water1h').value; 
+    document.getElementById('waste_water1t').value=document.getElementById('waste_water1q').value*document.getElementById('waste_water1u').value;
+    document.getElementById('waste_water2t').value=document.getElementById('waste_water2q').value*document.getElementById('waste_water2u').value;
+    // document.getElementById('waste_water3q').value=document.getElementById('waste_water3l').value * document.getElementById('waste_water3w').value * document.getElementById('waste_water3h').value; 
+    document.getElementById('waste_water3t').value=document.getElementById('waste_water3q').value*document.getElementById('waste_water3u').value;
+    document.getElementById('waste_water4t').value=document.getElementById('waste_water4q').value*document.getElementById('waste_water4u').value;
+    document.getElementById('waste_water5t').value=document.getElementById('waste_water5q').value*document.getElementById('waste_water5u').value;
+    document.getElementById('waste_water6t').value=document.getElementById('waste_water6q').value*document.getElementById('waste_water6u').value;
+  
+    // document.getElementById('waste_water_fulljob1q').value=document.getElementById('waste_water_fulljob1l').value * document.getElementById('waste_water_fulljob1w').value * document.getElementById('waste_water_fulljob1h').value; 
+    document.getElementById('waste_water_fulljob1t').value=document.getElementById('waste_water_fulljob1q').value*document.getElementById('waste_water_fulljob1u').value;
+    // document.getElementById('waste_water_fulljob2q').value=document.getElementById('waste_water_fulljob2l').value * document.getElementById('waste_water_fulljob2w').value * document.getElementById('waste_water_fulljob2h').value; 
+    document.getElementById('waste_water_fulljob2t').value=document.getElementById('waste_water_fulljob2q').value*document.getElementById('waste_water_fulljob2u').value;
+    // document.getElementById('waste_water_fulljob3q').value=document.getElementById('waste_water_fulljob3l').value * document.getElementById('waste_water_fulljob3w').value * document.getElementById('waste_water_fulljob3h').value; 
+    document.getElementById('waste_water_fulljob3t').value=document.getElementById('waste_water_fulljob3q').value*document.getElementById('waste_water_fulljob3u').value;
+    document.getElementById('waste_water_fulljob4t').value=document.getElementById('waste_water_fulljob4q').value*document.getElementById('waste_water_fulljob4u').value;
+    document.getElementById('waste_water_fulljob5t').value=document.getElementById('waste_water_fulljob5q').value*document.getElementById('waste_water_fulljob5u').value;
+    document.getElementById('waste_water_fulljob6t').value=document.getElementById('waste_water_fulljob6q').value*document.getElementById('waste_water_fulljob6u').value;
+    document.getElementById('waste_water_fulljob7t').value=document.getElementById('waste_water_fulljob7q').value*document.getElementById('waste_water_fulljob7u').value;
+    document.getElementById('waste_water_fulljob8t').value=document.getElementById('waste_water_fulljob8q').value*document.getElementById('waste_water_fulljob8u').value;
+    document.getElementById('waste_water_fulljob9t').value=document.getElementById('waste_water_fulljob9q').value*document.getElementById('waste_water_fulljob9u').value;
+    document.getElementById('waste_water_fulljob10t').value=document.getElementById('waste_water_fulljob10q').value*document.getElementById('waste_water_fulljob10u').value;
+    document.getElementById('waste_water_fulljob11t').value=document.getElementById('waste_water_fulljob11q').value*document.getElementById('waste_water_fulljob11u').value;
+    document.getElementById('waste_water_fulljob12t').value=document.getElementById('waste_water_fulljob12q').value*document.getElementById('waste_water_fulljob12u').value;
+    document.getElementById('waste_water_fulljob13t').value=document.getElementById('waste_water_fulljob13q').value*document.getElementById('waste_water_fulljob13u').value;
 
           var total=parseFloat(document.getElementById('toilet1t').value) +
                     parseFloat(document.getElementById('toilet2t').value) +
