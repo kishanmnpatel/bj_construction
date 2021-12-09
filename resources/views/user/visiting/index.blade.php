@@ -1,6 +1,6 @@
 @extends('user.layouts.app')
 
-@section('nav_title','Visiting Create')
+@section('nav_title','Clients')
 @section('content')
 
 <!-- Content Wrapper. Contains page content -->
@@ -10,12 +10,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Visitings</h1>
+            <h1 class="m-0 text-dark">Clients</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/">Home</a></li>
-              <li class="breadcrumb-item active">Visitings</li>
+              <li class="breadcrumb-item active">All Clients</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -41,7 +41,7 @@
     <div class="card-header">
         <div class="row">
             <div class="col-md-8">
-                <h3 class="card-title">Visitings</strong></h3>
+                <h3 class="card-title">All Clients</strong></h3>
             </div>
             <div class="col-md-4">
                 <form action="{{ route('user.visiting.index') }}" method="GET">

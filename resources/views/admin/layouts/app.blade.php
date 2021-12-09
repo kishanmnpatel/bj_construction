@@ -187,7 +187,7 @@
               @endif
                   <i class="nav-icon fas fa-copy"></i>
                   <p>
-                    Visitings
+                    Client
                     <i class="fas fa-angle-left right"></i>
                   </p>
                 </a>
@@ -195,13 +195,13 @@
                   <li class="nav-item">
                     <a href="{{url('admin/visiting/create')}}" class="nav-link {{ Request::is('admin/visiting/create') ? 'active' : '' }}">
                       <i class="far fa-file-alt nav-icon text-info"></i>
-                      <p>Visiting Create</p>
+                      <p>Client Registration</p>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="{{url('admin/visiting')}}" class="nav-link {{ Request::is('admin/visiting') ? 'active' : '' }}">
                       <i class="far fa-file-alt nav-icon text-info"></i>
-                      <p>All Visitings</p>
+                      <p>All Clients</p>
                     </a>
                   </li> 
                 </ul>
