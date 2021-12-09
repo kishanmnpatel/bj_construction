@@ -72,7 +72,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Quotation No</label>
-                    <input type="text" class="form-control @error('quotation_no') is-invalid @enderror" placeholder="Quotation No" name="quotation_no" value="{{App\Models\Invoice::max('quotation_no') == null ? 3000 : App\Models\Invoice::max('quotation_no') + 1}}" required autofocus>
+                    <input type="text" class="form-control @error('quotation_no') is-invalid @enderror" placeholder="Quotation No" name="quotation_no" value="{{App\Models\Invoice::max('quotation_no') == null ? 1500 : App\Models\Invoice::max('quotation_no') + 1}}" required autofocus>
                 </div>
             </div>
         </div>

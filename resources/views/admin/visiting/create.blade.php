@@ -68,7 +68,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Reference No</label>
-                    <input type="text" class="form-control @error('reference_no') is-invalid @enderror" id="reference_no" placeholder="Reference No" name="reference_no" value="{{App\Models\Visiting::max('reference_no') == null ? 1 : App\Models\Visiting::max('reference_no') + 1}}" required>
+                    <input type="text" class="form-control @error('reference_no') is-invalid @enderror" id="reference_no" placeholder="Reference No" name="reference_no" value="{{App\Models\Visiting::max('reference_no') == null ? 4000 : App\Models\Visiting::max('reference_no') + 1}}" required>
                 </div>
                 <div class="form-group">
                     <label>First Name</label>
