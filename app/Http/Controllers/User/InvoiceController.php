@@ -8,6 +8,8 @@ use App\Models\ToiletInvoice;
 use App\Models\WasteWaterInvoice;
 use App\Http\Controllers\Controller;
 use App\Models\ToiletFulljobInvoice;
+use Illuminate\Support\Facades\View;
+use Mpdf\Mpdf;
 use App\Models\WasteWaterFulljobInvoice;
 
 class InvoiceController extends Controller
@@ -49,6 +51,71 @@ class InvoiceController extends Controller
     public function create()
     {
         return view('user.invoice.create');
+    }
+
+    public function viewPDF(Invoice $invoice)
+    {
+        if ($invoice->invoice_type == 'toiletInvoice') {
+            $view = $this->ToiletSingleJobHTML($invoice);
+            $html = $view->render();
+            $mpdf = new Mpdf(['mode' => 'UTF-8', 'format' => 'A4-P', 'autoScriptToLang' => true, 'autoLangToFont' => true]);
+            $mpdf->WriteHTML($html);
+            $mpdf->Output();
+        }elseif ($invoice->invoice_type == 'toiletFulljobInvoice') {
+            $view = $this->ToiletFullJobHTML($invoice);
+            $html = $view->render();
+            $mpdf = new Mpdf(['mode' => 'UTF-8', 'format' => 'A4-P', 'autoScriptToLang' => true, 'autoLangToFont' => true]);
+            $mpdf->WriteHTML($html);
+            $mpdf->Output();
+        }elseif ($invoice->invoice_type == 'tasteWaterInvoice') {
+            $view = $this->WasteWaterSingleJobHTML($invoice);
+            $html = $view->render();
+            $mpdf = new Mpdf(['mode' => 'UTF-8', 'format' => 'A4-P', 'autoScriptToLang' => true, 'autoLangToFont' => true]);
+            $mpdf->WriteHTML($html);
+            $mpdf->Output();
+        }elseif ($invoice->invoice_type == 'wasteWaterFulljobInvoice') {
+            $view = $this->WasteWaterFullJobHTML($invoice);
+            $html = $view->render();
+            $mpdf = new Mpdf(['mode' => 'UTF-8', 'format' => 'A4-P', 'autoScriptToLang' => true, 'autoLangToFont' => true]);
+            $mpdf->WriteHTML($html);
+            $mpdf->Output();
+        }
+    }
+
+    public function ToiletSingleJobHTML(Invoice $invoice)
+    {
+        $invoice=Invoice::where('id',$invoice->id)->with(['toiletSingleJobInvoices'=>function($query){
+                        $query->orderBy('product_id', 'asc');
+                    }])->first();
+        // dd($invoice->toiletSingleJobInvoices);
+        return View::make('pdf_templates.toilet_single_job',['invoice'=>$invoice]);
+    }
+
+    public function ToiletFullJobHTML(Invoice $invoice)
+    {
+        $invoice=Invoice::where('id',$invoice->id)->with(['toiletFullJobInvoices'=>function($query){
+                        $query->orderBy('product_id', 'asc');
+                    }])->first();
+        // dd($invoice->toiletFullJobInvoices);
+        return View::make('pdf_templates.toilet_full_job',['invoice'=>$invoice]);
+    }
+
+    public function WasteWaterSingleJobHTML(Invoice $invoice)
+    {
+        $invoice=Invoice::where('id',$invoice->id)->with(['wasteWaterSingleJobInvoices'=>function($query){
+                        $query->orderBy('product_id', 'asc');
+                    }])->first();
+        // dd($invoice->wasteWaterSingleJobInvoices);
+        return View::make('pdf_templates.waste_water_single_job',['invoice'=>$invoice]);
+    }
+
+    public function WasteWaterFullJobHTML(Invoice $invoice)
+    {
+        $invoice=Invoice::where('id',$invoice->id)->with(['wasteWaterFullJobInvoices'=>function($query){
+                        $query->orderBy('product_id', 'asc');
+                    }])->first();
+        // dd($invoice->wasteWaterFullJobInvoices);
+        return View::make('pdf_templates.waste_water_full_job',['invoice'=>$invoice]);
     }
 
     /**

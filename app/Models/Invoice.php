@@ -17,4 +17,24 @@ class Invoice extends Model
     {
         return $this->belongsTo(Visiting::class);
     }
+
+    public function toiletSingleJobInvoices()
+    {
+        return $this->hasMany(ToiletInvoice::class);
+    }
+
+    public function toiletFullJobInvoices()
+    {
+        return $this->hasMany(ToiletFulljobInvoice::class);
+    }
+
+    public function wasteWaterSingleJobInvoices()
+    {
+        return $this->hasMany(WasteWaterInvoice::class);
+    }
+
+    public function wasteWaterFullJobInvoices()
+    {
+        return $this->hasMany(WasteWaterFulljobInvoice::class);
+    }
 }
