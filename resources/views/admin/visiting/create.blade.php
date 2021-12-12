@@ -101,6 +101,9 @@
                     <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="Email Address" name="email" autocomplete="false">
                 </div>
             </div>
+            </div>
+            <br>
+            <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Service Category</label>
