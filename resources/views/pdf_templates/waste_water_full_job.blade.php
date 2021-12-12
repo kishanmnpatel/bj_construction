@@ -11,59 +11,42 @@
         }
 
     </style>
+    <title>Waste Water Full Job</title>
 </head>
 
 <body>
-
-<div>
+<div><br><br><br><br>
         <div style="clear:both;">
             <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: left; line-height: normal; font-size: 10pt;">
-                <strong><span> අනු</span></strong><strong>&nbsp;</strong><strong><span>අංකය</span></strong><strong>:
+                <span> අනු</span>&nbsp;<span>අංකය</span>:
                     {{$invoice->quotation_no}}</strong></p>
             <p style="margin-top:0pt; margin-bottom:0pt; text-align:right; line-height:normal;">&nbsp;</p>
         </div>
-        <p style="margin-top:12pt; margin-bottom:8pt;">
-            <br><br><br><br><br>{{$invoice->visiting->user_address}}<span style="width:33pt; display:inline-block;">&nbsp;</span><span
-                style="width:36pt; display:inline-block;">&nbsp;</span><span
-                style="width:36pt; display:inline-block;">&nbsp;</span><span
-                style="width:36pt; display:inline-block;">&nbsp;</span><span
-                style="width:36pt; display:inline-block;">&nbsp;</span><span style="width:36pt; display:inline-block;">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span><span>දිනය</span> :<span style="width:6.87pt; display:inline-block;">&nbsp;</span>{{$invoice->created_at->format('Y-m-d')}}
-        </p>
-        <p style="margin-top:0pt; margin-bottom:8pt;">
-            <span style="width:33pt; display:inline-block;">&nbsp;</span><span
-                style="width:36pt; display:inline-block;">&nbsp;</span><span
-                style="width:36pt; display:inline-block;">&nbsp;</span><span
-                style="width:36pt; display:inline-block;">&nbsp;</span><span
-                style="width:36pt; display:inline-block;">&nbsp;</span><span style="width:36pt; display:inline-block;">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span><span>දු</span>. <span>ක</span> :<span
-                style="width:8.74pt; display:inline-block;">&nbsp;</span>{{$invoice->visiting->contact_no}}
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-        </p>
+        <table width="600">
+            <tr>
+                <td width="200">
+                    <p
+                        style="margin-top: 0pt; margin-bottom: 0pt; text-align: left; line-height: normal; font-size: 10pt;">
+                        {{$invoice->visiting->user_address}}</p>
+                </td>
+                <td width="150">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+               
+                <td>
+                    <p
+                        style="margin-top: 0pt; margin-bottom: 0pt; text-align: left; line-height: normal; font-size: 10pt;">
+                        <span>දිනය</span> :&nbsp;{{$invoice->created_at->format('Y-m-d')}}
+                    </p>
+                </td>
+                <td>
+                    <p
+                        style="margin-top: 0pt; margin-bottom: 0pt; text-align: left; line-height: normal; font-size: 10pt;">
+                        <span>&nbsp;දුක</span> :&nbsp;{{$invoice->visiting->contact_no}}
+                    </p>
+                </td>
+            </tr>
+
+
+        </table>
 
         <p style="margin-top: 12pt; margin-bottom: 8pt; text-align: left; line-height: 107%; font-size: 10pt;">
             <br><span>{{intval($invoice->wasteWaterFullJobInvoices[0]['quantity'])}}දෙනෙකුගේ භාවිතයට වැසිකිලි පද්ධතියට පරවැව ඉදිකිරිම සඳහා
@@ -122,8 +105,8 @@
                             &nbsp;<span>ප්රමාණයට වල කැපීම.</span></td>
                         <td><span>අයිතම</span></td>
                         <td><span dir="rtl">{{$invoice->wasteWaterFullJobInvoices[1]['quantity']}}</span></td>
-                        <td>{{$invoice->wasteWaterFullJobInvoices[1]['unit_price']}}</td>
-                        <td>{{$invoice->wasteWaterFullJobInvoices[1]['total']}}</td>
+                        <td>RS {{number_format($invoice->wasteWaterFullJobInvoices[1]['unit_price'],2)}}</td>
+                        <td>RS {{number_format($invoice->wasteWaterFullJobInvoices[1]['total'],2)}}</td>
                     </tr>
                     <tr>
                         <td>02</td>
@@ -131,8 +114,8 @@
                             &nbsp;<span>ප්රමාණයට කාමර ………. ග්රීස් ප් එකක් ඉදිකිරිම.</span></td>
                         <td><span>ගණන</span></td>
                         <td><span dir="rtl">{{$invoice->wasteWaterFullJobInvoices[2]['quantity']}}</span></td>
-                        <td>{{$invoice->wasteWaterFullJobInvoices[2]['unit_price']}}</td>
-                        <td>{{$invoice->wasteWaterFullJobInvoices[2]['total']}}</td>
+                        <td>RS {{number_format($invoice->wasteWaterFullJobInvoices[2]['unit_price'],2)}}</td>
+                        <td>RS {{number_format($invoice->wasteWaterFullJobInvoices[2]['total'],2)}}</td>
                     </tr>
                     <tr>
                         <td>03</td>
@@ -140,48 +123,48 @@
                             &nbsp;<span>ප්රමාණයට වල කැපීම.</span></td>
                         <td><span>අයිතම</span></td>
                         <td><span dir="rtl">{{$invoice->wasteWaterFullJobInvoices[3]['quantity']}}</span></td>
-                        <td>{{$invoice->wasteWaterFullJobInvoices[3]['unit_price']}}</td>
-                        <td>{{$invoice->wasteWaterFullJobInvoices[3]['total']}}</td>
+                        <td>RS {{number_format($invoice->wasteWaterFullJobInvoices[3]['unit_price'],2)}}</td>
+                        <td>RS {{number_format($invoice->wasteWaterFullJobInvoices[3]['total'],2)}}</td>
                     </tr>
                     <tr>
                         <td>04</td>
                         <td><span>අපජලය සදහා වැලිෙපරණය ඉදිකිරිම</span></td>
                         <td><span>ගණන</span></td>
                         <td><span dir="rtl">{{$invoice->wasteWaterFullJobInvoices[4]['quantity']}}</span></td>
-                        <td>{{$invoice->wasteWaterFullJobInvoices[4]['unit_price']}}</td>
-                        <td>{{$invoice->wasteWaterFullJobInvoices[4]['total']}}</td>
+                        <td>RS {{number_format($invoice->wasteWaterFullJobInvoices[4]['unit_price'],2)}}</td>
+                        <td>RS {{number_format($invoice->wasteWaterFullJobInvoices[4]['total'],2)}}</td>
                     </tr>
                     <tr>
                         <td>05</td>
                         <td><span>අපජලය සදහා අවෙශා්ෂණ පරවැව ඉදිකිරිම.</span></td>
                         <td><span>ගණන</span></td>
                         <td><span dir="rtl">{{$invoice->wasteWaterFullJobInvoices[5]['quantity']}}</span></td>
-                        <td>{{$invoice->wasteWaterFullJobInvoices[5]['unit_price']}}</td>
-                        <td>{{$invoice->wasteWaterFullJobInvoices[5]['total']}}</td>
+                        <td>RS {{number_format($invoice->wasteWaterFullJobInvoices[5]['unit_price'],2)}}</td>
+                        <td>RS {{number_format($invoice->wasteWaterFullJobInvoices[5]['total'],2)}}</td>
                     </tr>
                     <tr>
                         <td>06</td>
                         <td><span>කපන ලද පස් ප්රවාහනය කර ඉවත් කිරීම.</span></td>
                         <td><span>අයිතම</span></td>
                         <td><span dir="rtl">{{$invoice->wasteWaterFullJobInvoices[6]['quantity']}}</span></td>
-                        <td>{{$invoice->wasteWaterFullJobInvoices[6]['unit_price']}}</td>
-                        <td>{{$invoice->wasteWaterFullJobInvoices[6]['total']}}</td>
+                        <td>RS {{number_format($invoice->wasteWaterFullJobInvoices[6]['unit_price'],2)}}</td>
+                        <td>RS {{number_format($invoice->wasteWaterFullJobInvoices[6]['total'],2)}}</td>
                     </tr>
                     <tr>
                         <td>07</td>
                         <td><span>අවශ්ය පරිදි 2” PVC නල එලීම.</span></td>
                         <td><span>ික් අ</span></td>
                         <td><span dir="rtl">{{$invoice->wasteWaterFullJobInvoices[7]['quantity']}}</span></td>
-                        <td>{{$invoice->wasteWaterFullJobInvoices[7]['unit_price']}}</td>
-                        <td>{{$invoice->wasteWaterFullJobInvoices[7]['total']}}</td>
+                        <td>RS {{number_format($invoice->wasteWaterFullJobInvoices[7]['unit_price'],2)}}</td>
+                        <td>RS {{number_format($invoice->wasteWaterFullJobInvoices[7]['total'],2)}}</td>
                     </tr>
                     <tr>
                         <td>08</td>
                         <td><span>2’ x 2’ මනුකිල ඉදිකිරිම.</span></td>
                         <td><span>ගණන</span></td>
                         <td><span dir="rtl">{{$invoice->wasteWaterFullJobInvoices[8]['quantity']}}</span></td>
-                        <td>{{$invoice->wasteWaterFullJobInvoices[8]['unit_price']}}</td>
-                        <td>{{$invoice->wasteWaterFullJobInvoices[8]['total']}}</td>
+                        <td>RS {{number_format($invoice->wasteWaterFullJobInvoices[8]['unit_price'],2)}}</td>
+                        <td>RS {{number_format($invoice->wasteWaterFullJobInvoices[8]['total'],2)}}</td>
                     </tr>
                     <tr>
                         <td>09</td>
@@ -190,8 +173,8 @@
                                 1&rsquo;-6&rdquo; ඩබල් සීල් මෙටල් කවර දැමීම.</span></p></td>
                         <td><span>ගණන</span></td>
                         <td><span dir="rtl">{{$invoice->wasteWaterFullJobInvoices[9]['quantity']}}</span></td>
-                        <td>{{$invoice->wasteWaterFullJobInvoices[9]['unit_price']}}</td>
-                        <td>{{$invoice->wasteWaterFullJobInvoices[9]['total']}}</td>
+                        <td>RS {{number_format($invoice->wasteWaterFullJobInvoices[9]['unit_price'],2)}}</td>
+                        <td>RS {{number_format($invoice->wasteWaterFullJobInvoices[9]['total'],2)}}</td>
                     </tr>
                     <tr>
                         <td>10</td>
@@ -200,32 +183,32 @@
                                 ඩබල් සීල් මෙටල් කවර දැමීම.</span></p></td>
                         <td><span>ගණන</span></td>
                         <td><span dir="rtl">{{$invoice->wasteWaterFullJobInvoices[10]['quantity']}}</span></td>
-                        <td>{{$invoice->wasteWaterFullJobInvoices[10]['unit_price']}}</td>
-                        <td>{{$invoice->wasteWaterFullJobInvoices[10]['total']}}</td>
+                        <td>RS {{number_format($invoice->wasteWaterFullJobInvoices[10]['unit_price'],2)}}</td>
+                        <td>RS {{number_format($invoice->wasteWaterFullJobInvoices[10]['total'],2)}}</td>
                     </tr>
                     <tr>
                         <td>11</td>
                         <td><span>ප්රවාහන ගාස්</span></td>
                         <td><span>අයිතම</span></td>
                         <td><span dir="rtl">{{$invoice->wasteWaterFullJobInvoices[11]['quantity']}}</span></td>
-                        <td>{{$invoice->wasteWaterFullJobInvoices[11]['unit_price']}}</td>
-                        <td>{{$invoice->wasteWaterFullJobInvoices[11]['total']}}</td>
+                        <td>RS {{number_format($invoice->wasteWaterFullJobInvoices[11]['unit_price'],2)}}</td>
+                        <td>RS {{number_format($invoice->wasteWaterFullJobInvoices[11]['total'],2)}}</td>
                     </tr>
                     <tr>
                         <td>12</td>
                         <td>{{$invoice->wasteWaterFullJobInvoices[12]['extra_item'] == '0' || $invoice->wasteWaterFullJobInvoices[12]['extra_item']== '' || $invoice->wasteWaterFullJobInvoices[12]['extra_item'] == 'null' ? '' : $invoice->wasteWaterFullJobInvoices[12]['extra_item']}}</td>
                         <td></td>
                         <td>{{$invoice->wasteWaterFullJobInvoices[12]['extra_item'] == '0' || $invoice->wasteWaterFullJobInvoices[12]['extra_item']== '' || $invoice->wasteWaterFullJobInvoices[12]['extra_item'] == 'null' ? '' : $invoice->wasteWaterFullJobInvoices[12]['quantity']}}</td>
-                        <td>{{$invoice->wasteWaterFullJobInvoices[12]['extra_item'] == '0' || $invoice->wasteWaterFullJobInvoices[12]['extra_item']== '' || $invoice->wasteWaterFullJobInvoices[12]['extra_item'] == 'null' ? '' : $invoice->wasteWaterFullJobInvoices[12]['unit_price']}}</td>
-                        <td>{{$invoice->wasteWaterFullJobInvoices[12]['extra_item'] == '0' || $invoice->wasteWaterFullJobInvoices[12]['extra_item']== '' || $invoice->wasteWaterFullJobInvoices[12]['extra_item'] == 'null' ? '' : $invoice->wasteWaterFullJobInvoices[12]['total']}}</td>
+                        <td>{{$invoice->wasteWaterFullJobInvoices[12]['extra_item'] == '0' || $invoice->wasteWaterFullJobInvoices[12]['extra_item']== '' || $invoice->wasteWaterFullJobInvoices[12]['extra_item'] == 'null' ? '' : 'RS '.number_format($invoice->wasteWaterFullJobInvoices[12]['unit_price'],2)}}</td>
+                        <td>{{$invoice->wasteWaterFullJobInvoices[12]['extra_item'] == '0' || $invoice->wasteWaterFullJobInvoices[12]['extra_item']== '' || $invoice->wasteWaterFullJobInvoices[12]['extra_item'] == 'null' ? '' : 'RS '.number_format($invoice->wasteWaterFullJobInvoices[12]['total'],2)}}</td>
                     </tr>
                     <tr>
                         <td>13</td>
                         <td>{{$invoice->wasteWaterFullJobInvoices[13]['extra_item'] == '0' || $invoice->wasteWaterFullJobInvoices[13]['extra_item']== '' || $invoice->wasteWaterFullJobInvoices[13]['extra_item'] == 'null' ? '' : $invoice->wasteWaterFullJobInvoices[13]['extra_item']}}</td>
                         <td></td>
                         <td>{{$invoice->wasteWaterFullJobInvoices[13]['extra_item'] == '0' || $invoice->wasteWaterFullJobInvoices[13]['extra_item']== '' || $invoice->wasteWaterFullJobInvoices[13]['extra_item'] == 'null' ? '' : $invoice->wasteWaterFullJobInvoices[13]['quantity']}}</td>
-                        <td>{{$invoice->wasteWaterFullJobInvoices[13]['extra_item'] == '0' || $invoice->wasteWaterFullJobInvoices[13]['extra_item']== '' || $invoice->wasteWaterFullJobInvoices[13]['extra_item'] == 'null' ? '' : $invoice->wasteWaterFullJobInvoices[13]['unit_price']}}</td>
-                        <td>{{$invoice->wasteWaterFullJobInvoices[13]['extra_item'] == '0' || $invoice->wasteWaterFullJobInvoices[13]['extra_item']== '' || $invoice->wasteWaterFullJobInvoices[13]['extra_item'] == 'null' ? '' : $invoice->wasteWaterFullJobInvoices[13]['total']}}</td>
+                        <td>{{$invoice->wasteWaterFullJobInvoices[13]['extra_item'] == '0' || $invoice->wasteWaterFullJobInvoices[13]['extra_item']== '' || $invoice->wasteWaterFullJobInvoices[13]['extra_item'] == 'null' ? '' : 'RS '.number_format($invoice->wasteWaterFullJobInvoices[13]['unit_price'],2)}}</td>
+                        <td>{{$invoice->wasteWaterFullJobInvoices[13]['extra_item'] == '0' || $invoice->wasteWaterFullJobInvoices[13]['extra_item']== '' || $invoice->wasteWaterFullJobInvoices[13]['extra_item'] == 'null' ? '' : 'RS '.number_format($invoice->wasteWaterFullJobInvoices[13]['total'],2)}}</td>
                     </tr>
                     <tr>
                         <td></td>
@@ -240,7 +223,7 @@
                                 $second=0;
                             }
                         @endphp
-                        <td>{{floatval($invoice->wasteWaterFullJobInvoices[1]['total'] + $invoice->wasteWaterFullJobInvoices[2]['total'] + $invoice->wasteWaterFullJobInvoices[3]['total'] + $invoice->wasteWaterFullJobInvoices[4]['total'] + $invoice->wasteWaterFullJobInvoices[5]['total'] + $invoice->wasteWaterFullJobInvoices[6]['total'] + $invoice->wasteWaterFullJobInvoices[7]['total'] + $invoice->wasteWaterFullJobInvoices[8]['total'] + $invoice->wasteWaterFullJobInvoices[9]['total'] + $invoice->wasteWaterFullJobInvoices[10]['total'] + $invoice->wasteWaterFullJobInvoices[11]['total']  + $first + $second)}}</td>
+                        <td>RS {{number_format(floatval($invoice->wasteWaterFullJobInvoices[1]['total'] + $invoice->wasteWaterFullJobInvoices[2]['total'] + $invoice->wasteWaterFullJobInvoices[3]['total'] + $invoice->wasteWaterFullJobInvoices[4]['total'] + $invoice->wasteWaterFullJobInvoices[5]['total'] + $invoice->wasteWaterFullJobInvoices[6]['total'] + $invoice->wasteWaterFullJobInvoices[7]['total'] + $invoice->wasteWaterFullJobInvoices[8]['total'] + $invoice->wasteWaterFullJobInvoices[9]['total'] + $invoice->wasteWaterFullJobInvoices[10]['total'] + $invoice->wasteWaterFullJobInvoices[11]['total']  + $first + $second),2)}}</td>
                     </tr>
                 {{-- <tr style="height:86.35pt;">
                     <td

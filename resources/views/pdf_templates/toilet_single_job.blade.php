@@ -11,58 +11,42 @@
         }
 
     </style>
+    <title>Toilet Single Job</title>
 </head>
 
 <body>
-    <div>
+<div><br><br><br><br>
         <div style="clear:both;">
             <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: left; line-height: normal; font-size: 10pt;">
-                <strong><span> අනු</span></strong><strong>&nbsp;</strong><strong><span>අංකය</span></strong><strong>:
+                <span> අනු</span>&nbsp;<span>අංක</span>:
                     {{$invoice->quotation_no}}</strong></p>
             <p style="margin-top:0pt; margin-bottom:0pt; text-align:right; line-height:normal;">&nbsp;</p>
         </div>
-        <p style="margin-top:12pt; margin-bottom:8pt;">
-            <br><br><br><br><br>{{$invoice->visiting->user_address}}<span style="width:33pt; display:inline-block;">&nbsp;</span><span
-                style="width:36pt; display:inline-block;">&nbsp;</span><span
-                style="width:36pt; display:inline-block;">&nbsp;</span><span
-                style="width:36pt; display:inline-block;">&nbsp;</span><span
-                style="width:36pt; display:inline-block;">&nbsp;</span><span style="width:36pt; display:inline-block;">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span><span>දිනය</span> :<span style="width:6.87pt; display:inline-block;">&nbsp;</span>{{$invoice->created_at->format('Y-m-d')}}
-        </p>
-        <p style="margin-top:0pt; margin-bottom:8pt;">
-            <span style="width:33pt; display:inline-block;">&nbsp;</span><span
-                style="width:36pt; display:inline-block;">&nbsp;</span><span
-                style="width:36pt; display:inline-block;">&nbsp;</span><span
-                style="width:36pt; display:inline-block;">&nbsp;</span><span
-                style="width:36pt; display:inline-block;">&nbsp;</span><span style="width:36pt; display:inline-block;">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span><span>දු</span>. <span>ක</span> :<span
-                style="width:8.74pt; display:inline-block;">&nbsp;</span>{{$invoice->visiting->contact_no}}
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-        </p>
+        <table width="600">
+            <tr>
+                <td width="200">
+                    <p
+                        style="margin-top: 0pt; margin-bottom: 0pt; text-align: left; line-height: normal; font-size: 10pt;">
+                        {{$invoice->visiting->user_address}}</p>
+                </td>
+                <td width="150">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+               
+                <td>
+                    <p
+                        style="margin-top: 0pt; margin-bottom: 0pt; text-align: left; line-height: normal; font-size: 10pt;">
+                        <span>දිනය</span> :&nbsp;{{$invoice->created_at->format('Y-m-d')}}
+                    </p>
+                </td>
+                <td>
+                    <p
+                        style="margin-top: 0pt; margin-bottom: 0pt; text-align: left; line-height: normal; font-size: 10pt;">
+                        <span>&nbsp;දුක</span> :&nbsp;{{$invoice->visiting->contact_no}}
+                    </p>
+                </td>
+            </tr>
+
+
+        </table>
 
         <p style="margin-top: 12pt; margin-bottom: 8pt; text-align: left; line-height: 107%; font-size: 10pt;">
             <br><span>{{intval($invoice->toiletSingleJobInvoices[0]['quantity'])}}දෙනෙකුගේ භාවිතයට වැසිකිලි පද්ධතියට පරවැව ඉදිකිරිම සඳහා
@@ -116,32 +100,32 @@
                         &nbsp;<span>ප්&zwj;රමාණයට පරවැව ඉදිකිරිම.</span></td>
                     <td><span>ගණන</span></td>
                     <td><span dir="rtl">{{$invoice->toiletSingleJobInvoices[1]['quantity']}}</span></td>
-                    <td>{{$invoice->toiletSingleJobInvoices[1]['unit_price']}}</td>
-                    <td>{{$invoice->toiletSingleJobInvoices[1]['total']}}</td>
+                    <td>RS {{number_format($invoice->toiletSingleJobInvoices[1]['unit_price'],2)}}</td>
+                    <td>RS {{number_format($invoice->toiletSingleJobInvoices[1]['total'],2)}}</td>
                 </tr>
                 <tr>
                     <td>02</td>
                     <td><span>ප්&zwj;රවාහන ගාස්තු</span></td>
                     <td><span>අයිතම</span></td>
                     <td><span dir="rtl">{{$invoice->toiletSingleJobInvoices[2]['quantity']}}</span></td>
-                    <td>{{$invoice->toiletSingleJobInvoices[2]['unit_price']}}</td>
-                    <td>{{$invoice->toiletSingleJobInvoices[2]['total']}}</td>
+                    <td>RS {{number_format($invoice->toiletSingleJobInvoices[2]['unit_price'],2)}}</td>
+                    <td>RS {{number_format($invoice->toiletSingleJobInvoices[2]['total'],2)}}</td>
                 </tr>
                 <tr>
                     <td>03</td>
                     <td>{{$invoice->toiletSingleJobInvoices[3]['extra_item'] == '0' || $invoice->toiletSingleJobInvoices[3]['extra_item']== '' || $invoice->toiletSingleJobInvoices[3]['extra_item'] == 'null' ? '' : $invoice->toiletSingleJobInvoices[3]['extra_item']}}</td>
                     <td></td>
                     <td>{{$invoice->toiletSingleJobInvoices[3]['extra_item'] == '0' || $invoice->toiletSingleJobInvoices[3]['extra_item']== '' || $invoice->toiletSingleJobInvoices[3]['extra_item'] == 'null' ? '' : $invoice->toiletSingleJobInvoices[3]['quantity']}}</td>
-                    <td>{{$invoice->toiletSingleJobInvoices[3]['extra_item'] == '0' || $invoice->toiletSingleJobInvoices[3]['extra_item']== '' || $invoice->toiletSingleJobInvoices[3]['extra_item'] == 'null' ? '' : $invoice->toiletSingleJobInvoices[3]['unit_price']}}</td>
-                    <td>{{$invoice->toiletSingleJobInvoices[3]['extra_item'] == '0' || $invoice->toiletSingleJobInvoices[3]['extra_item']== '' || $invoice->toiletSingleJobInvoices[3]['extra_item'] == 'null' ? '' : $invoice->toiletSingleJobInvoices[3]['total']}}</td>
+                    <td>{{$invoice->toiletSingleJobInvoices[3]['extra_item'] == '0' || $invoice->toiletSingleJobInvoices[3]['extra_item']== '' || $invoice->toiletSingleJobInvoices[3]['extra_item'] == 'null' ? '' : 'RS '.number_format($invoice->toiletSingleJobInvoices[3]['unit_price'],2)}}</td>
+                    <td>{{$invoice->toiletSingleJobInvoices[3]['extra_item'] == '0' || $invoice->toiletSingleJobInvoices[3]['extra_item']== '' || $invoice->toiletSingleJobInvoices[3]['extra_item'] == 'null' ? '' : 'RS '.number_format($invoice->toiletSingleJobInvoices[3]['total'],2)}}</td>
                 </tr>
                 <tr>
                     <td>04</td>
                     <td>{{$invoice->toiletSingleJobInvoices[4]['extra_item'] == '0' || $invoice->toiletSingleJobInvoices[4]['extra_item']== '' || $invoice->toiletSingleJobInvoices[4]['extra_item'] == 'null' ? '' : $invoice->toiletSingleJobInvoices[4]['extra_item']}}</td>
                     <td></td>
                     <td>{{$invoice->toiletSingleJobInvoices[4]['extra_item'] == '0' || $invoice->toiletSingleJobInvoices[4]['extra_item']== '' || $invoice->toiletSingleJobInvoices[4]['extra_item'] == 'null' ? '' : $invoice->toiletSingleJobInvoices[4]['quantity']}}</td>
-                    <td>{{$invoice->toiletSingleJobInvoices[4]['extra_item'] == '0' || $invoice->toiletSingleJobInvoices[4]['extra_item']== '' || $invoice->toiletSingleJobInvoices[4]['extra_item'] == 'null' ? '' : $invoice->toiletSingleJobInvoices[4]['unit_price']}}</td>
-                    <td>{{$invoice->toiletSingleJobInvoices[4]['extra_item'] == '0' || $invoice->toiletSingleJobInvoices[4]['extra_item']== '' || $invoice->toiletSingleJobInvoices[4]['extra_item'] == 'null' ? '' : $invoice->toiletSingleJobInvoices[4]['total']}}</td>
+                    <td>{{$invoice->toiletSingleJobInvoices[4]['extra_item'] == '0' || $invoice->toiletSingleJobInvoices[4]['extra_item']== '' || $invoice->toiletSingleJobInvoices[4]['extra_item'] == 'null' ? '' : 'RS '.number_format($invoice->toiletSingleJobInvoices[4]['unit_price'],2)}}</td>
+                    <td>{{$invoice->toiletSingleJobInvoices[4]['extra_item'] == '0' || $invoice->toiletSingleJobInvoices[4]['extra_item']== '' || $invoice->toiletSingleJobInvoices[4]['extra_item'] == 'null' ? '' : 'RS '.number_format($invoice->toiletSingleJobInvoices[4]['total'],2)}}</td>
                 </tr>
                 <tr>
                     <td></td>
@@ -156,7 +140,7 @@
                             $fourth=0;
                         }
                     @endphp
-                    <td>{{floatval($invoice->toiletSingleJobInvoices[1]['total'] + $invoice->toiletSingleJobInvoices[2]['total'] + $third + $fourth)}}</td>
+                    <td>RS {{number_format(floatval($invoice->toiletSingleJobInvoices[1]['total'] + $invoice->toiletSingleJobInvoices[2]['total'] + $third + $fourth),2)}}</td>
                 </tr>
                 {{-- <tr style="height:86.35pt;">
                     <td

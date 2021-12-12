@@ -11,174 +11,171 @@
         }
 
     </style>
+    <title>Waste Water Single Job</title>
 </head>
 
 <body>
-<div>
+    <div><br><br><br><br>
         <div style="clear:both;">
             <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: left; line-height: normal; font-size: 10pt;">
-                <strong><span> අනු</span></strong><strong>&nbsp;</strong><strong><span>අංකය</span></strong><strong>:
-                    {{$invoice->quotation_no}}</strong></p>
+                <span> අනු</span>&nbsp;<span>අංකය</span>:
+                {{$invoice->quotation_no}}</strong></p>
             <p style="margin-top:0pt; margin-bottom:0pt; text-align:right; line-height:normal;">&nbsp;</p>
         </div>
-        <p style="margin-top:12pt; margin-bottom:8pt;">
-            <br><br><br><br><br>{{$invoice->visiting->user_address}}<span style="width:33pt; display:inline-block;">&nbsp;</span><span
-                style="width:36pt; display:inline-block;">&nbsp;</span><span
-                style="width:36pt; display:inline-block;">&nbsp;</span><span
-                style="width:36pt; display:inline-block;">&nbsp;</span><span
-                style="width:36pt; display:inline-block;">&nbsp;</span><span style="width:36pt; display:inline-block;">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span><span>දිනය</span> :<span style="width:6.87pt; display:inline-block;">&nbsp;</span>{{$invoice->created_at->format('Y-m-d')}}
-        </p>
-        <p style="margin-top:0pt; margin-bottom:8pt;">
-            <span style="width:33pt; display:inline-block;">&nbsp;</span><span
-                style="width:36pt; display:inline-block;">&nbsp;</span><span
-                style="width:36pt; display:inline-block;">&nbsp;</span><span
-                style="width:36pt; display:inline-block;">&nbsp;</span><span
-                style="width:36pt; display:inline-block;">&nbsp;</span><span style="width:36pt; display:inline-block;">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span><span>දු</span>. <span>ක</span> :<span
-                style="width:8.74pt; display:inline-block;">&nbsp;</span>{{$invoice->visiting->contact_no}}
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-        </p>
+        <table width="600">
+            <tr>
+                <td width="200">
+                    <p
+                        style="margin-top: 0pt; margin-bottom: 0pt; text-align: left; line-height: normal; font-size: 10pt;">
+                        {{$invoice->visiting->user_address}}</p>
+                </td>
+                <td width="150">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+
+                <td>
+                    <p
+                        style="margin-top: 0pt; margin-bottom: 0pt; text-align: left; line-height: normal; font-size: 10pt;">
+                        <span>දිනය</span> :&nbsp;{{$invoice->created_at->format('Y-m-d')}}
+                    </p>
+                </td>
+                <td>
+                    <p
+                        style="margin-top: 0pt; margin-bottom: 0pt; text-align: left; line-height: normal; font-size: 10pt;">
+                        <span>&nbsp;දුක</span> :&nbsp;{{$invoice->visiting->contact_no}}
+                    </p>
+                </td>
+            </tr>
+
+
+        </table>
 
         <p style="margin-top: 12pt; margin-bottom: 8pt; text-align: left; line-height: 107%; font-size: 10pt;">
-            <br><span>{{intval($invoice->wasteWaterSingleJobInvoices[0]['quantity'])}}දෙනෙකුගේ භාවිතයට වැසිකිලි පද්ධතියට පරවැව ඉදිකිරිම සඳහා
+            <br><span>{{intval($invoice->wasteWaterSingleJobInvoices[0]['quantity'])}}දෙනෙකුගේ භාවිතයට වැසිකිලි පද්ධතියට
+                පරවැව ඉදිකිරිම සඳහා
                 ඇස්තමේන්තුව.</span></u></strong><u><span dir="rtl"
                     style="font-family:'Iskoola Pota'; font-weight:bold;">.</span></u></p>
         {{-- <table cellpadding="0" cellspacing="0"
             style="width:495.5pt; border:0.75pt solid #000000; border-collapse:collapse;"> --}}
-            <table border="1" style="width:495.5pt; border:0.75pt solid #000000; border-collapse:collapse;">
+        <table border="1" style="width:495.5pt; border:0.75pt solid #000000; border-collapse:collapse;">
             <tbody>
                 <tr style="height:34.15pt;">
                     <td
                         style="width: 14.8485%; border-right-style: solid; border-right-width: 0.75pt; border-bottom-style: solid; border-bottom-width: 0.75pt; padding-right: 5.03pt; padding-left: 5.03pt; vertical-align: middle;">
                         <p
                             style="margin-top:0pt; margin-bottom:8pt; text-align:center; line-height:107%; font-size:10pt;">
-                            <span style="font-family:'Iskoola Pota';">අනු</span><span dir="rtl"
-                                style="font-weight:bold;">&nbsp;</span>අංකය</p>
+                            <span>අනු</span><span dir="rtl" style="font-weight:bold;">&nbsp;</span>අංකය</p>
                     </td>
                     <td
                         style="width: 28.1818%; border-right-style: solid; border-right-width: 0.75pt; border-left-style: solid; border-left-width: 0.75pt; border-bottom-style: solid; border-bottom-width: 0.75pt; padding-right: 5.03pt; padding-left: 5.03pt; vertical-align: middle;">
                         <p
                             style="margin-top:0pt; margin-bottom:8pt; text-align:center; line-height:107%; font-size:10pt;">
-                            <span style="font-family:'Iskoola Pota';">විස්තරය</span></p>
+                            <span>විස්තරය</span></p>
                     </td>
                     <td
                         style="width:35.35pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
                         <p
                             style="margin-top:0pt; margin-bottom:8pt; text-align:center; line-height:107%; font-size:10pt;">
-                            <span style="font-family:'Iskoola Pota';">ඒකකය</span></p>
+                            <span>ඒකකය</span></p>
                     </td>
                     <td
                         style="width:38.7pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
                         <p
                             style="margin-top:0pt; margin-bottom:8pt; text-align:center; line-height:107%; font-size:10pt;">
-                            <span
-                                    style="font-family:'Iskoola Pota';">ප්</span>&zwj;<span
-                                    style="font-family:'Iskoola Pota';">රමාණය</span></p>
+                            <span>ප්</span>&zwj;<span>රමාණය</span></p>
                     </td>
                     <td
                         style="width:61.85pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
                         <p
                             style="margin-top:0pt; margin-bottom:8pt; text-align:center; line-height:107%; font-size:10pt;">
-                           <span
-                                    style="font-family:'Iskoola Pota';">එකක</span>&nbsp;<span
-                                    style="font-family:'Iskoola Pota';">මිල</span></p>
+                            <span>එකක</span>&nbsp;<span>මිල</span></p>
                     </td>
                     <td
                         style="width:83.05pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
                         <p
                             style="margin-top:0pt; margin-bottom:8pt; text-align:center; line-height:107%; font-size:10pt;">
-                            <span style="font-family:'Iskoola Pota';">මුදල</span></p>
+                            <span>මුදල</span></p>
                     </td>
                 </tr>
                 <tr>
                     <td>01</td>
-                    <td>{{$invoice->wasteWaterSingleJobInvoices[1]['width']}} x {{$invoice->wasteWaterSingleJobInvoices[1]['height']}} x {{$invoice->wasteWaterSingleJobInvoices[1]['length']}}
+                    <td>{{$invoice->wasteWaterSingleJobInvoices[1]['width']}} x
+                        {{$invoice->wasteWaterSingleJobInvoices[1]['height']}} x
+                        {{$invoice->wasteWaterSingleJobInvoices[1]['length']}}
                         &nbsp;<span>ප්‍රමාණයට කාමර ………. ග්‍රීස් ට්‍රැප් එකක් ඉදිකිරිම.</span></td>
                     <td><span>ගණන</span></td>
                     <td><span dir="rtl">{{$invoice->wasteWaterSingleJobInvoices[1]['quantity']}}</span></td>
-                    <td>{{$invoice->wasteWaterSingleJobInvoices[1]['unit_price']}}</td>
-                    <td>{{$invoice->wasteWaterSingleJobInvoices[1]['total']}}</td>
+                    <td>RS {{number_format($invoice->wasteWaterSingleJobInvoices[1]['unit_price'],2)}}</td>
+                    <td>RS {{number_format($invoice->wasteWaterSingleJobInvoices[1]['total'],2)}}</td>
                 </tr>
                 <tr>
                     <td>02</td>
                     <td><span>අපජලය සදහා වැලිපෙරණය ඉදිකිරිම.</span></td>
                     <td><span>ගණන</span></td>
                     <td><span dir="rtl">{{$invoice->wasteWaterSingleJobInvoices[2]['quantity']}}</span></td>
-                    <td>{{$invoice->wasteWaterSingleJobInvoices[2]['unit_price']}}</td>
-                    <td>{{$invoice->wasteWaterSingleJobInvoices[2]['total']}}</td>
+                    <td>RS {{number_format($invoice->wasteWaterSingleJobInvoices[2]['unit_price'],2)}}</td>
+                    <td>RS {{number_format($invoice->wasteWaterSingleJobInvoices[2]['total'],2)}}</td>
                 </tr>
                 <tr>
                     <td>03</td>
-                    <td>{{$invoice->wasteWaterSingleJobInvoices[3]['width']}} x {{$invoice->wasteWaterSingleJobInvoices[3]['height']}} x {{$invoice->wasteWaterSingleJobInvoices[3]['length']}}
+                    <td>{{$invoice->wasteWaterSingleJobInvoices[3]['width']}} x
+                        {{$invoice->wasteWaterSingleJobInvoices[3]['height']}} x
+                        {{$invoice->wasteWaterSingleJobInvoices[3]['length']}}
                         &nbsp;<span>ප්‍රමාණයට අපජලය සදහා අවශෝෂණ පරවැව ඉදිකිරිම.</span></td>
                     <td><span>ගණන</span></td>
                     <td><span dir="rtl">{{$invoice->wasteWaterSingleJobInvoices[3]['quantity']}}</span></td>
-                    <td>{{$invoice->wasteWaterSingleJobInvoices[3]['unit_price']}}</td>
-                    <td>{{$invoice->wasteWaterSingleJobInvoices[3]['total']}}</td>
+                    <td>RS {{number_format($invoice->wasteWaterSingleJobInvoices[3]['unit_price'],2)}}</td>
+                    <td>RS {{number_format($invoice->wasteWaterSingleJobInvoices[3]['total'],2)}}</td>
                 </tr>
                 <tr>
                     <td>04</td>
                     <td><span>ප්‍රවාහන ගාස්තු</span></td>
                     <td><span>අයිතම</span></td>
                     <td><span dir="rtl">{{$invoice->wasteWaterSingleJobInvoices[4]['quantity']}}</span></td>
-                    <td>{{$invoice->wasteWaterSingleJobInvoices[4]['unit_price']}}</td>
-                    <td>{{$invoice->wasteWaterSingleJobInvoices[4]['total']}}</td>
+                    <td>RS {{number_format($invoice->wasteWaterSingleJobInvoices[4]['unit_price'],2)}}</td>
+                    <td>RS {{number_format($invoice->wasteWaterSingleJobInvoices[4]['total'],2)}}</td>
                 </tr>
                 <tr>
                     <td>05</td>
-                    <td>{{$invoice->wasteWaterSingleJobInvoices[5]['extra_item'] == '0' || $invoice->wasteWaterSingleJobInvoices[5]['extra_item']== '' || $invoice->wasteWaterSingleJobInvoices[5]['extra_item'] == 'null' ? '' : $invoice->wasteWaterSingleJobInvoices[5]['extra_item']}}</td>
+                    <td>{{$invoice->wasteWaterSingleJobInvoices[5]['extra_item'] == '0' || $invoice->wasteWaterSingleJobInvoices[5]['extra_item']== '' || $invoice->wasteWaterSingleJobInvoices[5]['extra_item'] == 'null' ? '' : $invoice->wasteWaterSingleJobInvoices[5]['extra_item']}}
+                    </td>
                     <td></td>
-                    <td>{{$invoice->wasteWaterSingleJobInvoices[5]['extra_item'] == '0' || $invoice->wasteWaterSingleJobInvoices[5]['extra_item']== '' || $invoice->wasteWaterSingleJobInvoices[5]['extra_item'] == 'null' ? '' : $invoice->wasteWaterSingleJobInvoices[5]['quantity']}}</td>
-                    <td>{{$invoice->wasteWaterSingleJobInvoices[5]['extra_item'] == '0' || $invoice->wasteWaterSingleJobInvoices[5]['extra_item']== '' || $invoice->wasteWaterSingleJobInvoices[5]['extra_item'] == 'null' ? '' : $invoice->wasteWaterSingleJobInvoices[5]['unit_price']}}</td>
-                    <td>{{$invoice->wasteWaterSingleJobInvoices[5]['extra_item'] == '0' || $invoice->wasteWaterSingleJobInvoices[5]['extra_item']== '' || $invoice->wasteWaterSingleJobInvoices[5]['extra_item'] == 'null' ? '' : $invoice->wasteWaterSingleJobInvoices[5]['total']}}</td>
+                    <td>{{$invoice->wasteWaterSingleJobInvoices[5]['extra_item'] == '0' || $invoice->wasteWaterSingleJobInvoices[5]['extra_item']== '' || $invoice->wasteWaterSingleJobInvoices[5]['extra_item'] == 'null' ? '' : $invoice->wasteWaterSingleJobInvoices[5]['quantity']}}
+                    </td>
+                    <td>{{$invoice->wasteWaterSingleJobInvoices[5]['extra_item'] == '0' || $invoice->wasteWaterSingleJobInvoices[5]['extra_item']== '' || $invoice->wasteWaterSingleJobInvoices[5]['extra_item'] == 'null' ? '' : 'RS '.number_format($invoice->wasteWaterSingleJobInvoices[5]['unit_price'],2)}}
+                    </td>
+                    <td>{{$invoice->wasteWaterSingleJobInvoices[5]['extra_item'] == '0' || $invoice->wasteWaterSingleJobInvoices[5]['extra_item']== '' || $invoice->wasteWaterSingleJobInvoices[5]['extra_item'] == 'null' ? '' : 'RS '.number_format($invoice->wasteWaterSingleJobInvoices[5]['total'],2)}}
+                    </td>
                 </tr>
                 <tr>
                     <td>06</td>
-                    <td>{{$invoice->wasteWaterSingleJobInvoices[6]['extra_item'] == '0' || $invoice->wasteWaterSingleJobInvoices[6]['extra_item']== '' || $invoice->wasteWaterSingleJobInvoices[6]['extra_item'] == 'null' ? '' : $invoice->wasteWaterSingleJobInvoices[6]['extra_item']}}</td>
+                    <td>{{$invoice->wasteWaterSingleJobInvoices[6]['extra_item'] == '0' || $invoice->wasteWaterSingleJobInvoices[6]['extra_item']== '' || $invoice->wasteWaterSingleJobInvoices[6]['extra_item'] == 'null' ? '' : $invoice->wasteWaterSingleJobInvoices[6]['extra_item']}}
+                    </td>
                     <td></td>
-                    <td>{{$invoice->wasteWaterSingleJobInvoices[6]['extra_item'] == '0' || $invoice->wasteWaterSingleJobInvoices[6]['extra_item']== '' || $invoice->wasteWaterSingleJobInvoices[6]['extra_item'] == 'null' ? '' : $invoice->wasteWaterSingleJobInvoices[6]['quantity']}}</td>
-                    <td>{{$invoice->wasteWaterSingleJobInvoices[6]['extra_item'] == '0' || $invoice->wasteWaterSingleJobInvoices[6]['extra_item']== '' || $invoice->wasteWaterSingleJobInvoices[6]['extra_item'] == 'null' ? '' : $invoice->wasteWaterSingleJobInvoices[6]['unit_price']}}</td>
-                    <td>{{$invoice->wasteWaterSingleJobInvoices[6]['extra_item'] == '0' || $invoice->wasteWaterSingleJobInvoices[6]['extra_item']== '' || $invoice->wasteWaterSingleJobInvoices[6]['extra_item'] == 'null' ? '' : $invoice->wasteWaterSingleJobInvoices[6]['total']}}</td>
+                    <td>{{$invoice->wasteWaterSingleJobInvoices[6]['extra_item'] == '0' || $invoice->wasteWaterSingleJobInvoices[6]['extra_item']== '' || $invoice->wasteWaterSingleJobInvoices[6]['extra_item'] == 'null' ? '' : $invoice->wasteWaterSingleJobInvoices[6]['quantity']}}
+                    </td>
+                    <td>{{$invoice->wasteWaterSingleJobInvoices[6]['extra_item'] == '0' || $invoice->wasteWaterSingleJobInvoices[6]['extra_item']== '' || $invoice->wasteWaterSingleJobInvoices[6]['extra_item'] == 'null' ? '' : 'RS '.number_format($invoice->wasteWaterSingleJobInvoices[6]['unit_price'],2)}}
+                    </td>
+                    <td>{{$invoice->wasteWaterSingleJobInvoices[6]['extra_item'] == '0' || $invoice->wasteWaterSingleJobInvoices[6]['extra_item']== '' || $invoice->wasteWaterSingleJobInvoices[6]['extra_item'] == 'null' ? '' : 'RS '.number_format($invoice->wasteWaterSingleJobInvoices[6]['total'],2)}}
+                    </td>
                 </tr>
                 <tr>
                     <td></td>
                     <td colspan="4">මුළු එකතුව</td>
                     @php
-                        $first=$invoice->wasteWaterSingleJobInvoices[5]['total'];
-                        $second=$invoice->wasteWaterSingleJobInvoices[6]['total'];
-                        if ($invoice->wasteWaterSingleJobInvoices[5]['extra_item'] == '0' || $invoice->wasteWaterSingleJobInvoices[5]['extra_item']== '' || $invoice->wasteWaterSingleJobInvoices[5]['extra_item'] == 'null') {
-                            $first=0;
-                        }
-                        if ($invoice->wasteWaterSingleJobInvoices[6]['extra_item'] == '0' || $invoice->wasteWaterSingleJobInvoices[6]['extra_item']== '' || $invoice->wasteWaterSingleJobInvoices[6]['extra_item'] == 'null') {
-                            $second=0;
-                        }
+                    $first=$invoice->wasteWaterSingleJobInvoices[5]['total'];
+                    $second=$invoice->wasteWaterSingleJobInvoices[6]['total'];
+                    if ($invoice->wasteWaterSingleJobInvoices[5]['extra_item'] == '0' ||
+                    $invoice->wasteWaterSingleJobInvoices[5]['extra_item']== '' ||
+                    $invoice->wasteWaterSingleJobInvoices[5]['extra_item'] == 'null') {
+                    $first=0;
+                    }
+                    if ($invoice->wasteWaterSingleJobInvoices[6]['extra_item'] == '0' ||
+                    $invoice->wasteWaterSingleJobInvoices[6]['extra_item']== '' ||
+                    $invoice->wasteWaterSingleJobInvoices[6]['extra_item'] == 'null') {
+                    $second=0;
+                    }
                     @endphp
-                    <td>{{floatval($invoice->wasteWaterSingleJobInvoices[1]['total'] + $invoice->wasteWaterSingleJobInvoices[2]['total'] + $invoice->wasteWaterSingleJobInvoices[3]['total'] + $invoice->wasteWaterSingleJobInvoices[4]['total']  + $first + $second)}}</td>
+                    <td>RS {{number_format(floatval($invoice->wasteWaterSingleJobInvoices[1]['total'] + $invoice->wasteWaterSingleJobInvoices[2]['total'] + $invoice->wasteWaterSingleJobInvoices[3]['total'] + $invoice->wasteWaterSingleJobInvoices[4]['total']  + $first + $second),2)}}
+                    </td>
                 </tr>
                 {{-- <tr style="height:86.35pt;">
                     <td
@@ -205,23 +202,23 @@
                         style="width: 28.1818%; border-top-style: solid; border-top-width: 0.75pt; border-right-style: solid; border-right-width: 0.75pt; border-left-style: solid; border-left-width: 0.75pt; padding-right: 5.03pt; padding-left: 5.03pt; vertical-align: top;">
                         <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;"><br></p>
                         <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;">{Width} x
-                            {Height} x {Length}<span style="font-family:'Iskoola Pota';">ප්&zwj;රමාණයට
+                            {Height} x {Length}<span>ප්&zwj;රමාණයට
                                 කාමර&nbsp;</span>&hellip;&hellip;&hellip;. <span
-                                style="font-family:'Iskoola Pota';">ග්&zwj;රීස් ට්&zwj;රැප් එකක් ඉදිකිරිම.</span></p>
+                               >ග්&zwj;රීස් ට්&zwj;රැප් එකක් ඉදිකිරිම.</span></p>
                         <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;">&nbsp;</p>
                         <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;"><span
-                                style="font-family:'Iskoola Pota';">අපජලය සදහා වැලිපෙරණය ඉදිකිරිම.</span></p>
+                               >අපජලය සදහා වැලිපෙරණය ඉදිකිරිම.</span></p>
                         <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;">&nbsp;</p>
                         <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;">{Width} x
-                        {Height} x {Length} <span style="font-family:'Iskoola Pota';">ප්&zwj;රමාණයට අපජලය සදහා
+                        {Height} x {Length} <span>ප්&zwj;රමාණයට අපජලය සදහා
                                 අවශෝෂණ පරවැව ඉදිකිරිම.</span></p>
                         <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;">&nbsp;</p>
                         <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;"><span
-                                style="font-family:'Iskoola Pota';">ප්&zwj;රවාහන ගාස්තු</span></p>
+                               >ප්&zwj;රවාහන ගාස්තු</span></p>
                         <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;">&nbsp;</p>
                         <p
                             style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:107%; font-size:10pt;">
-                           <span style="font-family:'Iskoola Pota';">මුළු</span><span dir="rtl"
+                           <span>මුළු</span><span dir="rtl"
                                 style="font-weight:bold;">&nbsp;</span>එකතුව</p>
                     </td>
                     <td
@@ -229,19 +226,19 @@
                         <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:10pt;">&nbsp;</p>
                         <p style="margin-top:0pt; margin-bottom:0pt; text-align:center; font-size:10pt;">&nbsp;</p>
                         <p style="margin-top:0pt; margin-bottom:0pt; text-align:center; font-size:10pt;"><span
-                                style="font-family:'Iskoola Pota';">ගණන</span></p>
+                               >ගණන</span></p>
                         <p style="margin-top:0pt; margin-bottom:0pt; text-align:center; font-size:10pt;">&nbsp;</p>
                         <p style="margin-top:0pt; margin-bottom:0pt; text-align:center; font-size:10pt;"><br></p>
                         <p style="margin-top:0pt; margin-bottom:0pt; text-align:center; font-size:10pt;"><span
-                                style="font-family:'Iskoola Pota';">ගණන</span></p>
+                               >ගණන</span></p>
                         <p style="margin-top:0pt; margin-bottom:0pt; text-align:center; font-size:10pt;">&nbsp;</p>
                         <p style="margin-top:0pt; margin-bottom:0pt; text-align:center; font-size:10pt;"><br></p>
                         <p style="margin-top:0pt; margin-bottom:0pt; text-align:center; font-size:10pt;"><span
-                                style="font-family:'Iskoola Pota';">ගණන</span></p>
+                               >ගණන</span></p>
                         <p style="margin-top:0pt; margin-bottom:0pt; text-align:center; font-size:10pt;">&nbsp;</p>
                         <p style="margin-top:0pt; margin-bottom:0pt; text-align:center; font-size:10pt;">&nbsp;</p>
                         <p style="margin-top:0pt; margin-bottom:0pt; text-align:center; font-size:10pt;"><span
-                                style="font-family:'Iskoola Pota';">අයිතම</span></p>
+                               >අයිතම</span></p>
                         <p style="margin-top:0pt; margin-bottom:0pt; text-align:center; font-size:10pt;">&nbsp;</p>
                         <p style="margin-top:0pt; margin-bottom:0pt; text-align:center; font-size:10pt;">&nbsp;</p>
                     </td>
@@ -337,65 +334,40 @@
             style='margin-top:12.0pt;margin-right:0in;margin-bottom:0in;margin-left:0in;text-align:justify;line-height:115%;font-size:16px;font-family:"Times New Roman",serif;'>
             <span style='line-height:115%;font-family:"Iskoola Pota",sans-serif;'>කිසියම් ගැටළුවක් ඇතොත් ඕනෑම අවස්ථාවක
                 පිළිතුරු සැපයීමට අප ඔබ වෙනුවෙන් කැපවී සිටින බවත්, ඒ සදහා අප හා සම්බන්ධ වන ලෙසත් දන්වමු.</span></p>
-        <p
-            style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:0in;text-align:justify;line-height:115%;font-size:16px;font-family:"Times New Roman",serif;'>
-            <span style="font-size:9px;line-height:115%;">&nbsp;</span></p>
-        <p
-            style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:0in;text-align:justify;line-height:115%;font-size:16px;font-family:"Times New Roman",serif;'>
-            <span style="font-size:9px;line-height:115%;">&nbsp;</span></p>
-        <p
-            style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:0in;text-align:justify;line-height:115%;font-size:16px;font-family:"Times New Roman",serif;'>
-            <span style="font-size:9px;line-height:115%;">&nbsp;</span></p>
-        <p
-            style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:0in;text-align:justify;line-height:115%;font-size:16px;font-family:"Times New Roman",serif;'>
-            <span style="font-size:9px;line-height:115%;">&nbsp;</span></p>
+        <p>&nbsp;</p>
         <p
             style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:0in;text-align:justify;line-height:106%;font-size:16px;font-family:"Times New Roman",serif;'>
-            <span style="font-size:12px;line-height:106%;">&nbsp;</span></p>
-        <p
-            style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:0in;text-align:justify;line-height:106%;font-size:16px;font-family:"Times New Roman",serif;'>
-            <span dir="RTL"
-                style='line-height:106%;font-family:"Iskoola Pota",sans-serif;'>....................................
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp;....................................</span></p>
-        <p style="margin-top:12pt; margin-bottom:0pt; line-height:115%;"><span
-                style="font-family:'Iskoola Pota';">කිසියම්</span> <span
-                style="font-family:'Iskoola Pota';">ගැටළුවක්</span> <span
-                style="font-family:'Iskoola Pota';">ඇතොත්</span> <span style="font-family:'Iskoola Pota';">ඕනෑම</span>
-            <span style="font-family:'Iskoola Pota';">අවස්ථාවක</span> <span
-                style="font-family:'Iskoola Pota';">පිළිතුරු</span> <span
-                style="font-family:'Iskoola Pota';">සැපයීමට</span> <span style="font-family:'Iskoola Pota';">අප</span>
-            <span style="font-family:'Iskoola Pota';">ඔබ</span> <span
-                style="font-family:'Iskoola Pota';">වෙනුවෙන්</span> <span
-                style="font-family:'Iskoola Pota';">කැපවී</span> <span style="font-family:'Iskoola Pota';">සිටින</span>
-            <span style="font-family:'Iskoola Pota';">බවත්</span>, <span style="font-family:'Iskoola Pota';">ඒ</span>
-            <span style="font-family:'Iskoola Pota';">සදහා</span> <span style="font-family:'Iskoola Pota';">අප</span>
-            <span style="font-family:'Iskoola Pota';">හා</span> <span style="font-family:'Iskoola Pota';">සම්බන්ධ</span>
-            <span style="font-family:'Iskoola Pota';">වන</span> <span style="font-family:'Iskoola Pota';">ලෙසත්</span>
-            <span style="font-family:'Iskoola Pota';">දන්වමු</span>.</p>
-        <p style="margin-top:0pt; margin-bottom:0pt; line-height:115%; font-size:7pt;">&nbsp;</p>
-        <p style="margin-top:0pt; margin-bottom:0pt; line-height:115%; font-size:7pt;">&nbsp;</p>
-        <p style="margin-top:0pt; margin-bottom:0pt; line-height:115%; font-size:7pt;">&nbsp;</p>
-        <p style="margin-top:0pt; margin-bottom:0pt; line-height:115%; font-size:7pt;">&nbsp;</p>
-        <p style="margin-top:0pt; margin-bottom:0pt; line-height:107%; font-size:9pt;">&nbsp;</p>
+            <span dir="RTL" style='line-height:106%;font-family:"Iskoola Pota",sans-serif;'>
+                ....................................................................................................................................................</span>
+        </p>
+        <p style="margin-top:12pt; margin-bottom:0pt; line-height:115%;"><span>කිසියම්</span> <span>ගැටළුවක්</span>
+            <span>ඇතොත්</span> <span>ඕනෑම</span>
+            <span>අවස්ථාවක</span> <span>පිළිතුරු</span> <span>සැපයීමට</span> <span>අප</span>
+            <span>ඔබ</span> <span>වෙනුවෙන්</span> <span>කැපවී</span> <span>සිටින</span>
+            <span>බවත්</span>, <span>ඒ</span>
+            <span>සදහා</span> <span>අප</span>
+            <span>හා</span> <span>සම්බන්ධ</span>
+            <span>වන</span> <span>ලෙසත්</span>
+            <span>දන්වමු</span>.</p>
+        <p style="margin-top:0pt; margin-bottom:0pt; line-height:50%; font-size:7pt;">&nbsp;</p>
+        <p style="margin-top:0pt; margin-bottom:0pt; line-height:50%; font-size:7pt;">&nbsp;</p>
+        <p style="margin-top:0pt; margin-bottom:0pt; line-height:50%; font-size:7pt;">&nbsp;</p>
+        <p style="margin-top:0pt; margin-bottom:0pt; line-height:50%; font-size:7pt;">&nbsp;</p>
+        <p style="margin-top:0pt; margin-bottom:0pt; line-height:50%; font-size:9pt;">&nbsp;</p>
         <p style="margin-top:0pt; margin-bottom:0pt;"><span dir="rtl">....................................</span><span
                 style="width:36pt; display:inline-block;">&nbsp;</span><span
                 style="width:36pt; display:inline-block;">&nbsp;</span><span
                 style="width:36pt; display:inline-block;">&nbsp;</span><span
                 style="width:36pt; display:inline-block;">&nbsp;</span><span
                 style="width:36pt; display:inline-block;">&nbsp;</span><span
-                style="width:36pt; display:inline-block;">&nbsp;</span><span
-                style="width:36pt; display:inline-block;">
+                style="width:36pt; display:inline-block;">&nbsp;</span><span style="width:36pt; display:inline-block;">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </span><span
-                dir="rtl">....................................</span></p>
-                <p style="margin-top:0pt; margin-bottom:0pt; text-indent:36pt;"><span>දිනය</span><span
+            </span><span dir="rtl">....................................</span></p>
+        <p style="margin-top:0pt; margin-bottom:0pt; text-indent:36pt;"><span>දිනය</span><span
                 style="width:13.2pt; text-indent:0pt; display:inline-block;">&nbsp;</span><span
                 style="width:36pt; text-indent:0pt; display:inline-block;">&nbsp;</span><span
                 style="width:36pt; text-indent:0pt; display:inline-block;">&nbsp;</span><span
@@ -407,16 +379,15 @@
                 style="width:36pt; text-indent:0pt; display:inline-block;">&nbsp;</span><span
                 style="width:36pt; text-indent:0pt; display:inline-block;">
                 &nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <span>අත්සන</span><span
-                dir="rtl">&nbsp;</span></p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span>අත්සන</span><span dir="rtl">&nbsp;</span></p>
     </div>
-    
+
 </body>
 
 </html>
