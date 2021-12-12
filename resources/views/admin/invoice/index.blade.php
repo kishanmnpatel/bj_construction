@@ -53,6 +53,7 @@
             <thead>
                 <tr>
                     <th>Quotation No</th>
+                    <th>Reference No</th>
                     <th>Customer Name</th>
                     <th>Address</th>
                     <th>Actions</th>
@@ -88,6 +89,10 @@
                 {
                     data: 'quotation_no',
                     name: 'quotation_no'
+                },
+                {
+                    data: 'reference_no',
+                    name: 'reference_no'
                 },
                 {
                     data: 'name',

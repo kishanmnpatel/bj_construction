@@ -71,7 +71,7 @@ class ProfileController extends Controller
 
     public function getCustomerFromContact(Request $request)
     {
-        $user=Visiting::where('contact_no',$request->mobile)->first();
+        $user=Visiting::where('reference_no',$request->mobile)->first();
         return response()->json(['user'=>$user]);
     }
 

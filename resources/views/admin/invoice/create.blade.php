@@ -55,7 +55,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>Contact No</label>
+                    <label>Reference No</label>
                     <input type="text" class="form-control @error('mobile') is-invalid @enderror" id="contact_no" placeholder="Mobile" name="mobile" value="" required autofocus>
                     <input type="hidden" name="user_id" id="user_id"><br>
                     <button class="btn btn-primary btn-sm" type="button" onclick="getUser();">Get</button>

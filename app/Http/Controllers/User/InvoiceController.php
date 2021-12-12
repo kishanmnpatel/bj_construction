@@ -27,6 +27,9 @@ class InvoiceController extends Controller
                                 ->addColumn('quotation_no', function($data){
                                     return $data->quotation_no;
                                 })
+                                ->addColumn('reference_no', function($data){
+                                    return $data->visiting->reference_no;
+                                })
                                 ->addColumn('name', function($data){
                                     return $data->visiting->first_name;
                                 })
@@ -37,7 +40,7 @@ class InvoiceController extends Controller
                                     // return '<a href="'.route('admin.invoice.show',$data->id).'" class="btn btn-primary btn-sm">View Invoice</a> &nbsp;&nbsp;<a href="'.asset($data->pdf_path).'" class="btn btn-info btn-sm">View PDF</a>';
                                     return '<a href="'.asset($data->pdf_path).'" target="_blank" class="btn btn-info btn-sm">View PDF</a> &nbsp;&nbsp;<a href="'.route('user.invoice.show',$data->id).'" class="btn btn-danger btn-sm">Delete</a>';
                                 })
-                                ->rawColumns(['quotation_no','name','address','actions'])
+                                ->rawColumns(['quotation_no','reference_no','name','address','actions'])
                                 ->make(true);
                 }
         return view('user.invoice.index');
