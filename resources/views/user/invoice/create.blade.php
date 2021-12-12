@@ -683,6 +683,12 @@
 @endsection
 @section('extra_js')
 <script>
+  @if(session()->has('invoice_id'))
+    $( document ).ready(function() {
+      window.open("{{route('user.viewPDF',session()->get('invoice_id'))}}", "_blank");
+    });
+  @endif
+  
   function reCalculateItem(){
     // document.getElementById('toilet1q').value=document.getElementById('toilet1l').value * document.getElementById('toilet1w').value * document.getElementById('toilet1h').value; 
     document.getElementById('toilet1t').value=document.getElementById('toilet1q').value*document.getElementById('toilet1u').value;

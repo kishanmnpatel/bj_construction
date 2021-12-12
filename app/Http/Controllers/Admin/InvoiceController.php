@@ -36,7 +36,7 @@ class InvoiceController extends Controller
                                 })
                                 ->addColumn('actions', function($data){
                                     // return '<a href="'.route('admin.invoice.show',$data->id).'" class="btn btn-primary btn-sm">View Invoice</a> &nbsp;&nbsp;<a href="'.asset($data->pdf_path).'" class="btn btn-info btn-sm">View PDF</a>';
-                                    return '<a href="'.route('admin.viewPDF',$data->id).'" class="btn btn-info btn-sm">View PDF</a> &nbsp;&nbsp;<a href="'.route('admin.invoice.show',$data->id).'" class="btn btn-danger btn-sm">Delete</a>';
+                                    return '<a href="'.route('admin.viewPDF',$data->id).'" target="_blank" class="btn btn-info btn-sm">View PDF</a> &nbsp;&nbsp;<a href="'.route('admin.invoice.show',$data->id).'" class="btn btn-danger btn-sm">Delete</a>';
                                 })
                                 ->rawColumns(['quotation_no','name','address','actions'])
                                 ->make(true);
@@ -88,7 +88,6 @@ class InvoiceController extends Controller
         $invoice=Invoice::where('id',$invoice->id)->with(['toiletSingleJobInvoices'=>function($query){
                         $query->orderBy('product_id', 'asc');
                     }])->first();
-        // dd($invoice->toiletSingleJobInvoices);
         return View::make('pdf_templates.toilet_single_job',['invoice'=>$invoice]);
     }
 
@@ -97,7 +96,6 @@ class InvoiceController extends Controller
         $invoice=Invoice::where('id',$invoice->id)->with(['toiletFullJobInvoices'=>function($query){
                         $query->orderBy('product_id', 'asc');
                     }])->first();
-        // dd($invoice->toiletFullJobInvoices);
         return View::make('pdf_templates.toilet_full_job',['invoice'=>$invoice]);
     }
 
@@ -106,7 +104,6 @@ class InvoiceController extends Controller
         $invoice=Invoice::where('id',$invoice->id)->with(['wasteWaterSingleJobInvoices'=>function($query){
                         $query->orderBy('product_id', 'asc');
                     }])->first();
-        // dd($invoice->wasteWaterSingleJobInvoices);
         return View::make('pdf_templates.waste_water_single_job',['invoice'=>$invoice]);
     }
 
@@ -115,7 +112,6 @@ class InvoiceController extends Controller
         $invoice=Invoice::where('id',$invoice->id)->with(['wasteWaterFullJobInvoices'=>function($query){
                         $query->orderBy('product_id', 'asc');
                     }])->first();
-        // dd($invoice->wasteWaterFullJobInvoices);
         return View::make('pdf_templates.waste_water_full_job',['invoice'=>$invoice]);
     }
 
@@ -208,7 +204,7 @@ class InvoiceController extends Controller
             }
         }
         
-        return redirect()->back()->with('success','Invoice Created.');
+        return redirect()->back()->with(['success'=>'Invoice Created.','invoice_id'=>$invoice->id]);
     }
 
     /**
