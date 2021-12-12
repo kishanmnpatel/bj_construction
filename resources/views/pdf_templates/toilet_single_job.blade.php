@@ -100,32 +100,32 @@
                         &nbsp;<span>ප්&zwj;රමාණයට පරවැව ඉදිකිරිම.</span></td>
                     <td><span>ගණන</span></td>
                     <td><span dir="rtl">{{$invoice->toiletSingleJobInvoices[1]['quantity']}}</span></td>
-                    <td>RS {{number_format($invoice->toiletSingleJobInvoices[1]['unit_price'],2)}}</td>
-                    <td>RS {{number_format($invoice->toiletSingleJobInvoices[1]['total'],2)}}</td>
+                    <td>Rs {{number_format($invoice->toiletSingleJobInvoices[1]['unit_price'],2)}}</td>
+                    <td>Rs {{number_format($invoice->toiletSingleJobInvoices[1]['total'],2)}}</td>
                 </tr>
                 <tr>
                     <td>02</td>
                     <td><span>ප්&zwj;රවාහන ගාස්තු</span></td>
                     <td><span>අයිතම</span></td>
                     <td><span dir="rtl">{{$invoice->toiletSingleJobInvoices[2]['quantity']}}</span></td>
-                    <td>RS {{number_format($invoice->toiletSingleJobInvoices[2]['unit_price'],2)}}</td>
-                    <td>RS {{number_format($invoice->toiletSingleJobInvoices[2]['total'],2)}}</td>
+                    <td>Rs {{number_format($invoice->toiletSingleJobInvoices[2]['unit_price'],2)}}</td>
+                    <td>Rs {{number_format($invoice->toiletSingleJobInvoices[2]['total'],2)}}</td>
                 </tr>
                 <tr>
                     <td>03</td>
                     <td>{{$invoice->toiletSingleJobInvoices[3]['extra_item'] == '0' || $invoice->toiletSingleJobInvoices[3]['extra_item']== '' || $invoice->toiletSingleJobInvoices[3]['extra_item'] == 'null' ? '' : $invoice->toiletSingleJobInvoices[3]['extra_item']}}</td>
                     <td></td>
                     <td>{{$invoice->toiletSingleJobInvoices[3]['extra_item'] == '0' || $invoice->toiletSingleJobInvoices[3]['extra_item']== '' || $invoice->toiletSingleJobInvoices[3]['extra_item'] == 'null' ? '' : $invoice->toiletSingleJobInvoices[3]['quantity']}}</td>
-                    <td>{{$invoice->toiletSingleJobInvoices[3]['extra_item'] == '0' || $invoice->toiletSingleJobInvoices[3]['extra_item']== '' || $invoice->toiletSingleJobInvoices[3]['extra_item'] == 'null' ? '' : 'RS '.number_format($invoice->toiletSingleJobInvoices[3]['unit_price'],2)}}</td>
-                    <td>{{$invoice->toiletSingleJobInvoices[3]['extra_item'] == '0' || $invoice->toiletSingleJobInvoices[3]['extra_item']== '' || $invoice->toiletSingleJobInvoices[3]['extra_item'] == 'null' ? '' : 'RS '.number_format($invoice->toiletSingleJobInvoices[3]['total'],2)}}</td>
+                    <td>{{$invoice->toiletSingleJobInvoices[3]['extra_item'] == '0' || $invoice->toiletSingleJobInvoices[3]['extra_item']== '' || $invoice->toiletSingleJobInvoices[3]['extra_item'] == 'null' ? '' : 'Rs '.number_format($invoice->toiletSingleJobInvoices[3]['unit_price'],2)}}</td>
+                    <td>{{$invoice->toiletSingleJobInvoices[3]['extra_item'] == '0' || $invoice->toiletSingleJobInvoices[3]['extra_item']== '' || $invoice->toiletSingleJobInvoices[3]['extra_item'] == 'null' ? '' : 'Rs '.number_format($invoice->toiletSingleJobInvoices[3]['total'],2)}}</td>
                 </tr>
                 <tr>
                     <td>04</td>
                     <td>{{$invoice->toiletSingleJobInvoices[4]['extra_item'] == '0' || $invoice->toiletSingleJobInvoices[4]['extra_item']== '' || $invoice->toiletSingleJobInvoices[4]['extra_item'] == 'null' ? '' : $invoice->toiletSingleJobInvoices[4]['extra_item']}}</td>
                     <td></td>
                     <td>{{$invoice->toiletSingleJobInvoices[4]['extra_item'] == '0' || $invoice->toiletSingleJobInvoices[4]['extra_item']== '' || $invoice->toiletSingleJobInvoices[4]['extra_item'] == 'null' ? '' : $invoice->toiletSingleJobInvoices[4]['quantity']}}</td>
-                    <td>{{$invoice->toiletSingleJobInvoices[4]['extra_item'] == '0' || $invoice->toiletSingleJobInvoices[4]['extra_item']== '' || $invoice->toiletSingleJobInvoices[4]['extra_item'] == 'null' ? '' : 'RS '.number_format($invoice->toiletSingleJobInvoices[4]['unit_price'],2)}}</td>
-                    <td>{{$invoice->toiletSingleJobInvoices[4]['extra_item'] == '0' || $invoice->toiletSingleJobInvoices[4]['extra_item']== '' || $invoice->toiletSingleJobInvoices[4]['extra_item'] == 'null' ? '' : 'RS '.number_format($invoice->toiletSingleJobInvoices[4]['total'],2)}}</td>
+                    <td>{{$invoice->toiletSingleJobInvoices[4]['extra_item'] == '0' || $invoice->toiletSingleJobInvoices[4]['extra_item']== '' || $invoice->toiletSingleJobInvoices[4]['extra_item'] == 'null' ? '' : 'Rs '.number_format($invoice->toiletSingleJobInvoices[4]['unit_price'],2)}}</td>
+                    <td>{{$invoice->toiletSingleJobInvoices[4]['extra_item'] == '0' || $invoice->toiletSingleJobInvoices[4]['extra_item']== '' || $invoice->toiletSingleJobInvoices[4]['extra_item'] == 'null' ? '' : 'Rs '.number_format($invoice->toiletSingleJobInvoices[4]['total'],2)}}</td>
                 </tr>
                 <tr>
                     <td></td>
@@ -140,7 +140,7 @@
                             $fourth=0;
                         }
                     @endphp
-                    <td>RS {{number_format(floatval($invoice->toiletSingleJobInvoices[1]['total'] + $invoice->toiletSingleJobInvoices[2]['total'] + $third + $fourth),2)}}</td>
+                    <td>Rs {{number_format(floatval($invoice->toiletSingleJobInvoices[1]['total'] + $invoice->toiletSingleJobInvoices[2]['total'] + $third + $fourth),2)}}</td>
                 </tr>
                 {{-- <tr style="height:86.35pt;">
                     <td

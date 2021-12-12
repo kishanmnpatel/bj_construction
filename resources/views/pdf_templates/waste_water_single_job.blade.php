@@ -103,16 +103,16 @@
                         &nbsp;<span>ප්‍රමාණයට කාමර ………. ග්‍රීස් ට්‍රැප් එකක් ඉදිකිරිම.</span></td>
                     <td><span>ගණන</span></td>
                     <td><span dir="rtl">{{$invoice->wasteWaterSingleJobInvoices[1]['quantity']}}</span></td>
-                    <td>RS {{number_format($invoice->wasteWaterSingleJobInvoices[1]['unit_price'],2)}}</td>
-                    <td>RS {{number_format($invoice->wasteWaterSingleJobInvoices[1]['total'],2)}}</td>
+                    <td>Rs {{number_format($invoice->wasteWaterSingleJobInvoices[1]['unit_price'],2)}}</td>
+                    <td>Rs {{number_format($invoice->wasteWaterSingleJobInvoices[1]['total'],2)}}</td>
                 </tr>
                 <tr>
                     <td>02</td>
                     <td><span>අපජලය සදහා වැලිපෙරණය ඉදිකිරිම.</span></td>
                     <td><span>ගණන</span></td>
                     <td><span dir="rtl">{{$invoice->wasteWaterSingleJobInvoices[2]['quantity']}}</span></td>
-                    <td>RS {{number_format($invoice->wasteWaterSingleJobInvoices[2]['unit_price'],2)}}</td>
-                    <td>RS {{number_format($invoice->wasteWaterSingleJobInvoices[2]['total'],2)}}</td>
+                    <td>Rs {{number_format($invoice->wasteWaterSingleJobInvoices[2]['unit_price'],2)}}</td>
+                    <td>Rs {{number_format($invoice->wasteWaterSingleJobInvoices[2]['total'],2)}}</td>
                 </tr>
                 <tr>
                     <td>03</td>
@@ -122,16 +122,16 @@
                         &nbsp;<span>ප්‍රමාණයට අපජලය සදහා අවශෝෂණ පරවැව ඉදිකිරිම.</span></td>
                     <td><span>ගණන</span></td>
                     <td><span dir="rtl">{{$invoice->wasteWaterSingleJobInvoices[3]['quantity']}}</span></td>
-                    <td>RS {{number_format($invoice->wasteWaterSingleJobInvoices[3]['unit_price'],2)}}</td>
-                    <td>RS {{number_format($invoice->wasteWaterSingleJobInvoices[3]['total'],2)}}</td>
+                    <td>Rs {{number_format($invoice->wasteWaterSingleJobInvoices[3]['unit_price'],2)}}</td>
+                    <td>Rs {{number_format($invoice->wasteWaterSingleJobInvoices[3]['total'],2)}}</td>
                 </tr>
                 <tr>
                     <td>04</td>
                     <td><span>ප්‍රවාහන ගාස්තු</span></td>
                     <td><span>අයිතම</span></td>
                     <td><span dir="rtl">{{$invoice->wasteWaterSingleJobInvoices[4]['quantity']}}</span></td>
-                    <td>RS {{number_format($invoice->wasteWaterSingleJobInvoices[4]['unit_price'],2)}}</td>
-                    <td>RS {{number_format($invoice->wasteWaterSingleJobInvoices[4]['total'],2)}}</td>
+                    <td>Rs {{number_format($invoice->wasteWaterSingleJobInvoices[4]['unit_price'],2)}}</td>
+                    <td>Rs {{number_format($invoice->wasteWaterSingleJobInvoices[4]['total'],2)}}</td>
                 </tr>
                 <tr>
                     <td>05</td>
@@ -140,9 +140,9 @@
                     <td></td>
                     <td>{{$invoice->wasteWaterSingleJobInvoices[5]['extra_item'] == '0' || $invoice->wasteWaterSingleJobInvoices[5]['extra_item']== '' || $invoice->wasteWaterSingleJobInvoices[5]['extra_item'] == 'null' ? '' : $invoice->wasteWaterSingleJobInvoices[5]['quantity']}}
                     </td>
-                    <td>{{$invoice->wasteWaterSingleJobInvoices[5]['extra_item'] == '0' || $invoice->wasteWaterSingleJobInvoices[5]['extra_item']== '' || $invoice->wasteWaterSingleJobInvoices[5]['extra_item'] == 'null' ? '' : 'RS '.number_format($invoice->wasteWaterSingleJobInvoices[5]['unit_price'],2)}}
+                    <td>{{$invoice->wasteWaterSingleJobInvoices[5]['extra_item'] == '0' || $invoice->wasteWaterSingleJobInvoices[5]['extra_item']== '' || $invoice->wasteWaterSingleJobInvoices[5]['extra_item'] == 'null' ? '' : 'Rs '.number_format($invoice->wasteWaterSingleJobInvoices[5]['unit_price'],2)}}
                     </td>
-                    <td>{{$invoice->wasteWaterSingleJobInvoices[5]['extra_item'] == '0' || $invoice->wasteWaterSingleJobInvoices[5]['extra_item']== '' || $invoice->wasteWaterSingleJobInvoices[5]['extra_item'] == 'null' ? '' : 'RS '.number_format($invoice->wasteWaterSingleJobInvoices[5]['total'],2)}}
+                    <td>{{$invoice->wasteWaterSingleJobInvoices[5]['extra_item'] == '0' || $invoice->wasteWaterSingleJobInvoices[5]['extra_item']== '' || $invoice->wasteWaterSingleJobInvoices[5]['extra_item'] == 'null' ? '' : 'Rs '.number_format($invoice->wasteWaterSingleJobInvoices[5]['total'],2)}}
                     </td>
                 </tr>
                 <tr>
@@ -152,9 +152,9 @@
                     <td></td>
                     <td>{{$invoice->wasteWaterSingleJobInvoices[6]['extra_item'] == '0' || $invoice->wasteWaterSingleJobInvoices[6]['extra_item']== '' || $invoice->wasteWaterSingleJobInvoices[6]['extra_item'] == 'null' ? '' : $invoice->wasteWaterSingleJobInvoices[6]['quantity']}}
                     </td>
-                    <td>{{$invoice->wasteWaterSingleJobInvoices[6]['extra_item'] == '0' || $invoice->wasteWaterSingleJobInvoices[6]['extra_item']== '' || $invoice->wasteWaterSingleJobInvoices[6]['extra_item'] == 'null' ? '' : 'RS '.number_format($invoice->wasteWaterSingleJobInvoices[6]['unit_price'],2)}}
+                    <td>{{$invoice->wasteWaterSingleJobInvoices[6]['extra_item'] == '0' || $invoice->wasteWaterSingleJobInvoices[6]['extra_item']== '' || $invoice->wasteWaterSingleJobInvoices[6]['extra_item'] == 'null' ? '' : 'Rs '.number_format($invoice->wasteWaterSingleJobInvoices[6]['unit_price'],2)}}
                     </td>
-                    <td>{{$invoice->wasteWaterSingleJobInvoices[6]['extra_item'] == '0' || $invoice->wasteWaterSingleJobInvoices[6]['extra_item']== '' || $invoice->wasteWaterSingleJobInvoices[6]['extra_item'] == 'null' ? '' : 'RS '.number_format($invoice->wasteWaterSingleJobInvoices[6]['total'],2)}}
+                    <td>{{$invoice->wasteWaterSingleJobInvoices[6]['extra_item'] == '0' || $invoice->wasteWaterSingleJobInvoices[6]['extra_item']== '' || $invoice->wasteWaterSingleJobInvoices[6]['extra_item'] == 'null' ? '' : 'Rs '.number_format($invoice->wasteWaterSingleJobInvoices[6]['total'],2)}}
                     </td>
                 </tr>
                 <tr>
@@ -174,7 +174,7 @@
                     $second=0;
                     }
                     @endphp
-                    <td>RS {{number_format(floatval($invoice->wasteWaterSingleJobInvoices[1]['total'] + $invoice->wasteWaterSingleJobInvoices[2]['total'] + $invoice->wasteWaterSingleJobInvoices[3]['total'] + $invoice->wasteWaterSingleJobInvoices[4]['total']  + $first + $second),2)}}
+                    <td>Rs {{number_format(floatval($invoice->wasteWaterSingleJobInvoices[1]['total'] + $invoice->wasteWaterSingleJobInvoices[2]['total'] + $invoice->wasteWaterSingleJobInvoices[3]['total'] + $invoice->wasteWaterSingleJobInvoices[4]['total']  + $first + $second),2)}}
                     </td>
                 </tr>
                 {{-- <tr style="height:86.35pt;">
