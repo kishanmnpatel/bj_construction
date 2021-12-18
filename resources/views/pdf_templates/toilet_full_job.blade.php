@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Noto Sans Sinhala', sans-serif;
+            font-family: 'iskpota', sans-serif;
         }
 
     </style>

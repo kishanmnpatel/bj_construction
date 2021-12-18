@@ -56,6 +56,7 @@
                     <th>Reference No</th>
                     <th>Customer Name</th>
                     <th>Address</th>
+                    <th>Template Name</th>
                     <th>Actions</th>
                 </thead>
                 
@@ -101,6 +102,10 @@
                 {
                     data: 'address',
                     name: 'address'
+                },
+                {
+                    data: 'invoice_type',
+                    name: 'invoice_type'
                 },
                 {
                     data: 'actions',

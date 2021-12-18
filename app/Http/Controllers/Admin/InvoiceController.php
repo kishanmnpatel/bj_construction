@@ -29,7 +29,18 @@ class InvoiceController extends Controller
                                     return $data->quotation_no;
                                 })
                                 ->addColumn('name', function($data){
-                                    return $data->visiting->first_name;
+                                    return $data->visiting->first_name.' '.$data->visiting->last_name;
+                                })
+                                ->addColumn('invoice_type', function($data){
+                                    if ($data->invoice_type == 'toiletInvoice') {
+                                        return 'Toilet Single Job';
+                                    } elseif ($data->invoice_type == 'toiletFulljobInvoice') {
+                                        return 'Toilet Full Job';
+                                    }elseif ($data->invoice_type == 'tasteWaterInvoice') {
+                                        return 'Waste Water Single Job';
+                                    }elseif ($data->invoice_type == 'wasteWaterFulljobInvoice') {
+                                        return 'Waste Water Full Job';
+                                    }
                                 })
                                 ->addColumn('reference_no', function($data){
                                     return $data->visiting->reference_no;
@@ -41,7 +52,7 @@ class InvoiceController extends Controller
                                     // return '<a href="'.route('admin.invoice.show',$data->id).'" class="btn btn-primary btn-sm">View Invoice</a> &nbsp;&nbsp;<a href="'.asset($data->pdf_path).'" class="btn btn-info btn-sm">View PDF</a>';
                                     return '<a href="'.route('admin.viewPDF',$data->id).'" target="_blank" class="btn btn-info btn-sm">View PDF</a> &nbsp;&nbsp;<a href="'.route('admin.invoice.show',$data->id).'" class="btn btn-danger btn-sm">Delete</a>';
                                 })
-                                ->rawColumns(['quotation_no','reference_no','name','address','actions'])
+                                ->rawColumns(['quotation_no','reference_no','name','invoice_type','address','actions'])
                                 ->make(true);
                 }
         return view('admin.invoice.index');
@@ -63,24 +74,28 @@ class InvoiceController extends Controller
             $view = $this->ToiletSingleJobHTML($invoice);
             $html = $view->render();
             $mpdf = new Mpdf(['mode' => 'UTF-8', 'format' => 'A4-P', 'autoScriptToLang' => true, 'autoLangToFont' => true]);
+            $mpdf->SetFont('iskpota');
             $mpdf->WriteHTML($html);
             $mpdf->Output();
         }elseif ($invoice->invoice_type == 'toiletFulljobInvoice') {
             $view = $this->ToiletFullJobHTML($invoice);
             $html = $view->render();
             $mpdf = new Mpdf(['mode' => 'UTF-8', 'format' => 'A4-P', 'autoScriptToLang' => true, 'autoLangToFont' => true]);
+            $mpdf->SetFont('iskpota');
             $mpdf->WriteHTML($html);
             $mpdf->Output();
         }elseif ($invoice->invoice_type == 'tasteWaterInvoice') {
             $view = $this->WasteWaterSingleJobHTML($invoice);
             $html = $view->render();
             $mpdf = new Mpdf(['mode' => 'UTF-8', 'format' => 'A4-P', 'autoScriptToLang' => true, 'autoLangToFont' => true]);
+            $mpdf->SetFont('iskpota');
             $mpdf->WriteHTML($html);
             $mpdf->Output();
         }elseif ($invoice->invoice_type == 'wasteWaterFulljobInvoice') {
             $view = $this->WasteWaterFullJobHTML($invoice);
             $html = $view->render();
             $mpdf = new Mpdf(['mode' => 'UTF-8', 'format' => 'A4-P', 'autoScriptToLang' => true, 'autoLangToFont' => true]);
+            $mpdf->SetFont('iskpota');
             $mpdf->WriteHTML($html);
             $mpdf->Output();
         }
